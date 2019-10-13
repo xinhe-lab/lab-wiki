@@ -1,0 +1,92 @@
+#!/usr/bin/env sos-runner
+#fileformat=SOS1.0
+
+[global]
+import os, glob, getpass
+from sos.utils import env, get_output
+parameter: workdir = 'jupyter-book'
+parameter: src = 'public'
+parameter: base_url = 'https://xinhe-lab.github.io/lab-wiki'
+# Set to True to preview it at http://0.0.0.0:4000/${workdir}
+parameter: serve = False
+
+[setup: provides = f'{workdir}/Gemfile']
+parameter: version = '0.5.2'
+is_master = version == 'master'
+depends: Py_Module(f'jupyter_book{("==%s" % version) if not is_master else ""}', autoinstall = False if is_master else True)
+if is_master: run('pip install git+https://github.com/jupyter/jupyter-book -U')
+bash: expand = '${ }'
+	rm -rf ${workdir} && jupyter-book create ${workdir} 
+	rm -rf ${workdir}/content/* && rm -f ${workdir}/Gemfile.lock
+
+[build_1]
+depends: executable('rsync'), f'{workdir}/Gemfile'
+bash: expand = '${ }'
+	rsync -auz --delete ${src}/* --exclude "*.bib" ${workdir}/content/
+	rsync -auz --delete --ignore-missing-args ${src}/*.bib  ${workdir}/_bibliography
+	cp toc.yml ${workdir}/_data
+	cp _config.yml ${workdir}/_config.yml
+
+# Rename README.md to index.md
+for x in glob.glob(f'{workdir}/content/*/README.md'):
+	os.rename(x, f'{path(x):d}/index.md')
+
+bash: expand = True
+    jupyter-book build {workdir} {'--overwrite' if env.config['sig_mode'] == 'force' else ''}
+
+[build_2]
+# sync additional files over
+depends: sos_step('build_1')
+additional_files = [f'{workdir}/content/{x}' for x in get_output(f'rsync -auznv {workdir}/content/* {workdir}/_build | grep ".*\.md$" || true').strip().split()]
+skip_if(len(additional_files) == 0)
+input: additional_files, group_by = 1
+output: str(_input).replace('/content/', '/_build/')
+bash: expand = True
+	echo "$(echo -e '---\ntitle: {_input:bn}\n---'; cat {_input})" > {_output}
+
+[build_3]
+docker_build: workdir = workdir, tag = f'{getpass.getuser()}/jekyll-book'
+	FROM jekyll/jekyll:4.0.0
+	RUN apk --update add make gcc g++ libc-dev
+	COPY Gemfile .
+	RUN gem install bundle && bundle install 
+
+[build_4]
+depends: executable('docker')
+bash:  workdir = workdir, expand = "${ }"
+	docker container stop $(docker container ls -q --filter ancestor=${getpass.getuser()}/jekyll-book) &> /dev/null || true
+	docker run --rm --security-opt label:disable \
+   		-v `pwd`:/srv/jekyll \
+   		${'-p 4000:4000' if serve else ''} -it -u 1000:1000 \
+   		${getpass.getuser()}/jekyll-book \
+		 bundle exec jekyll ${'build' if not serve else 'serve --host 0.0.0.0'}
+
+[build_5]
+stop_if(serve)
+depends: executable('rsync')
+bash: expand = '${ }'
+	mkdir -p docs
+	rsync -auz --delete --exclude content ${workdir}/_site/* docs/
+	rsync -auz --delete --ignore-missing-args ${src}/external docs/
+	rm -f docs/runtime.txt
+	echo '''
+	<!DOCTYPE html>
+	<html lang="en-US">
+	<meta charset="utf-8">
+	<title>Redirecting&hellip;</title>
+  	<link rel="canonical" href="${base_url}/welcome">
+  	<script>location="${base_url}/welcome"</script>
+  	<meta http-equiv="refresh" content="0; url=${base_url}/welcome">
+  	<meta name="robots" content="noindex">
+  	<h1>Redirecting&hellip;</h1>
+  	<a href="${base_url}/welcome">Click here if you are not redirected.</a>
+	</html>
+	''' > docs/index.html
+	echo "Deployed to the docs/ folder"
+
+[clean]
+bash: expand = True
+	rm -rf {workdir} docs 
+
+[default]
+sos_run('build')

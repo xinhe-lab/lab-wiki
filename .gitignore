@@ -1,0 +1,7 @@
+# workflow files
+**/.sos
+**/.ipynb_checkpoints
+**/__pycache__
+
+# workflow outputs
+jupyter-book
