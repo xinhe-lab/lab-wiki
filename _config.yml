@@ -42,7 +42,7 @@ collapse_inactive_chapters: false  # Whether to collapse the inactive chapters i
 # I got DSC logo from freelogodesign.org
 textbook_logo             : images/logo.png  # A logo to be displayed at the top of your textbook sidebar
 textbook_logo_link        : https://xinhe-lab.github.io/lab-wiki  # A link for the logo.
-sidebar_footer_text       : 'Copyright (c) 2019 <br> <a href="http://tigerwang.org">Gao Wang</a> and contributors.<br>'
+sidebar_footer_text       : 'Copyright (c) 2019 <br> <a href="http://xinhelab.org">Xin He Lab</a>.<br>'
 
 # Search settings
 search_max_words_in_content : 100  # In the search function, use at most this many words (too many words will make search slow)
