@@ -19,7 +19,7 @@ bash: expand = '${ }'
 	rm -rf ${workdir} && jupyter-book create ${workdir} 
 	rm -rf ${workdir}/content/* && rm -f ${workdir}/Gemfile.lock
 
-[build_1]
+[build_files_in_toc]
 depends: executable('rsync'), f'{workdir}/Gemfile'
 bash: expand = '${ }'
 	rsync -auz --delete ${src}/* --exclude "*.bib" ${workdir}/content/
@@ -34,9 +34,8 @@ for x in glob.glob(f'{workdir}/content/*/README.md'):
 bash: expand = True
     jupyter-book build {workdir} {'--overwrite' if env.config['sig_mode'] == 'force' else ''}
 
-[build_2]
+[build_additional_files]
 # sync additional files over
-depends: sos_step('build_1')
 additional_files = [f'{workdir}/content/{x}' for x in get_output(f'rsync -auznv {workdir}/content/* {workdir}/_build | grep ".*\.md$" || true').strip().split()]
 skip_if(len(additional_files) == 0)
 input: additional_files, group_by = 1
@@ -44,14 +43,16 @@ output: str(_input).replace('/content/', '/_build/')
 bash: expand = True
 	echo "$(echo -e '---\ntitle: {_input:bn}\n---'; cat {_input})" > {_output}
 
-[build_3]
+[make_jekyll_image]
 docker_build: workdir = workdir, tag = f'{getpass.getuser()}/jekyll-book'
 	FROM jekyll/jekyll:4.0.0
-	RUN apk --update add make gcc g++ libc-dev
+	WORKDIR /tmp
+	RUN apk --update add make gcc g++ libc-dev && rm -rf /var/cache/apk/* 
+	WORKDIR /srv/jekyll
 	COPY Gemfile .
-	RUN gem install bundle && bundle install 
+	RUN gem install bundle && bundle install
 
-[build_4]
+[run_jekyll]
 depends: executable('docker')
 bash:  workdir = workdir, expand = "${ }"
 	docker container stop $(docker container ls -q --filter ancestor=${getpass.getuser()}/jekyll-book) &> /dev/null || true
@@ -61,7 +62,7 @@ bash:  workdir = workdir, expand = "${ }"
    		${getpass.getuser()}/jekyll-book \
 		 bundle exec jekyll ${'build' if not serve else 'serve --host 0.0.0.0'}
 
-[build_5]
+[make_site]
 stop_if(serve)
 depends: executable('rsync')
 bash: expand = '${ }'
@@ -89,4 +90,8 @@ bash: expand = True
 	rm -rf {workdir} docs 
 
 [default]
-sos_run('build')
+sos_run('build_files_in_toc')
+sos_run('build_additional_files')
+sos_run('make_jekyll_image')
+sos_run('run_jekyll')
+sos_run('make_site')
