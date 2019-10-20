@@ -2,11 +2,11 @@
 
 ## Install miniconda3 the Python development environment
 
-We recommend using `miniconda` over `anaconda` and customize your installation as needed. 
-To install please follow instructions [on this page](https://docs.conda.io/en/latest/miniconda.html).
+We recommend using `miniconda` over `anaconda` and customize your installation as needed after install this minimal version of `conda`. 
+To install please follow instructions [on this page](https://docs.conda.io/en/latest/miniconda.html). Please go for `miniconda3`.
 
 After you successfully installed the latest version of `miniconda3`, please follow prompts below to setup
-a JupyterLab + SoS Suite environment for computing.
+a [JupyterLab + SoS Suite environment](https://doi.org/10.1371/journal.pcbi.1006843) for daily computing.
 
 ## Jupyter Notebook kernels
 
@@ -32,6 +32,7 @@ R --slave -e "install.packages('IRkernel'); IRkernel::installspec()"
 
 ### A ipynb to docx converter
 
+This will allow you to save `ipynb` file to a `docx` file for various purposes
 ```
 pip install jupyter-docx-bundler --no-cache-dir
 jupyter bundlerextension enable --py jupyter_docx_bundler --sys-prefix
@@ -39,6 +40,7 @@ jupyter bundlerextension enable --py jupyter_docx_bundler --sys-prefix
 
 ### nbdime to work with git
 
+This will override the default `git diff` and display better the changes to IPython notebooks
 ```
 pip install nbdime
 nbdime config-git --enable --global

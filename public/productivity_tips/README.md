@@ -1,6 +1,7 @@
 # Computing devices
 
 - [Setup and run Jupyter server on cluster](https://github.com/gaow/misc/tree/master/bash#jupyterlab-server-on-cluster-via-ssh-tunnel).
+- [Connect from one computer to another](remote-computer).
 
 # Software development tips
 

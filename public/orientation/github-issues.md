@@ -8,11 +8,11 @@
 
 ## Issues for bug reports
 
-This is when you think you know what you are doing, but your code does not work as expected -- so already you can see there are two elements in this: your expectation, and the actual wrong behavior. Additionally since you know (at least partially) what you are doing, you must 
-have already done something very specific that resulted in the bad behavior; and you even made some attempts to fix it.
+This is when you think you are doing it correctly as instructed in the documentation, but the code does not work as expected -- so already you can see there are three elements in this: your implementation, 
+your expectation, and the actual wrong behavior. Since you might have already done something very specific that resulted in the bad behavior -- you ran into a "corner case", so to speak; and you even made some attempts to fix it.
 So it is also very important you show us exactly what you've done, as specific as possible -- never just say something like this: "I ran the code but got an error message. What should I do?". No one can respond to that!
 
-But before you report the bug, please at least try to diagnose and fix it first. At least, Google around and have some idea what might be wrong, before you open a ticket.
+But before you report the bug, please at least try to diagnose and fix it by yourself first. At least, search online and have some idea what might be wrong, before you open a ticket.
 
 [It would be very help if you provide some minimal working example (MWE)](https://testlio.com/blog/the-ideal-bug-report/) when you report a bug to others.
 

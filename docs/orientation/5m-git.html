@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>5 Minutes git</title>
+  <title>5 minutes git</title>
   <meta name="description" content="">
 
   <link rel="canonical" href="https://xinhe-lab.github.io/lab-wiki/orientation/5m-git.html">
@@ -15,7 +15,7 @@
 
   <meta property="og:url"         content="https://xinhe-lab.github.io/lab-wiki/orientation/5m-git.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="5 Minutes git" />
+<meta property="og:title"       content="5 minutes git" />
 <meta property="og:description" content="" />
 <meta property="og:image"       content="" />
 
@@ -27,11 +27,11 @@
   "mainEntityOfPage":
     "https://xinhe-lab.github.io/lab-wiki/orientation/5m-git.html",
   "headline":
-    "5 Minutes git",
+    "5 minutes git",
   "datePublished":
-    "2019-10-13T14:50:04-05:00",
+    "2019-10-20T18:41:02-05:00",
   "dateModified":
-    "2019-10-13T14:50:04-05:00",
+    "2019-10-20T18:41:02-05:00",
   "description":
     "",
   "author": {
@@ -489,7 +489,7 @@ initFunction(initQuery);
                   href="/lab-wiki/orientation/5m-git.html"
                 >
                   
-                  5 Minutes git
+                  5 minutes git
                 </a>
 
                 
@@ -813,40 +813,29 @@ initFunction(initQuery);
 
 <p>Git is a distributed version control system that not only automatically records the changes of each file, but also allows colleagues to collaborate and edit, so that users do not need to manage a bunch of files, and do not need to transfer files from / to colleagues. It keeps track of any change to any files (<code class="highlighter-rouge">git log</code> and <code class="highlighter-rouge">git blame</code>) in your project. It allows you to easily see history of modifications of a file, or restore the file to any time point in the history.</p>
 
-<p>In short with <code class="highlighter-rouge">git</code> you never have to (or allowed to) keep multiple versions of your script like <code class="highlighter-rouge">code_v1.R</code>, <code class="highlighter-rouge">code_version_20191015.py</code>, etc.</p>
+<p>In the context of research I see <code class="highlighter-rouge">git</code> as a way to collaborate with yourself over time. With <code class="highlighter-rouge">git</code> you never have to (or allowed to) keep multiple versions of your script like <code class="highlighter-rouge">code_v1.R</code>, <code class="highlighter-rouge">code_version_20191015.py</code>, etc. It will of course also make it easy for others to contribute to your project in a trackable fashion.</p>
 
 <h2 id="install-git">Install git</h2>
 
-<p>In command terminal type <code class="highlighter-rouge">git</code> to check if it is installed.</p>
-
-<p><strong>FIXME</strong>: please add link to resources that has helped you figuring out how git is installed.</p>
+<p>In command terminal type <code class="highlighter-rouge">git</code> to check if it is installed. If not please try search online for installation instructions 
+specific to your operating system. One way to do it is to first <a href="jupyter-setup">install conda</a> then use <code class="highlighter-rouge">conda install -c anaconda git
+</code> to install <code class="highlighter-rouge">git</code>.</p>
 
 <h2 id="your-first-github-project">Your first github project</h2>
 
 <h3 id="create-a-github-repository-and-clone-to-local-computer">Create a github repository and clone to local computer</h3>
 
-<p>We use <code class="highlighter-rouge">repo</code> to stand for “repository”. You can simply understand it as an inventory of files. Files in this inventory will be managed by <code class="highlighter-rouge">git</code> to track changes, additions and modifications.</p>
+<p>We use “repo” to stand for “repository”. You can simply understand it as an inventory of files. Files in this inventory will be managed by <code class="highlighter-rouge">git</code> to track changes, additions and modifications.</p>
 
-<p><strong>FIXME</strong>: give instructions on how to create a repository called <code class="highlighter-rouge">git-test</code> on your github.com account.</p>
+<p>To create a github repository online, visit <code class="highlighter-rouge">https://github.com/&lt;you github account&gt;</code> where <code class="highlighter-rouge">&lt;your github account&gt;</code> is your github username. Then under <code class="highlighter-rouge">repositories</code> tag click on <code class="highlighter-rouge">new repository</code>
+to create a new repository — you can call it <code class="highlighter-rouge">git-test</code>. You can choose either Private or Public repo it does not matter at this point. When creating the repo I suggest you choose the option to “Include a README.md” so github will create an actual repo on github with that README.md file. You can then download, make changes and contribute back to it.</p>
 
-<p>Then, create an empty directory on your computer, say under a folder <code class="highlighter-rouge">~/tmp/12-Oct-2019</code>,</p>
+<p>To download, or “clone” in git’s terminology, the repo you created on github.com to local computer,</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ~/tmp/12-Oct-2019
-<span class="nv">$ </span><span class="nb">mkdir </span>git-test
-<span class="nv">$ </span><span class="nb">cd </span>git-test
-<span class="nv">$ </span><span class="nb">pwd</span>
-/home/gaow/tmp/12-Oct-2019/git-test
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone &lt;URL to your repository on github&gt;
 </code></pre></div></div>
 
-<p>In practice you can name this folder to anything; here <code class="highlighter-rouge">git-test</code> is chosen to be consistent with the github.com
-repository name.</p>
-
-<p>Now use <code class="highlighter-rouge">git clone</code> to clone the repo you created on github.com to local computer,</p>
-
-<p><strong>FIXME</strong></p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone ....
-</code></pre></div></div>
+<p>You can then use <code class="highlighter-rouge">cd git-test</code> to navigate to the downloaded the <code class="highlighter-rouge">git-test</code> repository you just created online.</p>
 
 <h3 id="add-files-to-the-repository">Add files to the repository</h3>
 
@@ -863,11 +852,33 @@ repository name.</p>
  1 file changed, 1 insertion<span class="o">(</span>+<span class="o">)</span>
  create mode 100644 example.md
 </code></pre></div></div>
-<p>Here <code class="highlighter-rouge">-m</code> carries a message to explain this change. This will help others – and more importantly, yourself – to understand the change easily without looking into the code.</p>
+<p>Here <code class="highlighter-rouge">-m</code> carries a message to explain this change. This will help others — and more importantly, yourself — to understand the change easily without looking into the code.</p>
 
 <h3 id="push-your-change-to-repo-on-githubcom">Push your change to repo on github.com</h3>
 
-<p><strong>FIXME</strong></p>
+<p>The previous step wrote changes to a local copy of the git repo on your computer. To upload your changes to the online repository,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push
+</code></pre></div></div>
+
+<p>It is very important that you <code class="highlighter-rouge">push</code> to the online repo to “finalize” your changes to the project.</p>
+
+<h2 id="contribute-to-this-repository">Contribute to this repository</h2>
+
+<p>First, clone the repo to your computer:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/xinhe-lab/lab-wiki
+</code></pre></div></div>
+
+<p>Then edit this document <code class="highlighter-rouge">public/orientation/README.md</code> and <code class="highlighter-rouge">public/orientation/5m-git.md</code> in ways you think you can improve it, and commit and push it back.</p>
+
+<p>If you have previously cloned a copy to your computer, then before your edit <strong>please update to the current version</strong> that might
+have been changed by others since you last cloned:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull
+</code></pre></div></div>
+
+<p>Then you can continue to contribute.</p>
 
 <h2 id="beyond-5-minutes">Beyond 5 minutes</h2>
 

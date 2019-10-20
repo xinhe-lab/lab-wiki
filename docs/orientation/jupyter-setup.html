@@ -29,9 +29,9 @@
   "headline":
     "Jupyter and SoS suite setup",
   "datePublished":
-    "2019-10-13T14:50:04-05:00",
+    "2019-10-20T18:41:02-05:00",
   "dateModified":
-    "2019-10-13T14:50:04-05:00",
+    "2019-10-20T18:41:02-05:00",
   "description":
     "",
   "author": {
@@ -489,7 +489,7 @@ initFunction(initQuery);
                   href="/lab-wiki/orientation/5m-git.html"
                 >
                   
-                  5 Minutes git
+                  5 minutes git
                 </a>
 
                 
@@ -811,11 +811,11 @@ initFunction(initQuery);
 
 <h2 id="install-miniconda3-the-python-development-environment">Install miniconda3 the Python development environment</h2>
 
-<p>We recommend using <code class="highlighter-rouge">miniconda</code> over <code class="highlighter-rouge">anaconda</code> and customize your installation as needed. 
-To install please follow instructions <a href="https://docs.conda.io/en/latest/miniconda.html">on this page</a>.</p>
+<p>We recommend using <code class="highlighter-rouge">miniconda</code> over <code class="highlighter-rouge">anaconda</code> and customize your installation as needed after install this minimal version of <code class="highlighter-rouge">conda</code>. 
+To install please follow instructions <a href="https://docs.conda.io/en/latest/miniconda.html">on this page</a>. Please go for <code class="highlighter-rouge">miniconda3</code>.</p>
 
 <p>After you successfully installed the latest version of <code class="highlighter-rouge">miniconda3</code>, please follow prompts below to setup
-a JupyterLab + SoS Suite environment for computing.</p>
+a <a href="https://doi.org/10.1371/journal.pcbi.1006843">JupyterLab + SoS Suite environment</a> for daily computing.</p>
 
 <h2 id="jupyter-notebook-kernels">Jupyter Notebook kernels</h2>
 
@@ -838,12 +838,14 @@ python -m markdown_kernel.install
 
 <h3 id="a-ipynb-to-docx-converter">A ipynb to docx converter</h3>
 
+<p>This will allow you to save <code class="highlighter-rouge">ipynb</code> file to a <code class="highlighter-rouge">docx</code> file for various purposes</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install jupyter-docx-bundler --no-cache-dir
 jupyter bundlerextension enable --py jupyter_docx_bundler --sys-prefix
 </code></pre></div></div>
 
 <h3 id="nbdime-to-work-with-git">nbdime to work with git</h3>
 
+<p>This will override the default <code class="highlighter-rouge">git diff</code> and display better the changes to IPython notebooks</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install nbdime
 nbdime config-git --enable --global
 </code></pre></div></div>

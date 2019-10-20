@@ -29,7 +29,7 @@ repository: "xinhe-lab/lab-wiki"
 #######################################################################################
 # Jupyter Book settings
 
-foot_text                 : 'Copyright (c) 2019 <br> <a href="http://xinhelab.org">Xin He Lab</a>.<br>'
+foot_text                 : 'Copyright (c) 2019 <br> <a href="http://xinhelab.org">Xin He Lab</a>.<br>Distributed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA license</a>.<br>'
 
 # Notebook content settings
 hide_cell_text            : "# HIDDEN"  # When building the textbook, any cells with this text inside will be hidden in the output markdown

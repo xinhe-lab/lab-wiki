@@ -29,9 +29,9 @@
   "headline":
     "Debian based Linux setup",
   "datePublished":
-    "2019-10-13T14:50:04-05:00",
+    "2019-10-20T18:41:02-05:00",
   "dateModified":
-    "2019-10-13T14:50:04-05:00",
+    "2019-10-20T18:41:02-05:00",
   "description":
     "",
   "author": {
@@ -489,7 +489,7 @@ initFunction(initQuery);
                   href="/lab-wiki/orientation/5m-git.html"
                 >
                   
-                  5 Minutes git
+                  5 minutes git
                 </a>
 
                 
@@ -826,25 +826,21 @@ sudo apt-get clean
 </code></pre></div></div>
 
 <h2 id="install-latest-r">Install latest R</h2>
-<p>I would not recommend it, at least at this point, to source compile R or to install R via <code class="highlighter-rouge">conda</code>.
+<p>I would not recommend it, at least at this point, to source compile R or to install R via <code class="highlighter-rouge">conda</code> 
+(unless you have experiences with these in the past).
 Here we use the Linux distribution’s package repository to install.</p>
 
 <h3 id="debian-9-upgrade">Debian 9 upgrade</h3>
 
 <p>For R 3.5 on Debian 9, for example, create a file</p>
-
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo gvim /etc/apt/sources.list.d/cran.list
 </code></pre></div></div>
-
 <p>and add</p>
-
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deb http://cran.rstudio.com/bin/linux/debian stretch-cran35/
 </code></pre></div></div>
-
 <p>and save and exit. This specifies the path to the repository from which the Debian system gets the
 latest R version (R 3.5) for its distribution (Debian 9, aka, Debian Stretch). Then add GPG key to
 use the repository:</p>
-
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-key adv --keyserver keys.gnupg.net --recv-key 'E19F5F87128899B192B1A2C2AD5F960A256A04AF'
 </code></pre></div></div>
 
@@ -858,7 +854,6 @@ use the repository:</p>
 </code></pre></div></div>
 
 <p>Finally, install it:</p>
-
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get update &amp; sudo apt-get install r-base r-base-dev libatlas3-base
 </code></pre></div></div>
 

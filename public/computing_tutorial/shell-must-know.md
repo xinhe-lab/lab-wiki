@@ -31,7 +31,7 @@ du -h
 rsync; rsync -auzP
 ```
 
-## Advanced
+## Advanced (yet commonly used!)
 
 ```
 |

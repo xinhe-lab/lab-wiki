@@ -7,15 +7,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Use github issues</title>
+  <title>remote-computer</title>
   <meta name="description" content="">
 
-  <link rel="canonical" href="https://xinhe-lab.github.io/lab-wiki/orientation/github-issues.html">
+  <link rel="canonical" href="https://xinhe-lab.github.io/lab-wiki/productivity_tips/remote-computer.html">
   <link rel="alternate" type="application/rss+xml" title="Lab Docs" href="https://xinhe-lab.github.io/lab-wiki/feed.xml">
 
-  <meta property="og:url"         content="https://xinhe-lab.github.io/lab-wiki/orientation/github-issues.html" />
+  <meta property="og:url"         content="https://xinhe-lab.github.io/lab-wiki/productivity_tips/remote-computer.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Use github issues" />
+<meta property="og:title"       content="remote-computer" />
 <meta property="og:description" content="" />
 <meta property="og:image"       content="" />
 
@@ -25,9 +25,9 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage":
-    "https://xinhe-lab.github.io/lab-wiki/orientation/github-issues.html",
+    "https://xinhe-lab.github.io/lab-wiki/productivity_tips/remote-computer.html",
   "headline":
-    "Use github issues",
+    "remote-computer",
   "datePublished":
     "2019-10-20T18:41:02-05:00",
   "dateModified":
@@ -502,7 +502,7 @@ initFunction(initQuery);
               
 
               <li class="c-sidebar__section">
-                <a class="c-sidebar__entry c-sidebar__entry--active"
+                <a class="c-sidebar__entry "
                   href="/lab-wiki/orientation/github-issues.html"
                 >
                   
@@ -807,81 +807,180 @@ initFunction(initQuery);
             
 
             <div class="c-textbook__content">
-              <h1 id="how-to-write-a-github-issue">How to write a github issue</h1>
+              <h1 id="connect-from-your-personal-computer-to-another-computer">Connect from your personal computer to another computer</h1>
 
-<h2 id="issues-for-discussion-new-ideas-exchange-of-thoughts">Issues for discussion, new ideas, exchange of thoughts</h2>
+<p>This is a typical user case when we need to work with a computer server to perform data analysis etc but not physically in front of the machine. Rather we connect to it from another machine, say a personal laptop.</p>
+
+<p>Here we introduce in brief a few methods to connect and work with remote computers. I’ll call it “host” for the remote computer,
+and “guest” for the computer through which you connect to the host.</p>
+
+<h2 id="through-command-shell">Through command shell</h2>
+
+<h3 id="get-ip-address">Get IP address</h3>
+
+<p>First, obtain the IP address or domain name of the host computer. You may either be provided with the information,
+or you can run in command terminal (for a Linux host):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ifconfig 
+</code></pre></div></div>
+
+<p>to see the IP address. For example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ifconfig
+eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 192.168.0.105  netmask 255.255.255.0  broadcast 192.168.0.255
+        inet6 fe80::ae1f:6bff:fe11:ab10  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether ac:1f:6b:11:ab:10  txqueuelen 1000  (Ethernet)
+        RX packets 123292  bytes 105881116 (100.9 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 130328  bytes 41654696 (39.7 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0xc7200000-c727ffff
+
+eth1: flags=4099&lt;UP,BROADCAST,MULTICAST&gt;  mtu 1500
+        ether ac:1f:6b:11:ab:11  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0xc7100000-c717ffff
+</code></pre></div></div>
+
+<p>The information you should be looking at is the <code class="highlighter-rouge">inet</code> property under <code class="highlighter-rouge">eth0</code>, which in our case is <code class="highlighter-rouge">192.168.0.105</code> 
+(this is the IP address in my local network domain).</p>
+
+<h3 id="connect-via-ssh">Connect via SSH</h3>
+
+<p>On the guest computer, type</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh username@192.168.0.105
+</code></pre></div></div>
+
+<p>where <code class="highlighter-rouge">username</code> is the account name you have on the host machine. Please replace <code class="highlighter-rouge">192.168.0.105</code> with your IP address.
+If it fails, it might be possible that your host machine does not support
+SSH access. In that case you need to install SSH server on your host. For a Debian / Ubuntu host:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install openssh-server
+</code></pre></div></div>
+
+<p>If you want to be able to use graphical interface for apps on your host, for example use <code class="highlighter-rouge">firefox</code> to browse internet from host, you need to
+connect through <code class="highlighter-rouge">-X</code> option, eg,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -X username@192.168.0.105
+</code></pre></div></div>
+
+<h4 id="create-a-user-on-the-host-machine">Create a user on the host machine</h4>
+
+<p>If you do not have a user account on the host, ask whoever administrates that machine to create one for you. He / she can use the command below:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>username=hxl
+group=docker # another option is `www-data` group, for a web server
+cd /home
+sudo useradd -g $group $username -d /home/$username -m -s /bin/bash
+sudo passwd $username
+sudo cp .bash_profile .bash_prompt /home/$username
+sudo echo 'export LC_ALL="en_US.UTF-8"' &gt;&gt; /home/$username/.bashrc
+sudo chown $username.$group -R /home/$username
+</code></pre></div></div>
+
+<p>You’ll be prompt to enter password. This will add user <code class="highlighter-rouge">hxl</code> to <code class="highlighter-rouge">docker</code> group.</p>
+
+<p>Notice the line <code class="highlighter-rouge">cp .bash_profile .bash_prompt /home/$username</code> – I put a couple of template configuration files under <code class="highlighter-rouge">/home</code> folder to copy to a new account. This will make the terminal prompt look better.</p>
+
+<h2 id="through-jupyterlab">Through JupyterLab</h2>
+
+<h3 id="install-jupyterlab-on-host">Install JupyterLab on host</h3>
+
+<p>If you are a JupyterLab user you probably already have JupyterLab running on the host, or at least knows how to install it. 
+If not, <a href="jupyter-setup">this page</a> contains the commands to set it up.</p>
+
+<h3 id="if-the-host-is-a-regular-desktop-computer">If the host is a regular desktop computer</h3>
+
+<h4 id="start-jupyterlab-server-on-host">Start JupyterLab server on host</h4>
+
+<p>First you need to connect to the host via SSH. Please open a new terminal to connect. Details see section above.</p>
+
+<p>Once you are connected to host, type this line:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter-lab --no-browser &amp;
+</code></pre></div></div>
+
+<p>You should see lots of output. Of relevance is some lines like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[C 12:40:51.496 LabApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:8888/?token=1a90c5465f3295c8354a6e2365b961e88affb880559f51cb
+</code></pre></div></div>
+
+<p>Once you see it you know the JupyterLab server is up and running (on the background on the remote host). There are two important piece of information you need to keep:</p>
 
 <ol>
-  <li>First, describe your motivation – why are you proposing something? what’s wrong with existing solution?</li>
-  <li>Intuition behand your proposed solution – why do you think it will work?</li>
-  <li>Feasibility of your solution – how long does it take to implement? Is it simple enough as a proof of concept that can be further developed into more sophisticated solutions?</li>
+  <li>The port number the JupyterLab server is to be accessed: <code class="highlighter-rouge">8888</code></li>
+  <li>The token (password): <code class="highlighter-rouge">1a90c5465f3295c8354a6e2365b961e88affb880559f51cb</code></li>
 </ol>
 
-<h2 id="issues-for-bug-reports">Issues for bug reports</h2>
+<p>The port number and token can be different every time you connect.</p>
 
-<p>This is when you think you are doing it correctly as instructed in the documentation, but the code does not work as expected – so already you can see there are three elements in this: your implementation, 
-your expectation, and the actual wrong behavior. Since you might have already done something very specific that resulted in the bad behavior – you ran into a “corner case”, so to speak; and you even made some attempts to fix it.
-So it is also very important you show us exactly what you’ve done, as specific as possible – never just say something like this: “I ran the code but got an error message. What should I do?”. No one can respond to that!</p>
+<p>At this point you can hit <code class="highlighter-rouge">enter</code> key to bring yourself back to the terminal, then type <code class="highlighter-rouge">exit</code> to quit the host. It is very important to quit properly!</p>
 
-<p>But before you report the bug, please at least try to diagnose and fix it by yourself first. At least, search online and have some idea what might be wrong, before you open a ticket.</p>
+<h4 id="connect-to-host-jupyterlab-from-guest">Connect to host JupyterLab from guest</h4>
 
-<p><a href="https://testlio.com/blog/the-ideal-bug-report/">It would be very help if you provide some minimal working example (MWE)</a> when you report a bug to others.</p>
+<p>On your guest machine, type:</p>
 
-<p>More formally, we require the following minimal template to report a bug:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Issue description
-
-
-## What's the expected result?
-
--
-
-
-## What's the actual result?
-
--
-
-## Steps to reproduce the issue
-
-1.  
-2. 
-3. 
-
-(zip and drag to upload a minimal test data-set used to reproduce the issue)
-
-## What do I think is the problem?
-
-Guess or suggest something, or say "I do not know" if you really do not have an idea.
-
-## What did I do in my own attempt to fixing the issue?
-
-### Attempt 1
-
-According to [this article]() I found line, I tried .... (describe what you tried), but it still failed ... (describe how it failed)
-
-### Attempt 2
-
-....
-
-## Additional details / screenshot / links
-
-- ![Screenshot]()
--
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -NL 1828:localhost:8888 username@192.168.0.105
 </code></pre></div></div>
+
+<p>where:</p>
+
+<ol>
+  <li><code class="highlighter-rouge">8888</code> is the port number you see in the previous step on the host. Replace it with what you actually see.</li>
+  <li><code class="highlighter-rouge">username</code> is your username on the host, replace it with your username</li>
+  <li><code class="highlighter-rouge">192.168.0.105</code> is my host IP address, see previous section on SSH connections. Replace it with the actual IP of your host computer.</li>
+  <li><code class="highlighter-rouge">1828</code> is a port number you assign on your guest machine to map to host JupyterLab server port. It can be a random number like this, or like <code class="highlighter-rouge">2888</code>, <code class="highlighter-rouge">3888</code>, <code class="highlighter-rouge">6666</code> as long is they are not being used by other apps on your computer. Just type in any 4-digits number. The command will complain and fail if the port you choose is not available.</li>
+</ol>
+
+<p>Hit <code class="highlighter-rouge">enter</code>, you might be asked to enter password. After that, nothing will show up. Do not worry it is a good sign!</p>
+
+<h3 id="if-the-host-is-a-cluster-system">If the host is a cluster system</h3>
+
+<p>At least for University of Chicago clusters we can connect to a compute node on it directly using SSH tunnel. 
+We can run JupyterLab on compute nodes and connect to it directly via SSH tunnel, along the lines of <a href="http://ipyrad.readthedocs.io/HPC_Tunnel.html">this post</a>. It does not involve running anything on the login node.</p>
+
+<p><a href="https://github.com/gaow/misc/blob/master/bash/jupyterlab.sbatch">This script</a> works for UChicago RCC midway HPC. <a href="https://github.com/gaow/misc/blob/master/bash/README.md#jupyterlab-server-on-cluster-via-ssh-tunnel">Here are instructions</a>.</p>
+
+<h3 id="use-command-terminal-from-within-jupyterlab">Use command terminal from within JupyterLab</h3>
+
+<p>The “Launcher” page of JupyterLab has a few types of items to launch:</p>
+
+<ul>
+  <li>Notebook</li>
+  <li>Console</li>
+  <li>Terminal</li>
+</ul>
+
+<p>We typically launch a <code class="highlighter-rouge">Notebook</code>, but the other two are also very useful. For example to get yourself a conventional command terminal you just click on <code class="highlighter-rouge">Terminal</code> then you’ll be brought to the command terminal. You can also try to create a Bash <code class="highlighter-rouge">Console</code>. It is like something in between terminal and notebook. Sometimes you might find it more user-friendly.</p>
+
+<h2 id="through-vscode">Through vscode</h2>
+
+<p><a href="https://code.visualstudio.com/"><code class="highlighter-rouge">vscode</code></a> is my text editor of choice. I use this <a href="https://marketplace.visualstudio.com/items?itemName=mkloubert.vscode-remote-workspace#user-content-install-">extension</a> to connect to remote computer. Workspace configuration example:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"folders"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sftp://gaow:statgen@205.208.52.221/home/gaow"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My office computer"</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="through-rstudio-server">Through Rstudio server</h2>
+
+<p>(to be updated)</p>
 
               <nav class="c-page__nav">
   
-    
-    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/lab-wiki/orientation/5m-git.html">
-      〈 <span class="u-margin-right-tiny"></span> 5 minutes git
-    </a>
-  
 
-  
-    
-    <a id="js-page__nav__next" class="c-page__nav__next" href="/lab-wiki/orientation/debian-setup.html">
-      Debian based Linux setup <span class="u-margin-right-tiny"></span> 〉
-    </a>
   
 </nav>
 

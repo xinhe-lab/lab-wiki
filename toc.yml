@@ -22,7 +22,7 @@
   not_numbered: true
   expand_sections: false 
   sections:
-  - title: 5 Minutes git
+  - title: 5 minutes git
     url: /orientation/5m-git
     not_numbered: true
   - title: Use github issues
