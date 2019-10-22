@@ -18,20 +18,15 @@ Relevant books, papers and other learning materials online.
 - [How to keep up with the scientific literature (a 2016 blogpost)](https://www.sciencemag.org/careers/2016/11/how-keep-scientific-literature)
     - [A distilled version by Gao Wang](keep-up-literature-2016)
 
-### Journal special collections
-
-General
+### General collections
 
 - [Nature's Scitable](https://www.nature.com/scitable)
 - [PLoS Compbio Education collection](https://collections.plos.org/compbiol-education)
 - [Nature Biotech Computational Biology collection](https://www.nature.com/collections/tmdlscdqmc)
 
-Statistical genetics
-
-- [NRG GWAS colection](https://www.nature.com/collections/jpqdqjwqkk)
-
 ### Statistical Genetics
 
+- [NRG GWAS colection](https://www.nature.com/collections/jpqdqjwqkk)
 - [Statistical genetics papers](statgen-papers)
 
 ## Online courses & tutorials
