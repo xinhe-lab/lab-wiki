@@ -20,9 +20,15 @@ Relevant books, papers and other learning materials online.
 
 ### Journal special collections
 
+General
+
 - [Nature's Scitable](https://www.nature.com/scitable)
 - [PLoS Compbio Education collection](https://collections.plos.org/compbiol-education)
 - [Nature Biotech Computational Biology collection](https://www.nature.com/collections/tmdlscdqmc)
+
+Statistical genetics
+
+- [NRG GWAS colection](https://www.nature.com/collections/jpqdqjwqkk)
 
 ### Statistical Genetics
 
