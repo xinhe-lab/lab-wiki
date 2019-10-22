@@ -23,6 +23,8 @@ Relevant books, papers and other learning materials online.
 - [Nature's Scitable](https://www.nature.com/scitable)
 - [PLoS Compbio Education collection](https://collections.plos.org/compbiol-education)
 - [Nature Biotech Computational Biology collection](https://www.nature.com/collections/tmdlscdqmc)
+- [Computational genomics papers](comp-genomics-2016)
+    - A list compiled by Xin He in 2016
 
 ### Statistical Genetics
 
