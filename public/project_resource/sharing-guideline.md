@@ -1,0 +1,1 @@
+# Guideline for internal resource sharing

@@ -52,6 +52,9 @@
   - title: Data resources
     url: /project_resource/data
     not_numbered: true
+  - title: Sharing guidelines
+    url: /project_resource/sharing-guideline
+    not_numbered: true
 
 ##
 - divider: true
@@ -68,7 +71,7 @@
 - divider: true
 - header: Resources
 
-- title: Learning resource links
+- title: Learning resource
   url: /learning_center/index
   not_numbered: true
 

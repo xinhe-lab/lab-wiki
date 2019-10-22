@@ -1,11 +1,11 @@
 # Learning material
 
-Relevant books, papers and other learning materials online.
+Relevant books, papers, lectures and other learning materials online.
 
 ## Books
 
 ### Text books
-- [Introductory statistics](stats-background)
+- [Statistics backgroud](stats-background) most relevant to our research.
 - [Computational biology](compbio-books)
 
 ### Popular science books
@@ -23,13 +23,16 @@ Relevant books, papers and other learning materials online.
 - [Nature's Scitable](https://www.nature.com/scitable)
 - [PLoS Compbio Education collection](https://collections.plos.org/compbiol-education)
 - [Nature Biotech Computational Biology collection](https://www.nature.com/collections/tmdlscdqmc)
-- [Computational genomics papers](comp-genomics-2016)
-    - A list compiled by Xin He in 2016
+- [Computational genomics papers](comp-genomics-2016), a list compiled by Xin He in 2016
 
 ### Statistical Genetics
 
 - [NRG GWAS colection](https://www.nature.com/collections/jpqdqjwqkk)
 - [Statistical genetics papers](statgen-papers)
+
+## Lectures
+
+- 
 
 ## Online courses & tutorials
 
