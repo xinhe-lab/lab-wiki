@@ -15,9 +15,9 @@ and `sos` (simply `pip install sos` for Python 3 users), then run
 ```
 ./release.sos --serve
 ```
-to preview, and 
+to preview at http://0.0.0.0:4000/lab-wiki/welcome.html 
 
 ```
 ./release.sos
 ```
-to write the changes.
+to write the changes to the repo, add & commit, and push. The updated wiki will then be displayed at https://xinhe-lab.github.io/lab-wiki
