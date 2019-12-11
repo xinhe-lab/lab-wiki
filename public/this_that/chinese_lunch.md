@@ -4,42 +4,32 @@
 
 There has long been a collaboration between CSSA (Chinese Students and Scholars Association) and Tangchao restaurant offering $7 lunch boxes at East lobby of GCIS building at noon. A while ago Tangchao closed their business. Now [Joy Delivery service](https://www.joydeliveryservice.com/) replaces Tangchao offering lunch boxes at the same time and location, and roughly the same price. 
 
-Below is info from their CSSA email:
+I put together several of their CSSA emails into information below.
 
 ### How to order
 
 
-(I always order the same day before 10AM via text. They mostly immediately reply your text to confirm. You then show up at 12PM with cash to get the food.)
+Personal note: I always order the same day before 10AM via text. They mostly immediately reply your text to confirm. You then show up at 12PM with cash to get the food.
 
 ```
 $7 per meal for lunch specials (cash only)
-
 Location: 929 E 57th Street, outside of GCIS east lobby
-
 Pick-up time: 12:00 – 2:00 pm (Monday à Friday)
 
- 
 How to make an order:
-
 (1) Text to (773) 664 - 2110
-
-Example: one free meal L51 on 7/30 (Tuesday)
-
+Example: one L51 on 7/30 (Tuesday)
 (2) Email to: joydeliveryservice@gmail.com
-
 Example: one L23 on 8/30 (Friday)
-
 (3) Online: www.joydeliveryservice.com
 
-
 It's be nice to make an order by 8pm one day before
-
 Emergent case: before 10:00am the same day (order by cellphone only)
 ```
 
 ### Price
 
-(I personally think T200 combo is the best -- you've got to text them what goes into the combo)
+Note: I mostly go for T200 combo --- you've got to text them what to go into the combo.
 
 ```
 - 普通分量：L （24oz）每份 $6
