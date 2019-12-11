@@ -1,6 +1,6 @@
 # This and that
 
-## About New York City
+## About Chicago
 
-- [Museums in NYC](nyc_museums).
-- [Restaurants in NYC](nyc_restaurants).
+- [Museums in Chicago](chicago_museums).
+- [Restaurants in Chicago](chicago_restaurants).

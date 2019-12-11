@@ -7,7 +7,7 @@ from sos.utils import env, get_output
 parameter: workdir = 'jupyter-book'
 parameter: src = 'public'
 parameter: base_url = 'https://xinhe-lab.github.io/lab-wiki'
-# Set to True to preview it at http://0.0.0.0:4000/${workdir}
+# Set to True to preview it at http://0.0.0.0:4000/${workdir}/welcome.html
 parameter: serve = False
 
 [setup: provides = f'{workdir}/Gemfile']

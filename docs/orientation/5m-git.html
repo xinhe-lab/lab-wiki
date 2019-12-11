@@ -29,9 +29,9 @@
   "headline":
     "5 minutes git",
   "datePublished":
-    "2019-10-22T18:21:48-05:00",
+    "2019-12-11T11:55:37-06:00",
   "dateModified":
-    "2019-10-22T18:21:48-05:00",
+    "2019-12-11T11:55:37-06:00",
   "description":
     "",
   "author": {
@@ -828,15 +828,14 @@ initFunction(initQuery);
 
 <h2 id="what-is-git">What is git?</h2>
 
-<p>Git is a distributed version control system that not only automatically records the changes of each file, but also allows colleagues to collaborate and edit, so that users do not need to manage a bunch of files, and do not need to transfer files from / to colleagues. It keeps track of any change to any files (<code class="highlighter-rouge">git log</code> and <code class="highlighter-rouge">git blame</code>) in your project. It allows you to easily see history of modifications of a file, or restore the file to any time point in the history.</p>
+<p>Git is a distributed version control system that not only automatically records the changes of each file, but also allows colleagues to collaborate and edit, so that users do not need to manage a bunch of files, and do not need to transfer files from / to colleagues. It keeps track of any change to any files (<code class="highlighter-rouge">git diff</code>, <code class="highlighter-rouge">git log</code> and <code class="highlighter-rouge">git blame</code>) in your project. It allows you to easily see history of modifications of a file, or restore the file to any time point in the history.</p>
 
 <p>In the context of research I see <code class="highlighter-rouge">git</code> as a way to collaborate with yourself over time. With <code class="highlighter-rouge">git</code> you never have to (or allowed to) keep multiple versions of your script like <code class="highlighter-rouge">code_v1.R</code>, <code class="highlighter-rouge">code_version_20191015.py</code>, etc. It will of course also make it easy for others to contribute to your project in a trackable fashion.</p>
 
 <h2 id="install-git">Install git</h2>
 
 <p>In command terminal type <code class="highlighter-rouge">git</code> to check if it is installed. If not please try search online for installation instructions 
-specific to your operating system. One way to do it is to first <a href="jupyter-setup">install conda</a> then use <code class="highlighter-rouge">conda install -c anaconda git
-</code> to install <code class="highlighter-rouge">git</code>.</p>
+specific to your operating system. One way to do it is to first <a href="https://docs.conda.io/en/latest/miniconda.html">install conda</a> then use <code class="highlighter-rouge">conda install -c anaconda git</code> to install <code class="highlighter-rouge">git</code>.</p>
 
 <h2 id="your-first-github-project">Your first github project</h2>
 
@@ -844,82 +843,128 @@ specific to your operating system. One way to do it is to first <a href="jupyter
 
 <p>We use “repo” to stand for “repository”. You can simply understand it as an inventory of files. Files in this inventory will be managed by <code class="highlighter-rouge">git</code> to track changes, additions and modifications.</p>
 
-<p>To create a github repository online, visit <code class="highlighter-rouge">https://github.com/&lt;you github account&gt;</code> where <code class="highlighter-rouge">&lt;your github account&gt;</code> is your github username. Then under <code class="highlighter-rouge">repositories</code> tag click on <code class="highlighter-rouge">new repository</code>
-to create a new repository — you can call it <code class="highlighter-rouge">git-test</code>. You can choose either Private or Public repo it does not matter at this point. When creating the repo I suggest you choose the option to “Include a README.md” so github will create an actual repo on github with that README.md file. You can then download, make changes and contribute back to it.</p>
-
-<p>To download, or “clone” in git’s terminology, the repo you created on github.com to local computer,</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone &lt;URL to your repository on github&gt;
-</code></pre></div></div>
-
-<p>You can then use <code class="highlighter-rouge">cd git-test</code> to navigate to the downloaded the <code class="highlighter-rouge">git-test</code> repository you just created online.</p>
+<ol>
+  <li>Create a GitHub repo online at <code class="highlighter-rouge">https://github.com/&lt;your github account&gt;'</code> where <code class="highlighter-rouge">&lt;your github account&gt;</code> is your github username.</li>
+  <li>Under <code class="highlighter-rouge">repositories</code> tag click <code class="highlighter-rouge">new repository</code> and type in any name for it. Here I suggest let’s call it <code class="highlighter-rouge">*compbio-recipes*</code> (for reasons to be revealed later). You can either choose Private or Public repo it does not matter at this point. When creating the repository I sugget you select the option “Include a <code class="highlighter-rouge">README.md</code> file” so github will create an actual repo on github with that file instead of creating an empty repo.</li>
+  <li>Now you can download, make changes and contribute back to it. To download (or “clone” in git’s terminology) this repo to your local computer, type <code class="highlighter-rouge">git clone https://github.com/&lt;your github account/compbio-recipes</code> in your shell command terminal.</li>
+  <li>Use <code class="highlighter-rouge">cd compbio-recipes</code> to navigate to the downloaded <code class="highlighter-rouge">compbio-recipes</code> repo.</li>
+</ol>
 
 <h3 id="add-files-to-the-repository">Add files to the repository</h3>
 
-<p>Under this folder let’s create a file called <code class="highlighter-rouge">example.md</code>, eg, using <code class="highlighter-rouge">echo</code> command</p>
+<p>Under this folder let’s create a file called <code class="highlighter-rouge">software-config.md</code> using the following commands</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"Lab orientation task"</span> <span class="o">&gt;</span> example.md
-</code></pre></div></div>
-
-<p>Then we use <code class="highlighter-rouge">git add</code> to add the file to the repo, and commit it,</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git add example.md
-<span class="nv">$ </span>git commit <span class="nt">-am</span> <span class="s2">"Add an example"</span>
-<span class="o">[</span>master <span class="o">(</span>root-commit<span class="o">)</span> 703f32e] Add an example
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"# Recipes for software configurations"</span> <span class="o">&gt;</span> software-config.md
+ <span class="nv">$ </span>git add software-config.md
+ <span class="nv">$ </span>git commit <span class="nt">-am</span> <span class="s2">"Add an example</span><span class="sb">`</span>
+ <span class="o">[</span>master <span class="o">(</span>root-commit<span class="o">)</span> 703f32e] Add an example
  1 file changed, 1 insertion<span class="o">(</span>+<span class="o">)</span>
- create mode 100644 example.md
+ create mode 100644 software-config.md 
 </code></pre></div></div>
+
 <p>Here <code class="highlighter-rouge">-m</code> carries a message to explain this change. This will help others — and more importantly, yourself — to understand the change easily without looking into the code.</p>
 
-<h3 id="push-your-change-to-repo-on-githubcom">Push your change to repo on github.com</h3>
+<h3 id="push-your-change-to-repo-into-githubcom">Push your change to repo into GitHub.com</h3>
 
-<p>The previous step wrote changes to a local copy of the git repo on your computer. To upload your changes to the online repository,</p>
+<p>The previous step wrote changes to a local copy of the git repo on your computer. To upload your changes to the online repository you have to push your change to repo into GitHub. It is very important that you <code class="highlighter-rouge">push</code> to the online repo to “finalize” your changes to the project.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push
 </code></pre></div></div>
 
-<p>It is very important that you <code class="highlighter-rouge">push</code> to the online repo to “finalize” your changes to the project.</p>
+<h3 id="update-the-local-clone-of-repos">Update the local clone of repos</h3>
 
-<h2 id="contribute-to-this-repository">Contribute to this repository</h2>
+<p>Update the local clone of repositories before editing and commiting new information,</p>
 
-<p>First, clone the repo to your computer:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/xinhe-lab/lab-wiki
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull
 </code></pre></div></div>
 
-<p>Then edit this document <code class="highlighter-rouge">public/orientation/README.md</code> and <code class="highlighter-rouge">public/orientation/5m-git.md</code> in ways you think you can improve it, and commit and push it back.</p>
+<h2 id="use-git-in-your-daily-research">Use git in your daily research</h2>
 
-<p>If you have previously cloned a copy to your computer, then before your edit <strong>please update to the current version</strong> that might
-have been changed by others since you last cloned:</p>
+<p>Now you are in a good position to use git/github for various purposes! Let’s start with notes keeping – the repo you just created, <code class="highlighter-rouge">compbio-recipes</code>, can be used to keep your own notes of various “recipes” to setup your computational environment that are specific to your own computer and projects that we don’t discuss in this wiki.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull
+<h2 id="contribute-to-editing-this-wiki-using-git">Contribute to editing this wiki using git</h2>
+
+<p>To contribute to editing our wiki, first, clone the repo to your computer:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/xinhe-lab/lab-wiki
 </code></pre></div></div>
 
-<p>Then you can continue to contribute.</p>
+<p>Then edit contents offline, commit and push after you are ready.</p>
 
 <h2 id="beyond-5-minutes">Beyond 5 minutes</h2>
 
-<p>Here is a list of most essential git commands,</p>
+<p>Here is a table of most essential git commands:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone
-git pull
-git status
-git diff
-git add
-git commit
-git push
-</code></pre></div></div>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Subcommand</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">clone</td>
+      <td style="text-align: left">This command clones repositories from github</td>
+      <td style="text-align: left"><code class="highlighter-rouge">git clone https://github.com/gaow/lab-wiki</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">status</td>
+      <td style="text-align: left">This command displays the state of your working directory and the staging area</td>
+      <td style="text-align: left"><code class="highlighter-rouge">git status</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">diff</td>
+      <td style="text-align: left">Let you see differences between the working tree and the index or a tree</td>
+      <td style="text-align: left"><code class="highlighter-rouge">git diff &lt;filename&gt;</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">add</td>
+      <td style="text-align: left">This serves to add the file to the repo. Every time you change a file add it to the repo using this command and commiting it</td>
+      <td style="text-align: left"><code class="highlighter-rouge">git add &lt;filename&gt;</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">commit</td>
+      <td style="text-align: left">Commit refers to saved changes. It will save the changes to file and add the description. The -m command creates a description of the file to help you and others understand the change in the code</td>
+      <td style="text-align: left"><code class="highlighter-rouge">git commit -am "Add example"</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">push</td>
+      <td style="text-align: left">To upload your local changes into your online repository</td>
+      <td style="text-align: left"><code class="highlighter-rouge">git push origin master</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">pull</td>
+      <td style="text-align: left">If you have cloned a previous copy to your computer before editing <strong>update to the current version</strong> that might have been changed by other since you last cloned</td>
+      <td style="text-align: left"><code class="highlighter-rouge">git pull</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">checkout</td>
+      <td style="text-align: left">Error recovery: give up changes to one file</td>
+      <td style="text-align: left"><code class="highlighter-rouge">git checkout &lt;filename&gt;</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">reset</td>
+      <td style="text-align: left">Error recovery: give up all uncommitted changes, reverting to the state of the last commit</td>
+      <td style="text-align: left"><code class="highlighter-rouge">git reset --hard</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">log</td>
+      <td style="text-align: left">Keeps track of any change to any file</td>
+      <td style="text-align: left"><code class="highlighter-rouge">git log</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">blame</td>
+      <td style="text-align: left">Keeps track of changes more specifically. It allows you to easily see the history of modifications of a file, or restore the file to any time point in the history</td>
+      <td style="text-align: left"><code class="highlighter-rouge">git blame &lt;filename&gt;</code></td>
+    </tr>
+  </tbody>
+</table>
 
-<p>and a little more advanced about error recovery / giving up local changes</p>
+<p>I think it is about 95% of the daily git commands I use! There are plenty material online to learn about these commands. I suggest you experiment with / learn these commands as you use git, hopefully starting from now.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout &lt;filename&gt;
-git reset --hard
-</code></pre></div></div>
-
-<p>I think it is about 95% of the daily git commands I use! There are plenty material online to learn about these
-commands. Please do so.</p>
-
-<p>Additionally <a href="https://github.com/ramanshah/intermediate_git">here</a> is a tutorial I find useful for learning more advanced usages.</p>
+<p>Additionally <a href="git-tips">here</a> are some (random) git tips I find useful for more advanced uses.</p>
 
               <nav class="c-page__nav">
   

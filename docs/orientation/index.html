@@ -29,9 +29,9 @@
   "headline":
     "Orientation",
   "datePublished":
-    "2019-10-22T18:21:48-05:00",
+    "2019-12-11T11:55:37-06:00",
   "dateModified":
-    "2019-10-22T18:21:48-05:00",
+    "2019-12-11T11:55:37-06:00",
   "description":
     "",
   "author": {
@@ -837,13 +837,50 @@ and reproduce.</p>
 
 <h1 id="orientation-tasks">Orientation tasks</h1>
 
-<h2 id="task-1-git-githubcom-and-markdown">Task 1: git, github.com and markdown</h2>
+<h2 id="task-1-add-yourself-to-our-slack-workspace">Task 1: Add yourself to our slack workspace</h2>
 
-<p>We assume you are comfortable with command-line interface (on Linux or Mac). This orientation task involves obtaining the source code for this wiki, make changes and contribute your changes.
+<p>You should join our <a href="https://slack.com">slack</a> workspace at <code class="highlighter-rouge">xinhe-lab.slack.com</code>. 
+Please ask Suzanne Leal to send you an invite.</p>
+
+<p>After you are added to the workspace, please find these channels to join:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">papers</code></li>
+  <li><code class="highlighter-rouge">readinggroup</code></li>
+  <li><code class="highlighter-rouge">programming</code></li>
+  <li><code class="highlighter-rouge">seminars</code></li>
+</ul>
+
+<p>Here you can communicate with others in the lab via instant messaging and work on projects together in separate project channels.</p>
+
+<h3 id="slack-tips">Slack tips</h3>
+
+<ol>
+  <li>It would be great if you could upload a photo of you (or your pet) to your slack profile.</li>
+  <li>Notifications: Under <code class="highlighter-rouge">Preference -&gt; Notifications</code> you can configure notifications behavior for incoming new messages. I suggest choose notification option “Direct messages, mentions and keywords”. Also enable “Send email notification” under “When inactive on desktop” option.</li>
+  <li><a href="https://slack.com/downloads">Slack desktop app is available</a> and is recommended because that will keep slack running on the background, for multiple slack groups you join. There is also a phone app you can choose to install.</li>
+  <li>Slack uses mostly markdown language to edit text, as you will learn in the next orentation task.</li>
+</ol>
+
+<h2 id="task-2-git-githubcom-and-markdown">Task 2: git, github.com and markdown</h2>
+
+<p>We assume you are comfortable with command-line interface (on Linux or Mac). This orientation task involves obtaining the source code for this wiki, make and contribute your changes.
 The source code of this wiki is on github so this will be a <code class="highlighter-rouge">git</code> exercise — it means you will need to install <code class="highlighter-rouge">git</code> and clone this repo, make changes and push back to github which automatically
 publishes your changes here.</p>
 
-<p>But before you make any changes to the wiki, you should learn about using <code class="highlighter-rouge">git</code> if you haven’t used it before. Under the <code class="highlighter-rouge">orientation</code> folder of this repo (that you should have been granted permission to at this point) there is a Markdown file called <a href="5m-git.html"><code class="highlighter-rouge">5m-git.md</code></a> for a 5-minutes tutorial on <code class="highlighter-rouge">git</code>. If you are not familiar with <code class="highlighter-rouge">git</code> please walk through that document to learn basic git; then modify the document to make improvements — I wrote it up with little time leaving it unpolished as an orientation task to engage you in it. If you are already familiar with <code class="highlighter-rouge">git</code>, please also improve by either add to it whatever tips you’ve learned in the past that you find useful to mention here, or including links to materials you like — but please still try to keep it a short 5-minutes read. Or, you can help improve a more advance tutorial <a href="git-tips.html"><code class="highlighter-rouge">git-tips.md</code></a> completing some of the <code class="highlighter-rouge">FIXME</code> tags I made on the document. Please make sure you use the best of your knowledge editing Markdown format files. Please format things nicely.</p>
+<p>Please send your github handler to Gao Wang to request adding you to <a href="https://github.com/xinhe-lab">the lab github account</a>, and to have your permission granted for viewing and editing source file of this wiki. If you do not have a github.com account, please register one.</p>
+
+<p>But before you make any changes to the wiki, you should learn about using <code class="highlighter-rouge">git</code> if you haven’t used it before. Under the <code class="highlighter-rouge">orientation</code> folder of this repo (that you should have been granted permission to at this point) there is a Markdown file called <a href="5m-git"><code class="highlighter-rouge">5m-git.md</code></a> for a 5-minutes tutorial on <code class="highlighter-rouge">git</code>. If you are not familiar with <code class="highlighter-rouge">git</code> please walk through that document to learn basic git. If you are already familiar with <code class="highlighter-rouge">git</code>, please take a look and help improve a more advance tutorial <a href="git-tips"><code class="highlighter-rouge">git-tips.md</code></a> completing some of the <code class="highlighter-rouge">FIXME</code> tags I made on the document, or adding to it whatever tips you’ve learned in the past that you find useful to mention here. <strong>Please make sure you use the best of your knowledge editing Markdown format files, that is, format things nicely and logically</strong>.</p>
+
+<h3 id="text-editor">Text editor</h3>
+
+<p>Here is a personal suggestion: I use <code class="highlighter-rouge">gvim</code> for many years before I switched to <a href="https://code.visualstudio.com/">VS Code</a> text editor — yes it is from Microsoft but it is cross-platform and is good! I now use VS Code with Vim binding (an Extension you can find in VS Code Extension Marketplace) so I can still use keyboard conventions that I’m familiar with.</p>
+
+<p>To open a particular folder (eg a github local clone) on your computer from command terminal:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;path to the folder&gt;
+code ./
+</code></pre></div></div>
 
 <h3 id="additional-reading">Additional reading</h3>
 
@@ -852,14 +889,13 @@ publishes your changes here.</p>
   <li><a href="git-tips">Additional git/github tips</a></li>
 </ul>
 
-<h2 id="task-2-organize-your-work">Task 2: organize your work</h2>
+<h2 id="task-3-organize-your-research">Task 3: organize your research</h2>
 
-<p>This task is about good computational biology research practice. 
-You can optionally choose one of the task below, although option 1 is
-highly recommended unless you have strong preference in Rstudio over JupyterLab.</p>
+<p>This task is about good computational biology research practice.
+It is highly recommended that all computational
+procedures in your daily research should be documented, well organized and version controlled (using git) for review at any point.</p>
 
-<p>Notice that if you have any issues with any procedures below, please <a href="github-issues#issues-for-bug-reports">post an issue</a> at the github repository
-of this wiki using “github issues”.</p>
+<p>You can optionally choose one of the task below for organizing your research using Notebooks or Rmarkdown files.</p>
 
 <h3 id="option-1-learn-and-use-ipython-notebook-and-jupyterlab">Option 1: Learn and use IPython notebook and JupyterLab</h3>
 
@@ -868,31 +904,24 @@ and communicate your results as well as the code that generated them in a self-c
 In particular, in a notebook you can put down notes in Markdown cells in between code cells to explain what you do. 
 This may be less important to computer programmers but is very important to data scientists.</p>
 
-<p>An important reason I prefer Jupyter over Rstudio is because I recommand using <a href="https://vatlab.github.io/sos-docs">SoS suite</a>, a workflow system (pipeline tool) for batch data analysis and a multi-language notebook for interactive analysis, for your daily computing in research. You will find out more about it later in this orientation task.</p>
+<p>An important reason I (Gao Wang) prefer Jupyter over Rstudio is because I recommand using <a href="https://vatlab.github.io/sos-docs">SoS suite</a>, a workflow system (pipeline tool) for batch data analysis and a multi-language notebook for interactive analysis, for your daily computing in research. You will find out more about it later in this orientation task.</p>
 
 <p>Here are some tasks you should walk through:</p>
 
 <ol>
-  <li><a href="jupyter-setup">Install Jupyter Lab with SoS Suite</a>, make sure you know (eg by learing from Google) how to lanch and write Python and R codes in it.
+  <li><a href="jupyter-setup">Install Jupyter Lab with SoS Suite</a>, make sure you know (eg by learing from Google) how to lanch Bash, R and Python notebooks and correspondingly write codes in them.
     <ul>
       <li>If you use Debian based Linux desktop (Debian or Ubuntu) <a href="debian-setup">here are some recommendations</a> on setting up your machine.</li>
     </ul>
   </li>
-  <li>Learn from these examples interactive data analysis using SoS Notebook (you can find and run them at: <code class="highlighter-rouge">http://128.135.144.117:8000</code>):
+  <li>Learn from these examples interactive data analysis using SoS Notebook that allows for multiple languages inside one notebook (you can find and run them at: <code class="highlighter-rouge">http://128.135.144.117:8000</code>):
     <ul>
       <li><a href="https://github.com/vatlab/sos/blob/master/development/docker-demo/examples/JupyterCon18/2_Data_Exchange.ipynb">Data exchange between languages</a></li>
       <li><a href="https://github.com/vatlab/sos/blob/master/development/docker-demo/examples/JupyterCon18/3_SoS_Magics.ipynb">SoS Notebook built-in commands</a></li>
     </ul>
   </li>
-  <li>Learn from these examples the very basic usage of SoS Workflow (you can find and run them at: <code class="highlighter-rouge">http://128.135.144.117:8000</code>):
-    <ul>
-      <li><a href="https://github.com/vatlab/sos/blob/master/development/docker-demo/examples/HomePage_Example_2.ipynb">An example to turn interactive analysis to workflow</a></li>
-      <li><a href="https://github.com/vatlab/sos/blob/master/development/docker-demo/examples/JupyterCon18/4_Notebook_to_Workflow.ipynb">Another example to turn interactive analysis to workflow</a></li>
-      <li><a href="sos_meta_script">A simple SoS meta-script</a></li>
-      <li>Please try to <a href="https://vatlab.github.io/sos-docs/doc/examples/WGS_Call.html">reproduce this example on your computer</a> (source code <a href="https://github.com/vatlab/sos-docs/blob/master/src/examples/WGS_Call.ipynb">here</a>). In particular, note how multiple samples are processed in parallel (<code class="highlighter-rouge">group_by</code> in SoS) and how intermediate results can be visualized within the workflow notebook. Also note how docker containers are used to execute the workflow to help avoid installing all software dependencies and ensuring reproducible results.</li>
-    </ul>
-  </li>
-  <li>Learn from <a href="https://github.com/gaow/annotation-finemap-dsc">this example</a> the suggested format to write and report computational analysis and post results on github.io via <code class="highlighter-rouge">jnbinder</code> script. The suggested format is as follows:
+  <li>Convert notebooks to a research website using <a href="https://github.com/vatlab/jnbinder"><code class="highlighter-rouge">jnbinder</code> script</a>. Please follow instructions on <code class="highlighter-rouge">jnbinder</code> repo to create a research website using some IPython notebooks you have.</li>
+  <li>Learn from <a href="https://github.com/gaow/annotation-finemap-dsc">this example</a> the suggested format to write and report computational analysis. This is a demo of a research website <code class="highlighter-rouge">jnbinder</code> created. The suggested format is as follows:
     <ol>
       <li><strong>Title,</strong> and in the same notebook cell <strong>a brief one sentence summary</strong> of what the notebook is about.</li>
       <li><strong>Motivation</strong> or <strong>Aims</strong>: describe the problem under investigation.</li>
@@ -904,19 +933,45 @@ This may be less important to computer programmers but is very important to data
   </li>
 </ol>
 
+<p>In your future daily research you will be expected to use SoS Notebook to analyze data, document your workflows with suggested analysis report format, and make them available as websites to share with your colleagues. 
+We host a private webserver and provide instructions to configure your github repository to automatically publish websites to the server as soon as you push to the repository.</p>
+
+<p>Additionally, if you are interested in bioinformatics workflow system, you can optionally complete the following tasks on Bioinformatics Workflow System:</p>
+
+<ol>
+  <li>Learn from these examples the very basic usage of SoS Workflow (you can find and run the first 2 at: <code class="highlighter-rouge">http://128.135.144.117:8000</code>):
+    <ul>
+      <li><a href="https://github.com/vatlab/sos/blob/master/development/docker-demo/examples/HomePage_Example_2.ipynb">An example to turn interactive analysis to workflow</a></li>
+      <li><a href="https://github.com/vatlab/sos/blob/master/development/docker-demo/examples/JupyterCon18/4_Notebook_to_Workflow.ipynb">Another example to turn interactive analysis to workflow</a></li>
+    </ul>
+  </li>
+  <li>Please try to <a href="https://vatlab.github.io/sos-docs/doc/examples/WGS_Call.html">reproduce this example on your computer</a> (source code <a href="https://github.com/vatlab/sos-docs/blob/master/src/examples/WGS_Call.ipynb">here</a>). In particular, note how multiple samples are processed in parallel (<code class="highlighter-rouge">group_by</code> in SoS) and how intermediate results can be visualized within the workflow notebook. Also note how docker containers are used to execute the workflow to help avoid installing all software dependencies and ensuring reproducible results.</li>
+</ol>
+
 <p>Although I recommend SoS Notebook and SoS Workflow be the primary tool for daily computational research, I acknowledge there are limitations to using IPython notebooks in general for interactive analysis, <a href="https://docs.google.com/presentation/d/1n2RlMdmv1p25Xy5thJUhkKGvjtV-dkAIsUXP-AL4ffI/mobilepresent?slide=id.g362da58057_0_1">cf, this presentation</a>. However most of such issues can be avoided if you recognize them and develop good habits in using notebooks and not commit those pitfalls. Additionally, these limitations do not apply to when you use notebooks to develop SoS Workflows; and I always prefer writing small workflows over interactive notebooks — as you hopefully have learned from the above tasks and agree that it is almost trivial to turn an interactive SoS notebook into an SoS workflow.</p>
 
 <h3 id="option-2-learn-and-use-rstudio-and-workflowr">Option 2: Learn and use Rstudio and workflowr</h3>
 
 <p>(to be updated)</p>
 
-<h2 id="task-3-explore-lab-wiki">Task 3: Explore lab wiki</h2>
+<h3 id="additional-reading-1">Additional reading</h3>
+
+<ul>
+  <li>How to organize computational research projects
+    <ul>
+      <li><a href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424">This paper</a>, <a href="http://journals.plos.org/ploscollections/article?id=10.1371%2Fjournal.pcbi.1004385">this paper</a> and <a href="http://nicercode.github.io/blog/2013-04-05-projects/">this post</a>.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="task-4-explore-lab-wiki">Task 4: Explore lab wiki</h2>
 
 <p>You are encouraged to explore the lab wiki checking out material on other pages. In particular,</p>
 
 <ul>
   <li><a href="../learning_center">A list of learning material</a> on various topics in computational biology.</li>
   <li><a href="../computing_tutorial/shell-must-know.html">A list of “must know” shell commands</a>.</li>
+  <li><a href="../project_resource/sharing-guideline">Resource sharing guideline</a>.</li>
   <li><a href="../this_that">This and that</a>, tips about life on campus, the city and places to visit &amp; eat.</li>
 </ul>
 
