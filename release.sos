@@ -9,6 +9,8 @@ parameter: src = 'public'
 parameter: base_url = 'https://xinhe-lab.github.io/lab-wiki'
 # Set to True to preview it at http://0.0.0.0:4000/${workdir}/welcome.html
 parameter: serve = False
+# Run docker based jekyll. Use --no-use-docker to disable it
+parameter: use_docker = True
 
 [setup: provides = f'{workdir}/Gemfile']
 parameter: version = '0.5.2'
@@ -52,7 +54,7 @@ docker_build: workdir = workdir, tag = f'{getpass.getuser()}/jekyll-book'
 	COPY Gemfile .
 	RUN gem install bundle && bundle install
 
-[run_jekyll]
+[run_jekyll_image]
 depends: executable('docker')
 bash:  workdir = workdir, expand = "${ }"
 	docker container stop $(docker container ls -q --filter ancestor=${getpass.getuser()}/jekyll-book) &> /dev/null || true
@@ -61,6 +63,12 @@ bash:  workdir = workdir, expand = "${ }"
    		${'-p 4000:4000' if serve else ''} -it -u 1000:1000 \
    		${getpass.getuser()}/jekyll-book \
 		 bundle exec jekyll ${'build' if not serve else 'serve --host 0.0.0.0'}
+
+[run_jekyll]
+depends: executable('bundle')
+bash:  workdir = workdir, expand = "${ }"
+ 	bundle exec jekyll ${'build' if not serve else 'serve --host 0.0.0.0'}
+
 
 [make_site]
 stop_if(serve)
@@ -92,6 +100,9 @@ bash: expand = True
 [default]
 sos_run('build_files_in_toc')
 sos_run('build_additional_files')
-sos_run('make_jekyll_image')
-sos_run('run_jekyll')
+if (not use_docker and not serve):
+	sos_run('run_jekyll')
+else:
+	sos_run('make_jekyll_image')
+	sos_run('run_jekyll_image')
 sos_run('make_site')
