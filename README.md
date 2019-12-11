@@ -15,3 +15,11 @@ To publish contents under `public` folder to github.io, you need to [install doc
 docker run --rm --security-opt label:disable -v `pwd`:/srv/jekyll -u $UID:100 -t gaow/lab-wiki sos run release.sos --no-use-docker
 ```
 to write the changes to the repo, add & commit, and push. The updated wiki will then be displayed at https://xinhe-lab.github.io/lab-wiki
+
+To preview changes before you push:
+
+```
+docker run --rm --security-opt label:disable -v `pwd`:/srv/jekyll -u $UID:100 -p 4000:4000 -t gaow/lab-wiki sos run release.sos --no-use-docker
+```
+then see the changes at http://0.0.0.0:4000/lab-wiki/welcome.html
+

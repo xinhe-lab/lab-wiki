@@ -100,7 +100,7 @@ bash: expand = True
 [default]
 sos_run('build_files_in_toc')
 sos_run('build_additional_files')
-if (not use_docker and not serve):
+if (not use_docker):
 	sos_run('run_jekyll')
 else:
 	sos_run('make_jekyll_image')
