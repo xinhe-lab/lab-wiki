@@ -5,6 +5,7 @@
 import os, glob, getpass
 from sos.utils import env, get_output
 parameter: workdir = 'jupyter-book'
+parameter: htmldir = 'docs'
 parameter: src = 'public'
 parameter: base_url = 'https://xinhe-lab.github.io/lab-wiki'
 # Set to True to preview it at http://0.0.0.0:4000/${workdir}/welcome.html
@@ -74,10 +75,10 @@ bash:  workdir = workdir, expand = "${ }"
 stop_if(serve)
 depends: executable('rsync')
 bash: expand = '${ }'
-	mkdir -p docs
-	rsync -auz --delete --exclude content ${workdir}/_site/* docs/
-	rsync -auz --delete --ignore-missing-args ${src}/external docs/
-	rm -f docs/runtime.txt
+	mkdir -p ${htmldir}
+	rsync -auz --delete --exclude content ${workdir}/_site/* ${htmldir}/
+	rsync -auz --delete --ignore-missing-args ${src}/external ${htmldir}/
+	rm -f ${htmldir}/runtime.txt
 	echo '''
 	<!DOCTYPE html>
 	<html lang="en-US">
@@ -90,12 +91,12 @@ bash: expand = '${ }'
   	<h1>Redirecting&hellip;</h1>
   	<a href="${base_url}/welcome">Click here if you are not redirected.</a>
 	</html>
-	''' > docs/index.html
-	echo "Deployed to the docs/ folder"
+	''' > ${htmldir}/index.html
+	echo "Deployed to ${htmldir}/ folder"
 
 [clean]
 bash: expand = True
-	rm -rf {workdir} docs
+	rm -rf {workdir} {htmldir}
 
 [default_1]
 bash: workdir = f'{src}/project_resource'
