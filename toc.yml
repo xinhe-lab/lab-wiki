@@ -47,7 +47,7 @@
     url: /project_resource/pipeline
     not_numbered: true
 
-- title: Computing resources
+- title: Shared computing
   url: /shared_computing/index
   not_numbered: true
   expand_sections: true
