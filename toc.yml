@@ -53,10 +53,10 @@
   expand_sections: true
   sections:
   - title: Data resources
-    url: /project_resource/data
+    url: /shared_computing/data
     not_numbered: true
   - title: Sharing guidelines
-    url: /project_resource/sharing-guideline
+    url: /shared_computing/sharing-guideline
     not_numbered: true
 
 ##
