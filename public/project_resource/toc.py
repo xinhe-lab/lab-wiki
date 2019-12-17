@@ -20,8 +20,8 @@ A_TO_Z = '''
 
 class Environment:
     def __init__(self):
-        self.blob = 'https://github.com/gaow/lab-wiki/blob/master/private/'
-        self.exclude = ['data/README.md', 'data/TEMPLATE.md']
+        self.blob = 'https://xinhe-lab.github.io/lab-wiki/project_resource/'
+        self.exclude = ['data/TEMPLATE.md']
 
 env = Environment()
 

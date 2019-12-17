@@ -1,5 +1,7 @@
 ## GTEx data
 
+GTEx V8 from dbGaP.
+
 ### Contact
 Gao Wang
 

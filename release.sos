@@ -18,7 +18,7 @@ is_master = version == 'master'
 depends: Py_Module(f'jupyter_book{("==%s" % version) if not is_master else ""}', autoinstall = False if is_master else True)
 if is_master: run('pip install git+https://github.com/jupyter/jupyter-book -U')
 bash: expand = '${ }'
-	rm -rf ${workdir} && jupyter-book create ${workdir} 
+	rm -rf ${workdir} && jupyter-book create ${workdir}
 	rm -rf ${workdir}/content/* && rm -f ${workdir}/Gemfile.lock
 
 [build_files_in_toc]
@@ -49,7 +49,7 @@ bash: expand = True
 docker_build: workdir = workdir, tag = f'{getpass.getuser()}/jekyll-book'
 	FROM jekyll/jekyll:4.0.0
 	WORKDIR /tmp
-	RUN apk --update add make gcc g++ libc-dev && rm -rf /var/cache/apk/* 
+	RUN apk --update add make gcc g++ libc-dev && rm -rf /var/cache/apk/*
 	WORKDIR /srv/jekyll
 	COPY Gemfile .
 	RUN gem install bundle && bundle install
@@ -95,9 +95,13 @@ bash: expand = '${ }'
 
 [clean]
 bash: expand = True
-	rm -rf {workdir} docs 
+	rm -rf {workdir} docs
 
-[default]
+[default_1]
+bash: workdir = f'{src}/project_resource'
+	python3 toc.py data/*.md -o data.md -t "Data Resources"
+
+[default_2]
 sos_run('build_files_in_toc')
 sos_run('build_additional_files')
 if (not use_docker):
