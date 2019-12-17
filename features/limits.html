@@ -7,16 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Search the site</title>
-  <meta name="description" content="This is an example book built with Jupyter Books.">
+  <title>Feature Limits</title>
+  <meta name="description" content="Demo page to showcase markdown">
 
-  <link rel="canonical" href="https://jupyter.org/jupyter-book/search">
+  <link rel="canonical" href="https://jupyter.org/jupyter-book/features/limits.html">
   <link rel="alternate" type="application/rss+xml" title="Jupyter Book" href="https://jupyter.org/jupyter-book/feed.xml">
 
-  <meta property="og:url"         content="https://jupyter.org/jupyter-book/search" />
+  <meta property="og:url"         content="https://jupyter.org/jupyter-book/features/limits.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Search the site" />
-<meta property="og:description" content="This is an example book built with Jupyter Books." />
+<meta property="og:title"       content="Feature Limits" />
+<meta property="og:description" content="Demo page to showcase markdown" />
 <meta property="og:image"       content="" />
 
 
@@ -25,15 +25,15 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage":
-    "https://jupyter.org/jupyter-book/search",
+    "https://jupyter.org/jupyter-book/features/limits.html",
   "headline":
-    "Search the site",
+    "Feature Limits",
   "datePublished":
     "2019-06-04T21:25:48-07:00",
   "dateModified":
     "2019-06-04T21:25:48-07:00",
   "description":
-    "This is an example book built with Jupyter Books.",
+    "Demo page to showcase markdown",
   "author": {
     "@type": "Person",
     "name": "The Jupyter Book Community"
@@ -974,7 +974,7 @@ initFunction(initQuery);
               
 
               <li class="c-sidebar__section">
-                <a class="c-sidebar__entry "
+                <a class="c-sidebar__entry c-sidebar__entry--active"
                   href="/jupyter-book/features/limits.html"
                 >
                   
@@ -1480,6 +1480,13 @@ initFunction(initQuery);
 </nav>
 
       
+      <!-- Empty sidebar placeholder that we'll auto-fill with javascript -->
+      <aside class="sidebar__right">
+          <header><h4 class="nav__title"><i class="fa fa-list"></i>   On this page</h4></header>
+          <nav class="onthispage">
+          </nav>
+      </aside>
+      
       <main class="c-textbook__page" tabindex="-1">
           <div class="o-wrapper">
             <div class="c-sidebar-toggle">
@@ -1498,370 +1505,651 @@ initFunction(initQuery);
             
 
             <div class="c-textbook__content">
-              <div class="search-content__inner-wrap">
-    <input type="text" id="lunr_search" class="search-input" tabindex="-1" placeholder="'Enter your search term...''" />
-    <div id="results" class="results"></div>
-</div>
+              <h1 id="demo-page-to-showcase-markdown">Demo page to showcase markdown</h1>
 
-<script>
-    // Add the lunr store since we will now search it
-    var store = [{
-        "title": "Introduction",
-        
-        "excerpt":
-            "Chapter 1: Introduction Data are descriptions of the world around us, collected through observation and stored on computers. Computers enable us to infer properties of the world from these descriptions. Data science is the discipline of drawing conclusions from data using computation. There are three core aspects of effective data analysis: exploration, prediction, and inference. This text develops a consistent approach to all three, introducing statistical ideas and fundamental ideas in computer science concurrently. We focus on a minimal set of core techniques that they apply to a vast range of real-world applications. A foundation in data science requires not...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/01/1/intro.html",
-        "teaser":null},{
-        "title": "Why Data Science?",
-        
-        "excerpt":
-            "Why Data Science? Most important decisions are made with only partial information and uncertain outcomes. However, the degree of uncertainty for many decisions can be reduced sharply by public access to large data sets and the computational tools required to analyze them effectively. Data-driven decision making has already transformed a tremendous breadth of industries, including finance, advertising, manufacturing, and real estate. At the same time, a wide range of academic disciplines are evolving rapidly to incorporate large-scale data analysis into their theory and practice. Studying data science enables individuals to bring these techniques to bear on their work, their scientific...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/01/2/why-data-science.html",
-        "teaser":null},{
-        "title": "Plotting the Classics",
-        
-        "excerpt":
-            "In this example, we will explore statistics for two classic novels: The Adventures of Huckleberry Finn by Mark Twain, and Little Women by Louisa May Alcott. The text of any book can be read by a computer at great speed. Books published before 1923 are currently in the public domain, meaning that everyone has the right to copy or use the text in any way. Project Gutenberg is a website that publishes public domain books online. Using Python, we can load the text of these books directly from the web. This example is meant to illustrate some of the broad...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/01/3/Plotting_the_Classics.html",
-        "teaser":null},{
-        "title": "Subsection Demo 1",
-        
-        "excerpt":
-            "Subsections   You can also add subsections to your markdown files. These will be displayed along with the sidebar!  ",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/01/3/subsection/subsections.html",
-        "teaser":null},{
-        "title": "Subsection Demo 2",
-        
-        "excerpt":
-            "A second subsection page   And here’s another subsection page!  ",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/01/3/subsection/subsectiontwo.html",
-        "teaser":null},{
-        "title": "Data Science",
-        
-        "excerpt":
-            "What is Data Science Data Science is about drawing useful conclusions from large and diverse data sets through exploration, prediction, and inference. Exploration involves identifying patterns in information. Prediction involves using information we know to make informed guesses about values we wish we knew. Inference involves quantifying our degree of certainty: will those patterns we found also appear in new observations? How accurate are our predictions? Our primary tools for exploration are visualizations and descriptive statistics, for prediction are machine learning and optimization, and for inference are statistical tests and models. Statistics is a central component of data science because...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/01/what-is-data-science.html",
-        "teaser":null},{
-        "title": "John Snow and the Broad Street Pump",
-        
-        "excerpt":
-            "Observation and Visualization: John Snow and the Broad Street Pump One of the earliest examples of astute observation eventually leading to the establishment of causality dates back more than 150 years. To get your mind into the right timeframe, try to imagine London in the 1850’s. It was the world’s wealthiest city but many of its people were desperately poor. Charles Dickens, then at the height of his fame, was writing about their plight. Disease was rife in the poorer parts of the city, and cholera was among the most feared. It was not yet known that germs cause disease;...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump.html",
-        "teaser":null},{
-        "title": "Snow’s “Grand Experiment”",
-        
-        "excerpt":
-            "Snow’s “Grand Experiment” Encouraged by what he had learned in Soho, Snow completed a more thorough analysis of cholera deaths. For some time, he had been gathering data on cholera deaths in an area of London that was served by two water companies. The Lambeth water company drew its water upriver from where sewage was discharged into the River Thames. Its water was relatively clean. But the Southwark and Vauxhall (S&amp;V) company drew its water below the sewage discharge, and thus its supply was contaminated. The map below shows the areas served by the two companies. Snow honed in on...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/02/2/snow-s-grand-experiment.html",
-        "teaser":null},{
-        "title": "Establishing Causality",
-        
-        "excerpt":
-            "Establishing Causality In the language developed earlier in the section, you can think of the people in the S&amp;V houses as the treatment group, and those in the Lambeth houses at the control group. A crucial element in Snow’s analysis was that the people in the two groups were comparable to each other, apart from the treatment. In order to establish whether it was the water supply that was causing cholera, Snow had to compare two groups that were similar to each other in all but one aspect–their water supply. Only then would he be able to ascribe the differences...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/02/3/establishing-causality.html",
-        "teaser":null},{
-        "title": "Randomization",
-        
-        "excerpt":
-            "Randomization An excellent way to avoid confounding is to assign individuals to the treatment and control groups at random, and then administer the treatment to those who were assigned to the treatment group. Randomization keeps the two groups similar apart from the treatment. If you are able to randomize individuals into the treatment and control groups, you are running a randomized controlled experiment, also known as a randomized controlled trial (RCT). Sometimes, people’s responses in an experiment are influenced by their knowing which group they are in. So you might want to run a blind experiment in which individuals do...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/02/4/randomization.html",
-        "teaser":null},{
-        "title": "Endnote",
-        
-        "excerpt":
-            "Endnote In the terminology of that we have developed, John Snow conducted an observational study, not a randomized experiment. But he called his study a “grand experiment” because, as he wrote, “No fewer than three hundred thousand people … were divided into two groups without their choice, and in most cases, without their knowledge …” Studies such as Snow’s are sometimes called “natural experiments.” However, true randomization does not simply mean that the treatment and control groups are selected “without their choice.” The method of randomization can be as simple as tossing a coin. It may also be quite a...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/02/5/endnote.html",
-        "teaser":null},{
-        "title": "Causality and Experiments",
-        
-        "excerpt":
-            "Causality and Experiments “These problems are, and will probably ever remain, among the inscrutable secrets of nature. They belong to a class of questions radically inaccessible to the human intelligence.” —The Times of London, September 1849, on how cholera is contracted and spread Does the death penalty have a deterrent effect? Is chocolate good for you? What causes breast cancer? All of these questions attempt to assign a cause to an effect. A careful examination of data can help shed light on questions like these. In this section you will learn some of the fundamental concepts involved in establishing causality....",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/02/causality-and-experiments.html",
-        "teaser":null},{
-        "title": "Expressions",
-        
-        "excerpt":
-            "3.1 Expressions Programming languages are much simpler than human languages. Nonetheless, there are some rules of grammar to learn in any language, and that is where we will begin. In this text, we will use the Python programming language. Learning the grammar rules is essential, and the same rules used in the most basic programs are also central to more sophisticated programs. Programs are made up of expressions, which describe to the computer how to combine pieces of data. For example, a multiplication expression consists of a * symbol between two numerical expressions. Expressions, such as 3 * 4, are...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/03/1/Expressions.html",
-        "teaser":null},{
-        "title": "Expressions",
-        
-        "excerpt":
-            "3.1 Expressions Programming languages are much simpler than human languages. Nonetheless, there are some rules of grammar to learn in any language, and that is where we will begin. In this text, we will use the Python programming language. Learning the grammar rules is essential, and the same rules used in the most basic programs are also central to more sophisticated programs. Programs are made up of expressions, which describe to the computer how to combine pieces of data. For example, a multiplication expression consists of a * symbol between two numerical expressions. Expressions, such as 3 * 4, are...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/03/1/Expressions.html",
-        "teaser":null},{
-        "title": "Names",
-        
-        "excerpt":
-            "3.2 Names Names are given to values in Python using an assignment statement. In an assignment, a name is followed by =, which is followed by any expression. The value of the expression to the right of = is assigned to the name. Once a name has a value assigned to it, the value will be substituted for that name in future expressions. a = 10 b = 20 a + b 30 A previously assigned name can be used in the expression to the right of =. quarter = 1/4 half = 2 * quarter half 0.5 However, only...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/03/2/Names.html",
-        "teaser":null},{
-        "title": "Names",
-        
-        "excerpt":
-            "3.2 Names Names are given to values in Python using an assignment statement. In an assignment, a name is followed by =, which is followed by any expression. The value of the expression to the right of = is assigned to the name. Once a name has a value assigned to it, the value will be substituted for that name in future expressions. a = 10 b = 20 a + b 30 A previously assigned name can be used in the expression to the right of =. quarter = 1/4 half = 2 * quarter half 0.5 However, only...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/03/2/Names.html",
-        "teaser":null},{
-        "title": "Call Expressions",
-        
-        "excerpt":
-            "Call expressions invoke functions, which are named operations. The name of the function appears first, followed by expressions in parentheses. abs(-12) 12 round(5 - 1.3) 4 max(2, 2 + 3, 4) 5 In this last example, the max function is called on three arguments: 2, 5, and 4. The value of each expression within parentheses is passed to the function, and the function returns the final value of the full call expression. The max function can take any number of arguments and returns the maximum. A few functions are available by default, such as abs and round, but most functions...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/03/3/Calls.html",
-        "teaser":null},{
-        "title": "Call Expressions",
-        
-        "excerpt":
-            "Call expressions invoke functions, which are named operations. The name of the function appears first, followed by expressions in parentheses. abs(-12) 12 round(5 - 1.3) 4 max(2, 2 + 3, 4) 5 In this last example, the max function is called on three arguments: 2, 5, and 4. The value of each expression within parentheses is passed to the function, and the function returns the final value of the full call expression. The max function can take any number of arguments and returns the maximum. A few functions are available by default, such as abs and round, but most functions...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/03/3/Calls.html",
-        "teaser":null},{
-        "title": "Introduction to Tables",
-        
-        "excerpt":
-            "from datascience import * path_data = &#39;../../data/&#39; import numpy as np %matplotlib inline import matplotlib.pyplot as plots plots.style.use(&#39;fivethirtyeight&#39;) cones = Table.read_table(path_data + &#39;cones.csv&#39;) nba = Table.read_table(path_data + &#39;nba_salaries.csv&#39;).relabeled(3, &#39;SALARY&#39;) movies = Table.read_table(path_data + &#39;movies_by_year.csv&#39;) We can now apply Python to analyze data. We will work with data stored in Table structures. Tables are a fundamental way of representing data sets. A table can be viewed in two ways: a sequence of named columns that each describe a single attribute of all entries in a data set, or a sequence of rows that each contain all information about a single individual...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/03/4/Introduction_to_Tables.html",
-        "teaser":null},{
-        "title": "Introduction to Tables",
-        
-        "excerpt":
-            "We can now apply Python to analyze data. We will work with data stored in Table structures. Tables are a fundamental way of representing data sets. A table can be viewed in two ways: a sequence of named columns that each describe a single attribute of all entries in a data set, or a sequence of rows that each contain all information about a single individual in a data set. We will study tables in great detail in the next several chapters. For now, we will just introduce a few methods without going into technical details. The table cones has...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/03/4/Introduction_to_Tables.html",
-        "teaser":null},{
-        "title": "Programming in Python",
-        
-        "excerpt":
-            "Programming in Python   Programming can dramatically improve our ability to collect and analyze information about the world, which in turn can lead to discoveries through the kind of careful reasoning demonstrated in the previous section. In data science, the purpose of writing a program is to instruct a computer to carry out the steps of an analysis. Computers cannot study the world on their own. People must describe precisely what steps the computer should take in order to collect and analyze data, and those steps are expressed through programs.   ",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/03/programming-in-python.html",
-        "teaser":null},{
-        "title": "Numbers",
-        
-        "excerpt":
-            "Computers are designed to perform numerical calculations, but there are some important details about working with numbers that every programmer working with quantitative data should know. Python (and most other programming languages) distinguishes between two different types of numbers: Integers are called int values in the Python language. They can only represent whole numbers (negative, zero, or positive) that don't have a fractional component Real numbers are called float values (or floating point values) in the Python language. They can represent whole or fractional numbers but have some limitations. The type of a number is evident from the way it...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/04/1/Numbers.html",
-        "teaser":null},{
-        "title": "Numbers",
-        
-        "excerpt":
-            "Computers are designed to perform numerical calculations, but there are some important details about working with numbers that every programmer working with quantitative data should know. Python (and most other programming languages) distinguishes between two different types of numbers: Integers are called int values in the Python language. They can only represent whole numbers (negative, zero, or positive) that don’t have a fractional component Real numbers are called float values (or floating point values) in the Python language. They can represent whole or fractional numbers but have some limitations. The type of a number is evident from the way it...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/04/1/Numbers.html",
-        "teaser":null},{
-        "title": "Strings",
-        
-        "excerpt":
-            "Much of the world's data is text, and a piece of text represented in a computer is called a string. A string can represent a word, a sentence, or even the contents of every book in a library. Since text can include numbers (like this: 5) or truth values (True), a string can also describe those things. The meaning of an expression depends both upon its structure and the types of values that are being combined. So, for instance, adding two strings together produces another string. This expression is still an addition expression, but it is combining a different type...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/04/2/Strings.html",
-        "teaser":null},{
-        "title": "Strings",
-        
-        "excerpt":
-            "Much of the world’s data is text, and a piece of text represented in a computer is called a string. A string can represent a word, a sentence, or even the contents of every book in a library. Since text can include numbers (like this: 5) or truth values (True), a string can also describe those things. The meaning of an expression depends both upon its structure and the types of values that are being combined. So, for instance, adding two strings together produces another string. This expression is still an addition expression, but it is combining a different type...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/04/2/Strings.html",
-        "teaser":null},{
-        "title": "Comparisons",
-        
-        "excerpt":
-            "Boolean values most often arise from comparison operators. Python includes a variety of operators that compare values. For example, 3 is larger than 1 + 1. 3 &gt; 1 + 1 True The value True indicates that the comparison is valid; Python has confirmed this simple fact about the relationship between 3 and 1+1. The full set of common comparison operators are listed below. Comparison Operator True example False Example Less than &lt; 2 &lt; 3 2 &lt; 2 Greater than &gt; 3&gt;2 3&gt;3 Less than or equal &lt;= 2 &lt;= 2 3 &lt;= 2 Greater or equal &gt;= 3...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/04/3/Comparison.html",
-        "teaser":null},{
-        "title": "Comparisons",
-        
-        "excerpt":
-            "Boolean values most often arise from comparison operators. Python includes a variety of operators that compare values. For example, 3 is larger than 1 + 1. 3 &gt; 1 + 1 True The value True indicates that the comparison is valid; Python has confirmed this simple fact about the relationship between 3 and 1+1. The full set of common comparison operators are listed below. Comparison Operator True example False Example Less than &lt; 2 &lt; 3 2 &lt; 2 Greater than &gt; 3&gt;2 3&gt;3 Less than or equal &lt;= 2 &lt;= 2 3 &lt;= 2 Greater or equal &gt;= 3...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/04/3/Comparison.html",
-        "teaser":null},{
-        "title": "Data Types",
-        
-        "excerpt":
-            "Every value has a type, and the built-in type function returns the type of the result of any expression.    One type we have encountered already is a built-in function. Python indicates that the type is a builtin_function_or_method; the distinction between a function and a method is not important at this stage.                type(abs)                     builtin_function_or_method          This chapter will explore many useful types of data.       ",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/04/Types.html",
-        "teaser":null},{
-        "title": "Data Types",
-        
-        "excerpt":
-            "Every value has a type, and the built-in type function returns the type of the result of any expression.   One type we have encountered already is a built-in function. Python indicates that the type is a builtin_function_or_method; the distinction between a function and a method is not important at this stage.           type(abs)                         builtin_function_or_method                   This chapter will explore many useful types of data.  ",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/04/Types.html",
-        "teaser":null},{
-        "title": "Citations and bibliographies",
-        
-        "excerpt":
-            "Including citations in your book Because jupyter-book is built on top of Jekyll, we can use the excellent jekyll-scholar book to include citations and a bibliography with your book. Note that this only works if you’re building your book HTML locally and hosting the HTML files online somewhere. This can still use GitHub pages, but not the auto-generation of a cite from markdown files feature of GitHub pages. This is because GitHub pages doesn’t include the jekyll-scholar plugin. How to use citations Including citations with your markdown files or notebooks is done in the following way. Modify the file in...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/features/citations.html",
-        "teaser":null},{
-        "title": "Features and customization",
-        
-        "excerpt":
-            "Features   This is a short demonstration textbook to show the general layout / style of textbooks built with Jupyter and Jekyll.   To begin, click on one of the chapter sections in the sidebar to the left. Alternatively, click on the “next” button below in order to read further.   The first sections demonstrate some simple functionality of Jupyter Books, while the final chapters contain a subset of content from the Foundations in Data Science textbook.  ",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/features/features.html",
-        "teaser":null},{
-        "title": "Hiding code blocks or entire cells",
-        
-        "excerpt":
-            "Hiding or removing code blocks or entire cells It’s possible to control which cells show up in your final book pages. For example, you may want to display a complex visualization to illustrate an idea, but don’t want the page to be cluttered with a large code cell that generated the viz. In other cases, you may want to remove a code cell entirely. In this case, you have two options: Hiding the inputs of a code cell will hide the cell’s contents and provide a button that lets readers reveal the content. Removing the inputs (or the entire cell)...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/features/hiding.html",
-        "teaser":null},{
-        "title": "Connecting content with JupyterHub and Binder",
-        
-        "excerpt":
-            "Connecting content with JupyterHub and Binder Because Jupyter Books are built with Jupyter Notebooks, you can connect your online book with a Jupyter kernel running in the cloud. This lets readers quickly interact with your content in a traditional coding interface using either JupyterHub or BinderHub. This page describes a few ways to accomplish this. Creating interact buttons for BinderHub BinderHub can be used to build the environment needed to run a repository, and provides a link that lets others interact with that repository. If your Jupyter Book is hosted online on GitHub, you can automatically insert buttons that link...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/features/interact.html",
-        "teaser":null},{
-        "title": "Adding interactivity to your book pages",
-        
-        "excerpt":
-            "Interactive code in your book Sometimes you’d rather let people interact with code directly on the page instead of sending them off to a Binder or a JupyterHub. There are currently a few ways to make this happen in Jupyter Book (both of which are experimental). This page describes how to bring interactivity to your book. Both of these tools use MyBinder to provide a remote kernel. Making your page inputs interactive ✨experimental✨ If you’d like to provide interactivity for your content without making your readers leave the Jupyter Book site, you can use a project called Thebelab. This provides...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/features/interactive_cells.html",
-        "teaser":null},{
-        "title": "Feature Limits",
-        
-        "excerpt":
-            "Demo page to showcase markdown NOTE: None of the information on this page applies to Jupyter Books. It is taken from the Markdown documentation, and is meant to give an idea of how Jupyter Book renders really long pages of very diverse content! Amount of Content You should be able to put as much content, and as many headings, within each chapter as you want. In order to enable this we allow the table of contents on the right hand side to be scrollable. All of the sections on here allow us to test that. And they’ll give you a...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/features/limits.html",
-        "teaser":null},{
-        "title": "Markdown files",
-        
-        "excerpt":
-            "Creating book content The two kinds of files that contain course content are: Jupyter Notebooks Markdown files Each are contained in the content/ folder and referenced from _data/toc.yml. If the file is markdown, it will be copied over with front-matter YAML added so that Jekyll can parse it. print(\"Python (and any language-specific) code still works as expected\") As does non-language code. Sidebars with Jekyll You may notice that there’s a sidebar to the right (if your screen is wide enough). These are automatically generated from the headers that are present in your page. The sidebar will automatically capture all 2nd...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/features/markdown.html",
-        "teaser":null},{
-        "title": "Jupyter notebooks",
-        
-        "excerpt":
-            "Content with notebooks You can also create content with Jupyter Notebooks. The content for the current page is contained in a Jupyter Notebook in the notebooks/ folder of the repository. This means that we can include code blocks and their outputs, and export them to Jekyll markdown. You can find the original notebook for this page at this address Markdown + notebooks As it is markdown, you can embed images, HTML, etc into your posts! You an also $add_{math}$ and or But make sure you \\$Escape \\$your \\$dollar signs \\$you want to keep! Code blocks and image outputs Textbooks with...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/features/notebooks.html",
-        "teaser":null},{
-        "title": "Searching your book",
-        
-        "excerpt":
-            "Searching your book It’s possible to enable search in your book so that users can find the content they’re looking for. This uses a nifty package called lunr.js. To add search to your book, simple add the following entry to _data/toc.yml. - title: Search (whatever title you like) search: true The result will be a link in your Table of Contents that directs users to a search page. For example, click the Search link in the TOC of this demo book. Customizing how much text is stored in search The Jupyter-Book search works by storing excerpts of text from each...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/features/search.html",
-        "teaser":null},{
-        "title": "Getting started",
-        
-        "excerpt":
-            "The Jupyter Book Guide This is a guide for creating your own book using Jupyter Notebooks and Jekyll. Book content is written in markdown and Jupyter Notebooks, and jupyter-book converts these into a book fit for hosting on the web. Install the command-line interface First off, make sure you have the CLI installed so that you can work with Jupyter Book. The Jupyter-Book CLI allows you to create, build, upgrade, and otherwise control your Jupyter Book. You can install it via pip with the following command: pip install jupyter-book A quick tour of a Jupyter Book Jupyter-Book comes with a...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/guide/01_overview.html",
-        "teaser":null},{
-        "title": "Create your book",
-        
-        "excerpt":
-            "Create your Jupyter Book This page covers how to create a Jupyter Book with your own content. You’ve got three primary ways to create your Jupyter Book. by starting with a minimal book Running the following command will create a new Jupyter Book with a few content pages and a Table of Contents to get you started: jupyter-book create mybookname This will create a new book using your content in mybookname/. You’ll then need to Add your content to mybookname/content/ Modify mybookname/_data/toc.yml to match your content Modify mybookname/_config.yml to the configuration you’d like Note that if you choose to create...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/guide/02_create.html",
-        "teaser":null},{
-        "title": "Build and publish your book",
-        
-        "excerpt":
-            "Building and publishing your book Once you’ve added content and configured your book, it’s time to build the raw material that Jekyll will use to turn your book into a website. We’ll also cover how to turn this book into the HTML for a website that can be served online. Build the book’s markdown Now that you’ve got the files installed content is in the book, you can build your book. Build your book by running the following command: jupyter-book build mybookname/ This will: Use the links specified in the _data/toc.yml file (pointing to files in /content/) and do the...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/guide/03_build.html",
-        "teaser":null},{
-        "title": "FAQ",
-        
-        "excerpt":
-            "The following are some common issues and questions that have arisen when building your textbook with Jekyll. How can I update my book? Sometimes Jupyter Book will get updates that you want to incorporate into a book you’ve already built. The easiest way to do this is to use the Command-Line Interface to upgrade your book. To upgrade a pre-existing Jupyter Book, run the following command: jupyter-book upgrade path/to/mybook This will do the following: Generate a fresh Jupyter Book in mybook_UPGRADED using the content files in your current book. If this succeeds, copy over the contents of mybook_UPGRADED into your...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/guide/04_faq.html",
-        "teaser":null},{
-        "title": "How-to and advanced topics",
-        
-        "excerpt":
-            "This page contains more advanced and complete information about the jupyter-book repository. See the sections below. Hide cells or cell outputs in the built site Sometimes you want to use code to generate visualizations or prepare data, but you don’t want users to see it in your built book. To prevent code cells from showing up in your built site, you can use the following two configuration options in your _config.yml file. To remove entire code cells from your book, use the following configuration: hide_cell_text : \"YOUR TEXT\" Any code cell with the value of hide_cell_text (above it is YOUR...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/guide/05_advanced.html",
-        "teaser":null},{
-        "title": "Home",
-        
-        "excerpt":
-            "Books with Jupyter and Jekyll Jupyter Books lets you build an online book using a collection of Jupyter Notebooks and Markdown files. Its output is similar to the excellent Bookdown tool, and adds extra functionality for people running a Jupyter stack. For an example of a book built with Jupyter Books, see the textbook for Data 100 at UC Berkeley (or this website!) Here are a few features of Jupyter Books A Command-Line Interface (CLI) to quickly create, build, and upgrade books. Write book content in markdown and Jupyter Notebooks Convert these into Jekyll pages that can be hosted for...",
-        "categories": [],
-        "tags": [],
-        "url": "https://jupyter.org/jupyter-book/intro.html",
-        "teaser":null},]
-</script>
+<h1 id="note-none-of-the-information-on-this-page-applies-to-jupyter-books">NOTE: None of the information on this page applies to Jupyter Books.</h1>
+
+<p>It is taken from the Markdown
+documentation, and is meant to give an idea of how Jupyter Book renders really long pages of
+very diverse content!</p>
+
+<h2 id="amount-of-content">Amount of Content</h2>
+
+<p>You should be able to put as much content, and as many headings, within each chapter as you want.
+In order to enable this we allow the table of contents on the right hand side to be scrollable.
+All of the sections on here allow us to test that. And they’ll give you a full guide too all of markdown’s awesome features.</p>
+
+<p>The following test is all thanks to @adam-p’s great <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">wiki</a>.</p>
+
+<h1 id="markdown-cheatsheet">Markdown Cheatsheet</h1>
+<p>This is intended as a quick reference and showcase. For more complete info, see <a href="http://daringfireball.net/projects/markdown/">John Gruber’s original spec</a> and the <a href="http://github.github.com/github-flavored-markdown/">Github-flavored Markdown info page</a>.</p>
+
+<p>This cheatsheet is specifically <em>Markdown Here’s</em> version of Github-flavored Markdown. This differs slightly in styling and syntax from what Github uses, so what you see below might vary a little from what you get in a <em>Markdown Here</em> email, but it should be pretty close.</p>
+
+<p>You can play around with Markdown on our <a href="http://www.markdown-here.com/livedemo.html">live demo page</a>.</p>
+
+<p>(If you’re not a Markdown Here user, check out the <a href="./Markdown-Cheatsheet">Markdown Cheatsheet</a> that is not specific to MDH. But, really, you should also use Markdown Here, because it’s awesome. http://markdown-here.com)</p>
+
+<h5 id="table-of-contents">Table of Contents</h5>
+<p><a href="#headers">Headers</a>
+<a href="#emphasis">Emphasis</a>
+<a href="#lists">Lists</a>
+<a href="#links">Links</a>
+<a href="#images">Images</a>
+<a href="#code">Code and Syntax Highlighting</a>
+<a href="#tables">Tables</a>
+<a href="#blockquotes">Blockquotes</a>
+<a href="#html">Inline HTML</a>
+<a href="#hr">Horizontal Rule</a>
+<a href="#lines">Line Breaks</a>
+<a href="#videos">YouTube Videos</a>
+<a href="#tex">TeX Mathematical Formulae</a></p>
+
+<p><a name="headers"></a></p>
+
+<h2 id="headers">Headers</h2>
+
+<pre><code class="language-no-highlight"># H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+
+Alternatively, for H1 and H2, an underline-ish style:
+
+Alt-H1
+======
+
+Alt-H2
+------
+</code></pre>
+
+<h1 id="h1">H1</h1>
+<h2 id="h2">H2</h2>
+<h3 id="h3">H3</h3>
+<h4 id="h4">H4</h4>
+<h5 id="h5">H5</h5>
+<h6 id="h6">H6</h6>
+
+<p>Alternatively, for H1 and H2, an underline-ish style:</p>
+
+<h1 id="alt-h1">Alt-H1</h1>
+
+<h2 id="alt-h2">Alt-H2</h2>
+
+<p><a name="emphasis"></a></p>
+
+<h2 id="emphasis">Emphasis</h2>
+
+<pre><code class="language-no-highlight">Emphasis, aka italics, with *asterisks* or _underscores_.
+
+Strong emphasis, aka bold, with **asterisks** or __underscores__.
+
+Combined emphasis with **asterisks and _underscores_**.
+
+Strikethrough uses two tildes. ~~Scratch this.~~
+</code></pre>
+
+<p>Emphasis, aka italics, with <em>asterisks</em> or <em>underscores</em>.</p>
+
+<p>Strong emphasis, aka bold, with <strong>asterisks</strong> or <strong>underscores</strong>.</p>
+
+<p>Combined emphasis with <strong>asterisks and <em>underscores</em></strong>.</p>
+
+<p>Strikethrough uses two tildes. <del>Scratch this.</del></p>
+
+<p><a name="lists"></a></p>
+
+<h2 id="lists">Lists</h2>
+
+<pre><code class="language-no-highlight">1. First ordered list item
+2. Another item
+  * Unordered sub-list.
+1. Actual numbers don't matter, just that it's a number
+  1. Ordered sub-list
+4. And another item.
+
+   Some text that should be aligned with the above item.
+
+* Unordered list can use asterisks
+- Or minuses
++ Or pluses
+</code></pre>
+
+<ol>
+  <li>First ordered list item</li>
+  <li>Another item
+    <ul>
+      <li>Unordered sub-list.</li>
+    </ul>
+  </li>
+  <li>Actual numbers don’t matter, just that it’s a number</li>
+  <li>Ordered sub-list</li>
+  <li>
+    <p>And another item.</p>
+
+    <p>Some text that should be aligned with the above item.</p>
+  </li>
+</ol>
+
+<ul>
+  <li>Unordered list can use asterisks</li>
+  <li>Or minuses</li>
+  <li>Or pluses</li>
+</ul>
+
+<p><a name="links"></a></p>
+
+<h2 id="links">Links</h2>
+
+<p>There are two ways to create links.</p>
+
+<pre><code class="language-no-highlight">[I'm an inline-style link](https://www.google.com)
+
+[I'm a reference-style link][Arbitrary case-insensitive reference text]
+
+[You can use numbers for reference-style link definitions][1]
+
+Or leave it empty and use the [link text itself]
+
+URLs and URLs in angle brackets will automatically get turned into links.
+http://www.example.com or &lt;http://www.example.com&gt; and sometimes
+example.com (but not on Github, for example).
+
+Some text to show that the reference links can follow later.
+
+[arbitrary case-insensitive reference text]: https://www.mozilla.org
+[1]: http://slashdot.org
+[link text itself]: http://www.reddit.com
+</code></pre>
+
+<p><a href="https://www.google.com">I’m an inline-style link</a></p>
+
+<p><a href="https://www.mozilla.org">I’m a reference-style link</a></p>
+
+<p><a href="http://slashdot.org">You can use numbers for reference-style link definitions</a></p>
+
+<p>Or leave it empty and use the <a href="http://www.reddit.com">link text itself</a></p>
+
+<p>URLs and URLs in angle brackets will automatically get turned into links.
+http://www.example.com or <a href="http://www.example.com">http://www.example.com</a> and sometimes
+example.com (but not on Github, for example).</p>
+
+<p>Some text to show that the reference links can follow later.</p>
+
+<p><a name="images"></a></p>
+
+<h2 id="images">Images</h2>
+
+<pre><code class="language-no-highlight">Here's our logo (hover to see the title text):
+
+Inline-style:
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
+Reference-style:
+![alt text][logo]
+
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+</code></pre>
+
+<p>Here’s our logo (hover to see the title text):</p>
+
+<p>Inline-style:
+<img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png" alt="alt text" title="Logo Title Text 1" /></p>
+
+<p>Reference-style:
+<img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png" alt="alt text" title="Logo Title Text 2" /></p>
+
+<p><a name="code"></a></p>
+
+<h2 id="code-and-syntax-highlighting">Code and Syntax Highlighting</h2>
+
+<p>Code blocks are part of the Markdown spec, but syntax highlighting isn’t. However, many renderers – like Github’s and <em>Markdown Here</em> – support syntax highlighting. <em>Markdown Here</em> supports highlighting for dozens of languages (and not-really-languages, like diffs and HTTP headers); to see the complete list, and how to write the language names, see the <a href="http://softwaremaniacs.org/media/soft/highlight/test.html">highlight.js demo page</a>.</p>
+
+<pre><code class="language-no-highlight">Inline `code` has `back-ticks around` it.
+</code></pre>
+
+<p>Inline <code class="highlighter-rouge">code</code> has <code class="highlighter-rouge">back-ticks around</code> it.</p>
+
+<p>Blocks of code are either fenced by lines with three back-ticks <code>```</code>, or are indented with four spaces. I recommend only using the fenced code blocks – they’re easier and only they support syntax highlighting.</p>
+
+<pre lang="no-highlight"><code>```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+```
+
+```python
+s = "Python syntax highlighting"
+print s
+```
+
+```
+No language indicated, so no syntax highlighting.
+But let's throw in a &lt;b&gt;tag&lt;/b&gt;.
+```
+</code></pre>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="s2">"JavaScript syntax highlighting"</span><span class="p">;</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="s">"Python syntax highlighting"</span>
+<span class="k">print</span> <span class="n">s</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No language indicated, so no syntax highlighting in Markdown Here (varies on Github).
+But let's throw in a &lt;b&gt;tag&lt;/b&gt;.
+</code></pre></div></div>
+
+<p>Again, to see what languages are available for highlighting, and how to write those language names, see the <a href="http://softwaremaniacs.org/media/soft/highlight/test.html">highlight.js demo page</a>.</p>
+
+<p><a name="tables"></a></p>
+
+<h2 id="tables">Tables</h2>
+
+<p>Tables aren’t part of the core Markdown spec, but they are part of GFM and <em>Markdown Here</em> supports them. They are an easy way of adding tables to your email – a task that would otherwise require copy-pasting from another application.</p>
+
+<pre><code class="language-no-highlight">Colons can be used to align columns.
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+The outer pipes (|) are optional, and you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.
+
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
+</code></pre>
+
+<p>Colons can be used to align columns.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tables</th>
+      <th style="text-align: center">Are</th>
+      <th style="text-align: right">Cool</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>col 3 is</td>
+      <td style="text-align: center">right-aligned</td>
+      <td style="text-align: right">$1600</td>
+    </tr>
+    <tr>
+      <td>col 2 is</td>
+      <td style="text-align: center">centered</td>
+      <td style="text-align: right">$12</td>
+    </tr>
+    <tr>
+      <td>zebra stripes</td>
+      <td style="text-align: center">are neat</td>
+      <td style="text-align: right">$1</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>The outer pipes (</td>
+      <td>) are optional, and you don’t need to make the raw Markdown line up prettily. You can also use inline Markdown.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Markdown</th>
+      <th>Less</th>
+      <th>Pretty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>Still</em></td>
+      <td><code class="highlighter-rouge">renders</code></td>
+      <td><strong>nicely</strong></td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="blockquotes"></a></p>
+
+<h2 id="blockquotes">Blockquotes</h2>
+
+<pre><code class="language-no-highlight">&gt; Blockquotes are very handy in email to emulate reply text.
+&gt; This line is part of the same quote.
+
+Quote break.
+
+&gt; This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
+</code></pre>
+
+<blockquote>
+  <p>Blockquotes are very handy in email to emulate reply text.
+This line is part of the same quote.</p>
+</blockquote>
+
+<p>Quote break.</p>
+
+<blockquote>
+  <p>This is a very long line that will still be quoted properly when it wraps. Oh boy let’s keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can <em>put</em> <strong>Markdown</strong> into a blockquote.</p>
+</blockquote>
+
+<p><a name="html"></a></p>
+
+<h2 id="inline-html">Inline HTML</h2>
+
+<p>You can also use raw HTML in your Markdown, and it’ll mostly work pretty well.</p>
+
+<pre><code class="language-no-highlight">&lt;dl&gt;
+  &lt;dt&gt;Definition list&lt;/dt&gt;
+  &lt;dd&gt;Is something people use sometimes.&lt;/dd&gt;
+
+  &lt;dt&gt;Markdown in HTML&lt;/dt&gt;
+  &lt;dd&gt;Does *not* work **very** well. Use HTML &lt;em&gt;tags&lt;/em&gt;.&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+
+<dl>
+  <dt>Definition list</dt>
+  <dd>Is something people use sometimes.</dd>
+
+  <dt>Markdown in HTML</dt>
+  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
+</dl>
+
+<p><a name="hr"></a></p>
+
+<h2 id="horizontal-rule">Horizontal Rule</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Three or more...
+
+---
+
+Hyphens
+
+***
+
+Asterisks
+
+___
+
+Underscores
+</code></pre></div></div>
+
+<p>Three or more…</p>
+
+<hr />
+
+<p>Hyphens</p>
+
+<hr />
+
+<p>Asterisks</p>
+
+<hr />
+
+<p>Underscores</p>
+
+<p><a name="lines"></a></p>
+
+<h2 id="line-breaks">Line Breaks</h2>
+
+<p>My basic recommendation for learning how line breaks work is to experiment and discover – hit &lt;Enter&gt; once (i.e., insert one newline), then hit it twice (i.e., insert two newlines), see what happens. You’ll soon learn to get what you want. “Markdown Toggle” is your friend.</p>
+
+<p>Here are some things to try out:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Here's a line for us to start with.
+
+This line is separated from the one above by two newlines, so it will be a *separate paragraph*.
+
+This line is also a separate paragraph, but...
+This line is only separated by a single newline, so it's a separate line in the *same paragraph*.
+</code></pre></div></div>
+
+<p>Here’s a line for us to start with.</p>
+
+<p>This line is separated from the one above by two newlines, so it will be a <em>separate paragraph</em>.</p>
+
+<p>This line is also begins a separate paragraph, but…
+This line is only separated by a single newline, so it’s a separate line in the <em>same paragraph</em>.</p>
+
+<p>(Technical note: <em>Markdown Here</em> uses GFM line breaks, so there’s no need to use MD’s two-space line breaks.)</p>
+
+<p><a name="videos"></a></p>
+
+<h2 id="youtube-videos">YouTube Videos</h2>
+
+<p>They can’t be added directly but you can add an image with a link to the video like this:</p>
+
+<pre><code class="language-no-highlight">&lt;a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=YOUTUBE_VIDEO_ID_HERE
+" target="_blank"&gt;&lt;img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg"
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /&gt;&lt;/a&gt;
+</code></pre>
+
+<p>Or, in pure Markdown, but losing the image sizing and border:</p>
+
+<pre><code class="language-no-highlight">[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+</code></pre>
+
+<p><a name="tex"></a></p>
+
+<h2 id="tex-mathematical-formulae">TeX Mathematical Formulae</h2>
+
+<p>A full description of TeX math symbols is beyond the scope of this cheatsheet. Here’s a <a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">good reference</a>, and you can try stuff out on <a href="https://www.codecogs.com/latex/eqneditor.php">CodeCogs</a>. You can also play with formulae in the Markdown Here options page.</p>
+
+<p>Here are some examples to try out:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$-b \pm \sqrt{b^2 - 4ac} \over 2a$
+$x = a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \frac{1}{a_3 + a_4}}}$
+$\forall x \in X, \quad \exists y \leq \epsilon$
+</code></pre></div></div>
+
+<p>The beginning and ending dollar signs (<code class="highlighter-rouge">$</code>) are the delimiters for the TeX markup.</p>
+
+<h2 id="build-the-books-site-html-locally">Build the book’s site HTML locally</h2>
+
+<p>Once you’ve generated the markdown for your notebooks and installed the
+necessary dependencies. You are ready to build your site HTML.</p>
+
+<p>Ensure that your notebooks have been converted to markdown, there should be a
+collection of them in <code class="highlighter-rouge">_build/</code>.</p>
+
+<p>In order to locally build your site’s HTML with Jekyll, you’ll need to either install
+a container software (Docker or Singularity) or Ruby.</p>
+
+<p>In our experience, we’ve found that <a href="https://www.docker.com/resources/what-container">containers</a>
+provide an easier installation for most systems.
+If you are developing on a system where you have administrator privileges
+(i.e., you have <code class="highlighter-rouge">root</code> permissions), we recommend you use <a href="https://docs.docker.com/get-started/">Docker</a>.</p>
+
+<p>We also provide instructions for using <a href="https://www.sylabs.io/guides/2.6/user-guide/quick_start.html">Singularity</a>,
+an alternate containerization software for systems where you do not have administrator privileges.
+To learn more about using containers, please see the
+<a href="https://neurohackweek.github.io/docker-for-scientists/">Docker for scientists guide</a>.</p>
+
+<h3 id="building-your-site-locally-with-containers-docker">Building your site locally with Containers: Docker</h3>
+
+<p>First, you’ll need to make sure you have Docker installed.
+There are <a href="https://hub.docker.com/search/?type=edition&amp;offering=community">installation instructions for each operating system</a>
+to guide you through this process.</p>
+
+<p>Once Docker is available on your system, you can build the image locally with:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker pull emdupre/jupyter-book
+</code></pre></div></div>
+
+<p>You can then access this image with:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">--rm</span> <span class="nt">--security-opt</span> label:disable  <span class="se">\</span>
+   <span class="nt">-v</span> /full/path/to/your/book:/srv/jekyll <span class="se">\</span>
+   <span class="nt">-p</span> 4000:4000 <span class="se">\</span>
+   <span class="nt">-it</span> <span class="nt">-u</span> 1000:1000 <span class="se">\</span>
+   emdupre/jupyter-book bundle <span class="nb">exec </span>jekyll serve <span class="nt">--host</span> 0.0.0.0
+</code></pre></div></div>
+
+<p>If you navigate to <code class="highlighter-rouge">http://0.0.0.0:4000/jupyter-book/</code> in your browser,
+you should see a preview copy of your book.
+If you instead see an error, please try to update your local book;
+see <a href="https://jupyter.org/jupyter-book/guide/04_faq.html#how-can-i-update-my-book">the Jupyter Book FAQ section</a>
+for more details on how to do so.</p>
+
+<h3 id="building-your-site-locally-with-containers-singularity">Building your site locally with Containers: Singularity</h3>
+
+<p>If you are on a system where you do not have administrator privileges (such as a shared
+computing cluster), you will not be able to use Docker.
+Instead, you can use Singularity.
+First, you’ll need to check with your resource manager that Singularity is available
+on your system.</p>
+
+<p>You can then create a Jupyter Book Singularity image using:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>singularity build jupyter-book.simg docker://emdupre/jupyter-book
+</code></pre></div></div>
+
+<p>Next, you can access this image with:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>singularity run <span class="nt">-B</span> /full/path/to/your/book:/srv/jekyll <span class="se">\</span>
+    <span class="nt">--pwd</span> /srv/jekyll <span class="se">\</span>
+    jupyter-book.simg bundle <span class="nb">exec </span>jekyll serve
+</code></pre></div></div>
+
+<p>And that’s it! If you navigate to <code class="highlighter-rouge">http://127.0.0.1:4000/jupyter-book/</code> in your browser,
+you should see a preview copy of your book.</p>
+
+<h3 id="building-your-site-locally-with-ruby">Building your site locally with Ruby</h3>
+
+<p>You can also choose to build your site locally without a container.
+In this case, you’ll need Ruby, an open-source programming language, to build your site’s
+HTML with Jekyll. The easiest way to install Ruby on <em>nix systems is to use
+the *<code class="highlighter-rouge">conda</code></em> package manager:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda install <span class="nt">-c</span> conda-forge ruby
+</code></pre></div></div>
+<p>Once you have Ruby installed, run</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make install
+</code></pre></div></div>
+
+<p>which will install Bundler (a Ruby dependency management tool) and then install the plugins
+needed to build the site for your book.</p>
+
+<p>You can then build the site locally by running:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make site
+</code></pre></div></div>
+
+<p>Alternatively, you can preview your book’s site locally by running this command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make serve
+</code></pre></div></div>
+
+<p>This should open up a port on your computer with a live version of the book.</p>
+
+<h3 id="when-should-you-build-the-html-locally">When should you build the HTML locally?</h3>
+
+<p>You might ask: if GitHub pages can build my site automatically from the markdown files, why
+build it locally? The main reason for this is that you get more flexibility by building locally
+and serving raw HTML, as opposed to auto-building the site with GitHub-pages.</p>
+
+<p>In particular, if you wish to use any <strong>extra Jekyll plugins</strong>, such as the <code class="highlighter-rouge">jekyll-scholar</code> plugin that
+enables you to add citations and bibliographies, then you need to build your site
+locally as HTML. GitHub-pages doesn’t let you enable any extra plugins if it auto-builds your site.</p>
+
+<h2 id="create-an-online-repository-for-your-book">Create an <em>online</em> repository for your book</h2>
+
+<p>You’ve created your book on your own computer, but you haven’t yet added it
+online. This section covers the steps to create your own GitHub repository,
+and to add your book’s content to it.</p>
+
+<ol>
+  <li>First, log-in to GitHub, then go to the “create a new repository” page:</li>
+</ol>
+
+<p>https://github.com/new</p>
+
+<ol>
+  <li>
+    <p>Next, add a name and description for your book. You can choose whatever
+initialization you’d like.</p>
+  </li>
+  <li>
+    <p>Now, clone the empty repository to your computer:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/&lt;my-org&gt;/&lt;my-book-name&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Copy all of your book files and folders (what was created when you ran <code class="highlighter-rouge">jupyter-book create mybook</code>)
+into the new repository. For example, if you created your book locally with <code class="highlighter-rouge">jupyter-book create mylocalbook</code>
+and your online repository is called <code class="highlighter-rouge">myonlinebook</code>, the command would be:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp <span class="nt">-r</span> mylocalbook/<span class="k">*</span> myonlinebook/
+</code></pre></div>    </div>
+
+    <p>This will copy over the local book files into the online book folder.</p>
+  </li>
+  <li>
+    <p>Commit the new files to the repository in <code class="highlighter-rouge">myonlinebook/</code>:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>myonlinebook
+git add ./<span class="k">*</span>
+git commit <span class="nt">-m</span> <span class="s2">"adding my first book!"</span>
+git push
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>That’s it!</p>
+
+<h2 id="publish-your-book-online-with-github-pages">Publish your book online with GitHub Pages</h2>
+
+<p>Once you’ve built the markdown for your book (in <code class="highlighter-rouge">_build</code>) or built the HTML
+for your book (in <code class="highlighter-rouge">_site</code>), you can push your book contents to GitHub so that
+others can access your book. To do so, follow these steps:</p>
+
+<ol>
+  <li>Confirm that your site files are built. You should see a
+collection of markdown files/folders in the <code class="highlighter-rouge">_build</code> folder,
+or a collection of HTML in your <code class="highlighter-rouge">_site/</code> folder.</li>
+  <li>Commit and push the changes to your repository.</li>
+  <li>
+    <p>Enable GitHub site building for your repository.</p>
+
+    <p>From your GitHub repository, click <code class="highlighter-rouge">Settings</code> then scroll down to the
+<code class="highlighter-rouge">GitHub Pages</code> section. You should see the message <code class="highlighter-rouge">Your site is published at &lt;YOUR-URL&gt;</code>.
+Ensure that you’re building from the correct folder.</p>
+  </li>
+  <li>Go to the URL listed at <code class="highlighter-rouge">&lt;YOUR-URL&gt;</code> and you should see your live site.</li>
+</ol>
+
               <nav class="c-page__nav">
   
+    
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/jupyter-book/features/search">
+      〈 <span class="u-margin-right-tiny"></span> Searching your book
+    </a>
+  
 
+  
+    
+    <a id="js-page__nav__next" class="c-page__nav__next" href="https://github.com/jupyter/jupyter-book">
+      GitHub repository <span class="u-margin-right-tiny"></span> 〉
+    </a>
   
 </nav>
 
