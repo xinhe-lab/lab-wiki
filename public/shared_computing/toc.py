@@ -20,7 +20,7 @@ A_TO_Z = '''
 
 class Environment:
     def __init__(self):
-        self.blob = 'https://xinhe-lab.github.io/lab-wiki/project_resource/'
+        self.blob = 'https://xinhe-lab.github.io/lab-wiki/shared_computing/'
         self.exclude = ['data/TEMPLATE.md']
         self.remove_ext = 3
 
