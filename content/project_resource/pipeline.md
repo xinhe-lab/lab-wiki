@@ -15,9 +15,3 @@
 ## Somatic/germline mutation calling
 
 - [cancerWGS](https://github.com/aselewa/cancerWGS_pipeline). A pipeline for calling germline and somatic mutations from whole-genome sequencing data (WGS). The pipeline takes in fastq files from normal and tumor sequencing data from the same patient. Edit the config file to point to your reference genome files. This pipeline follows the GATK4 best practices for calling somatic mutations.
-
-# Made by Other People
-
-- [ANNOVAR](http://wannovar.wglab.org/) A web server for ANNOVAR
-
-- [Michigan Imputation Server](https://imputationserver.sph.umich.edu/index.html#!) A web server for fast and efficient imputation and phasing of genotype data.
