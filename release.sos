@@ -26,6 +26,7 @@ bash: expand = '${ }'
 depends: executable('rsync'), f'{workdir}/Gemfile'
 bash: expand = '${ }'
 	rsync -auz --delete ${src}/* --exclude "*.bib" ${workdir}/content/
+	cp README.md ${workdir}/content/welcome.md
 	rsync -auz --delete --ignore-missing-args ${src}/*.bib  ${workdir}/_bibliography
 	cp toc.yml ${workdir}/_data
 	cp jekyll_config.yml ${workdir}/_config.yml
