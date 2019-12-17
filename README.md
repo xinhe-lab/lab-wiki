@@ -32,6 +32,8 @@ docker run --rm --security-opt label:disable -v $(pwd):/srv/jekyll -u $(id -u):1
 ```
 to write the changes to the repo, add & commit, and push. The updated wiki will then be displayed at https://xinhe-lab.github.io/lab-wiki
 
+**NOTE** we are currently in the process of automating updates for the website
+
 ## Why docker?
 
 The wiki is powered by `jupyterbook` which uses `jekyll`, a `ruby` based tool for generating static website. These tools, along with their dependencies, are not straightforward to install. Also instead of vanilla `jupyterbook` + `jekyll` some modifications are made to it (making file organization much clearer) and built into `release.sos` as a pipeline, which requires `sos` to run it (requires Python 3.6+). All these tools are built into the docker image and users will only have to run the `docker` commands above.
