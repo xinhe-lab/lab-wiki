@@ -16,7 +16,6 @@ Unowned direcotires or directories belonging to long departed members that are n
 | For_Kevin_Luo          | yuwenliu     |            |             |
 | genomic_annotation     | nwknoblauch  |            |             |
 | genomic_annotations    | nwknoblauch  |            |             |
-| get-pip.py             | chj1ar       |            |             |
 | gregor_reference_files | jeanm        |            |             |
 | harrison               | hsgreenbaum  |            |             |
 | jean                   | jeanm        |            |             |
