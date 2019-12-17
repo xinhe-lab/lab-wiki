@@ -11,8 +11,3 @@
 ## Mendelian Randomization
   
   - [CAUSE, other MR methods, and Genetic correlation ](https://jean997.github.io/cause/gwas_pairs_2.html). This pipeline will help you run CAUSE, a bunch of othe MR methods and genetic correlation on pairs of GWAS traits. It is possible to specify the methods so you could only do genetic correlation, or only CAUSE or some subset. It is also possible to specify all pairs or only a subset of pairs. The pipeline starts with raw data (with some mild restrictions), formats, and runs the methods. 
-
-# Made by Other People
-
-- [ANNOVAR](http://wannovar.wglab.org/) A web server for ANNOVAR
-
