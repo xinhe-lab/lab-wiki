@@ -22,6 +22,7 @@ class Environment:
     def __init__(self):
         self.blob = 'https://xinhe-lab.github.io/lab-wiki/project_resource/'
         self.exclude = ['data/TEMPLATE.md']
+        self.remove_ext = 3
 
 env = Environment()
 
@@ -59,7 +60,7 @@ def write_toc(toc, page, title):
                 f.write('\n## {}\n'.format(category))
             desc_text = '. {}.'.format(toc[name][1]) if len(toc[name]) == 2 else ''
             desc_text = desc_text.rstrip('.') + '.'
-            link = '{}{}'.format(env.blob, toc[name][0])
+            link = '{}{}'.format(env.blob, toc[name][0][:-env.remove_ext] if env.remove_ext > 0 else toc[name][0])
             f.write('* [{}]({}){}\n'.format(name, link, desc_text))
 
 def main(args):
