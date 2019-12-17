@@ -59,11 +59,12 @@ docker_build: workdir = workdir, tag = f'{getpass.getuser()}/jekyll-book'
 depends: executable('docker')
 bash:  workdir = workdir, expand = "${ }"
 	docker container stop $(docker container ls -q --filter ancestor=${getpass.getuser()}/jekyll-book) &> /dev/null || true
+	${("echo 'Preview the website at: http://0.0.0.0:4000/lab-wiki/welcome.html; use ctrl-c to stop it.'") if serve else ""}
 	docker run --rm --security-opt label:disable \
    		-v `pwd`:/srv/jekyll \
    		${'-p 4000:4000 --name wiki-server' if serve else ''} -it -u 1000:1000 \
    		${getpass.getuser()}/jekyll-book \
-		 bundle exec jekyll ${'build' if not serve else 'serve --host 0.0.0.0'}
+		 bundle exec jekyll ${'build' if not serve else 'serve --host 0.0.0.0 > /dev/null'}
 
 [run_jekyll_1]
 depends: executable('bundle')

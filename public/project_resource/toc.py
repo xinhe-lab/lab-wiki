@@ -51,7 +51,7 @@ def write_toc(toc, page, title):
     categories = []
     with open(page, 'w') as f:
         f.write('# {}\n'.format(title))
-        f.write(A_TO_Z)
+        #f.write(A_TO_Z)
         for name in toc.keys():
             category = '0' if re.match(r"[-+]?\d+$", name[0]) is not None else name[0].upper()
             if category not in categories:
