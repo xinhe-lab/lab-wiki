@@ -19,7 +19,12 @@ to write the changes to the repo, add & commit, and push. The updated wiki will 
 To preview changes before you push:
 
 ```
-docker run --rm --security-opt label:disable -v $(pwd):/srv/jekyll -u $(id -u):100 -p 4000:4000 -t gaow/lab-wiki sos run release.sos --no-use-docker
+docker run --rm --security-opt label:disable -v $(pwd):/srv/jekyll -u $(id -u):100 -p 4000:4000 --name wiki-server -t gaow/lab-wiki sos run release.sos --no-use-docker --serve
 ```
-then see the changes at http://0.0.0.0:4000/lab-wiki/welcome.html
+then see the changes at http://0.0.0.0:4000/lab-wiki/welcome.html. You have to stop the docker based webserver after use, via command:
 
+```
+docker stop wiki-server
+```
+
+Otherwise next time the `docker run` command above will complain that port 4000 is in use.

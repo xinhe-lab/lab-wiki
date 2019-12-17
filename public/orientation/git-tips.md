@@ -1,3 +1,16 @@
+## Discuss about merge conflict
+
+You can run into a merge conflict when you commit a change and someone else has made changes to the file. When you face this type of merge conflicts there are two options.
+
+1. Clean the file manually 
+	* Open the file using a text editor and modify the conflicting parts of the file that will appear marked with `>>>  <<<`. The file won't be usable unless you edit it to resolve these conflicts.
+	* Then commit and push this new file into the repository.
+
+2. Remove the local copy of the GitHub repository
+	* Make sure your local clone does not have any other changes you wish to commit.
+	* This means that is completely safe to get rid of everything you have locally.
+	* Then remove the local clone and clone a fresh copy from GitHub.
+
 ## Discuss about ".gitignore"
 
 FIXME: Give examples to exclude tmp files, cache files and large data-sets using wildcard pattern ([here is an example](https://github.com/stephenslab/gtexresults/blob/master/.gitignore)).

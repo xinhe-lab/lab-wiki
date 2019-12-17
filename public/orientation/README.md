@@ -15,7 +15,7 @@ and reproduce.
 ## Task 1: Add yourself to our slack workspace
 
 You should join our [slack](https://slack.com) workspace at `xinhe-lab.slack.com`. 
-Please ask Suzanne Leal to send you an invite.
+Please ask Xin to send you an invite.
 
 After you are added to the workspace, please find these channels to join:
 
