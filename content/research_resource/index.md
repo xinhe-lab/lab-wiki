@@ -6,5 +6,4 @@
 
 ## Imputation
 
-- [Michigan Imputation Server](https://imputationserver.sph.umich.edu/index.html#!) A web server for fast and efficient imputation and phasin
-g of genotype data.
+- [Michigan Imputation Server](https://imputationserver.sph.umich.edu/index.html#!) A web server for fast and efficient imputation and phasing of genotype data.
