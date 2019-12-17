@@ -12,8 +12,6 @@ Unowned direcotires or directories belonging to long departed members that are n
 | CROP_seq               | zhouyf       |            |             |
 | DeepVariantAnnotation  | xinhe        |            |             |
 | Drug_resistance        | yuwenliu     |            |             |
-| ._.DS_Store            | pcarbo       |            |             |
-| .DS_Store              | pcarbo       |            |             |
 | eQTL                   | nwknoblauch  |            |             |
 | For_Kevin_Luo          | yuwenliu     |            |             |
 | genomic_annotation     | nwknoblauch  |            |             |
@@ -37,7 +35,6 @@ Unowned direcotires or directories belonging to long departed members that are n
 | ptb                    | jeanm        |            |             |
 | public_html            | pcarbo       |            |             |
 | quota_info             | nwknoblauch  |            |             |
-| .Rhistory              | yuwenliu     |            |             |
 | share                  | nwknoblauch  |            |             |
 | shared_data            | xinhe        |            |             |
 | shengqian              | shengqian    |            |             |
