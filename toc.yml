@@ -64,17 +64,6 @@
 
 ##
 - divider: true
-- header: Tutorials
-
-- title: Computing
-  url: /computing_tutorial/index
-  not_numbered: true
-- title: Computational biology
-  url: /compbio_tutorial/index
-  not_numbered: true
-
-##
-- divider: true
 - header: Resources
 
 - title: Learning resource
@@ -91,4 +80,15 @@
 
 - title: This and that
   url: /this_that/index
+  not_numbered: true
+
+##
+- divider: true
+- header: Tutorials
+
+- title: Computing
+  url: /computing_tutorial/index
+  not_numbered: true
+- title: Computational biology
+  url: /compbio_tutorial/index
   not_numbered: true
