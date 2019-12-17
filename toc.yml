@@ -58,6 +58,9 @@
   - title: Sharing guidelines
     url: /shared_computing/sharing-guideline
     not_numbered: true
+  - title: RCC Directories
+    url: /shared_computing/rcc_directories
+    not_numbered: true
 
 ##
 - divider: true
