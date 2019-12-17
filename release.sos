@@ -28,7 +28,7 @@ bash: expand = '${ }'
 	rsync -auz --delete ${src}/* --exclude "*.bib" ${workdir}/content/
 	rsync -auz --delete --ignore-missing-args ${src}/*.bib  ${workdir}/_bibliography
 	cp toc.yml ${workdir}/_data
-	cp _config.yml ${workdir}/_config.yml
+	cp jekyll_config.yml ${workdir}/_config.yml
 
 # Rename README.md to index.md
 for x in glob.glob(f'{workdir}/content/*/README.md'):
