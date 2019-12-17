@@ -7,15 +7,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Home</title>
+  <title>GWAS Summary Statistics</title>
   <meta name="description" content="">
 
-  <link rel="canonical" href="https://xinhe-lab.github.io/lab-wiki/welcome.html">
+  <link rel="canonical" href="https://xinhe-lab.github.io/lab-wiki/content/project_resource/data/summary_statistics.html">
   <link rel="alternate" type="application/rss+xml" title="Lab Docs" href="https://xinhe-lab.github.io/lab-wiki/feed.xml">
 
-  <meta property="og:url"         content="https://xinhe-lab.github.io/lab-wiki/welcome.html" />
+  <meta property="og:url"         content="https://xinhe-lab.github.io/lab-wiki/content/project_resource/data/summary_statistics.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Home" />
+<meta property="og:title"       content="GWAS Summary Statistics" />
 <meta property="og:description" content="" />
 <meta property="og:image"       content="" />
 
@@ -25,9 +25,9 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage":
-    "https://xinhe-lab.github.io/lab-wiki/welcome.html",
+    "https://xinhe-lab.github.io/lab-wiki/content/project_resource/data/summary_statistics.html",
   "headline":
-    "Home",
+    "GWAS Summary Statistics",
   "datePublished":
     "2019-12-17T14:40:09-06:00",
   "dateModified":
@@ -442,7 +442,7 @@ initFunction(initQuery);
       
       
       <li class="c-sidebar__chapter">
-        <a class="c-sidebar__entry c-sidebar__entry--active"
+        <a class="c-sidebar__entry "
           href="/lab-wiki/welcome.html"
         >
           
@@ -637,7 +637,7 @@ initFunction(initQuery);
               
 
               <li class="c-sidebar__section">
-                <a class="c-sidebar__entry "
+                <a class="c-sidebar__entry c-sidebar__entry--active"
                   href="/lab-wiki/project_resource/data.html"
                 >
                   
@@ -824,59 +824,29 @@ initFunction(initQuery);
             
 
             <div class="c-textbook__content">
-              <h1 id="welcome-to-the-lab">Welcome to the lab!</h1>
+              <h2 id="gwas-summary-statistics">GWAS Summary Statistics</h2>
 
-<p>Internal documentation for the lab. To contribute please edit files under</p>
+<p>A large collection of GWAS summary statistics from different sources</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- public
-- private
-</code></pre></div></div>
+<h3 id="contact">Contact</h3>
+<p>Jean Morrison (morrison.jeanv@gmail.com)</p>
 
-<p>and the sidebar navigation menu in:</p>
+<h3 id="location">Location</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- toc.yml
-</code></pre></div></div>
+<p>RCC: 
+<code class="language-plaintext highlighter-rouge">/project2/compbio/gwas_summary_statistics</code></p>
 
-<h2 id="preview-your-changes">Preview your changes</h2>
+<h3 id="source">Source</h3>
 
-<p>To preview changes before you push, you need to <a href="https://xinhe-lab.github.io/lab-wiki/orientation/jupyter-setup.html#install-docker">install docker</a>, then run from <code class="language-plaintext highlighter-rouge">bash</code> terminal:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run --rm --security-opt label:disable -v $(pwd):/srv/jekyll -u $(id -u):100 -p 4000:4000 --name wiki-server -t \
-	gaow/lab-wiki sos run release.sos --no-use-docker --serve
-</code></pre></div></div>
-<p>then see the changes at http://0.0.0.0:4000/lab-wiki/welcome.html. If the <code class="language-plaintext highlighter-rouge">docker run</code> command complains that port 4000 is in use, it means previously the server was not stopped properly. To fix it, type:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker stop wiki-server
-</code></pre></div></div>
-
-<h2 id="update-the-website">Update the website</h2>
-
-<p><strong>Notice: this section assumes the website is hosted under <code class="language-plaintext highlighter-rouge">docs</code> folder on github as source for github pages. But in our setup we’ve implemented an automatic deploy workflow to update the website. Therefore setup in this section do not apply and you can skip this section.</strong></p>
-
-<p>To publish contents under <code class="language-plaintext highlighter-rouge">public</code> folder to github.io, run from <code class="language-plaintext highlighter-rouge">bash</code> terminal:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run --rm --security-opt label:disable -v $(pwd):/srv/jekyll -u $(id -u):100 -t \
-	gaow/lab-wiki sos run release.sos --no-use-docker
-</code></pre></div></div>
-<p>to write the changes to the repo, add &amp; commit, and push. The updated wiki will then be displayed at https://xinhe-lab.github.io/lab-wiki</p>
-
-<h2 id="why-docker">Why docker?</h2>
-
-<p>The wiki is powered by <code class="language-plaintext highlighter-rouge">jupyterbook</code> which uses <code class="language-plaintext highlighter-rouge">jekyll</code>, a <code class="language-plaintext highlighter-rouge">ruby</code> based tool for generating static website. These tools, along with their dependencies, are not straightforward to install. Also instead of vanilla <code class="language-plaintext highlighter-rouge">jupyterbook</code> + <code class="language-plaintext highlighter-rouge">jekyll</code> some modifications are made to it (making file organization much clearer) and built into <code class="language-plaintext highlighter-rouge">release.sos</code> as a pipeline, which requires <code class="language-plaintext highlighter-rouge">sos</code> to run it (requires Python 3.6+). All these tools are built into the docker image and users will only have to run the <code class="language-plaintext highlighter-rouge">docker</code> commands above.</p>
+<p>This is a large collection of GWAS summary statistics from different sources. The directory contains a README describing 
+how to use the directory and its contents. The file gwas_info.csv contains information about each directory/data set. 
+As stated in the README, directories that do not end with <code class="language-plaintext highlighter-rouge">_mod</code> should only contain files that have been downloaded, not 
+processed files. The <code class="language-plaintext highlighter-rouge">standard_formats</code> subdirectory contains data files that have been processed into particular formats.
+Currently it contains files in “cause” format.</p>
 
               <nav class="c-page__nav">
   
-    
-    <a id="js-page__nav__prev" class="c-page__nav__prev" href="">
-      〈 <span class="u-margin-right-tiny"></span> 
-    </a>
-  
 
-  
-    
-    <a id="js-page__nav__next" class="c-page__nav__next" href="/lab-wiki/orientation/index.html">
-      Orientation <span class="u-margin-right-tiny"></span> 〉
-    </a>
   
 </nav>
 
