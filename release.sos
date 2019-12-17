@@ -55,30 +55,23 @@ docker_build: workdir = workdir, tag = f'{getpass.getuser()}/jekyll-book'
 	COPY Gemfile .
 	RUN gem install bundle && bundle install
 
-[run_jekyll_image]
+[run_jekyll_image_1]
 depends: executable('docker')
 bash:  workdir = workdir, expand = "${ }"
 	docker container stop $(docker container ls -q --filter ancestor=${getpass.getuser()}/jekyll-book) &> /dev/null || true
 	docker run --rm --security-opt label:disable \
    		-v `pwd`:/srv/jekyll \
-   		${'-p 4000:4000' if serve else ''} -it -u 1000:1000 \
+   		${'-p 4000:4000 --name wiki-server' if serve else ''} -it -u 1000:1000 \
    		${getpass.getuser()}/jekyll-book \
 		 bundle exec jekyll ${'build' if not serve else 'serve --host 0.0.0.0'}
 
-[run_jekyll]
+[run_jekyll_1]
 depends: executable('bundle')
 bash:  workdir = workdir, expand = "${ }"
  	bundle exec jekyll ${'build' if not serve else 'serve --host 0.0.0.0'}
 
-
-[make_site]
-stop_if(serve)
-depends: executable('rsync')
-bash: expand = '${ }'
-	mkdir -p ${htmldir}
-	rsync -auz --delete --exclude content ${workdir}/_site/* ${htmldir}/
-	rsync -auz --delete --ignore-missing-args ${src}/external ${htmldir}/
-	rm -f ${htmldir}/runtime.txt
+[run_jekyll_2, run_jekyll_image_2]
+bash:  workdir = workdir, expand = "${ }"
 	echo '''
 	<!DOCTYPE html>
 	<html lang="en-US">
@@ -91,7 +84,15 @@ bash: expand = '${ }'
   	<h1>Redirecting&hellip;</h1>
   	<a href="${base_url}/welcome">Click here if you are not redirected.</a>
 	</html>
-	''' > ${htmldir}/index.html
+	''' > _site/index.html
+
+[make_site]
+depends: executable('rsync')
+bash: expand = '${ }'
+	mkdir -p ${htmldir}
+	rsync -auz --delete --exclude content ${workdir}/_site/* ${htmldir}/
+	rsync -auz --delete --ignore-missing-args ${src}/external ${htmldir}/
+	rm -f ${htmldir}/{runtime.txt,Makefile}
 	echo "Deployed to ${htmldir}/ folder"
 
 [clean]
@@ -110,4 +111,5 @@ if (not use_docker):
 else:
 	sos_run('make_jekyll_image')
 	sos_run('run_jekyll_image')
+stop_if(serve or len(htmldir)==0)
 sos_run('make_site')
