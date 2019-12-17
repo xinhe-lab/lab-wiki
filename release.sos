@@ -104,7 +104,7 @@ bash: expand = True
 	rm -rf {workdir} {htmldir}
 
 [default_1]
-bash: workdir = f'{src}/project_resource'
+bash: workdir = f'{src}/shared_computing'
 	python3 toc.py data/*.md -o data.md -t "Data Resources"
 
 [default_2]

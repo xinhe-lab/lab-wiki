@@ -43,12 +43,15 @@
   - title: Project repos
     url: /project_resource/project
     not_numbered: true
-  - title: Prelim. explorations
-    url: /project_resource/investigation
-    not_numbered: true
   - title: Pipelines & workflows
     url: /project_resource/pipeline
     not_numbered: true
+
+- title: Computing resources
+  url: /shared_computing/index
+  not_numbered: true
+  expand_sections: true
+  sections:
   - title: Data resources
     url: /project_resource/data
     not_numbered: true
@@ -73,6 +76,10 @@
 
 - title: Learning resource
   url: /learning_center/index
+  not_numbered: true
+
+- title: Research resource
+  url: /research_resource/index
   not_numbered: true
 
 - title: Productivity tips
