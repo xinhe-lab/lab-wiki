@@ -34,7 +34,7 @@ def get_toc(files):
     for item in files:
         if item in env.exclude:
             continue
-        lines = [x.strip() for x in open(item).readlines()]
+        lines = [x.strip() for x in open(item).readlines() if x.strip()]
         name = lines[0].strip('#').strip()
         res[name] = [item]
         for line in lines[1:]:
