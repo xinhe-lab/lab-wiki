@@ -1,4 +1,4 @@
-# lab-resource
+# Welcome to the lab!
 
 Internal documentation for the lab. To contribute please edit files under
 
