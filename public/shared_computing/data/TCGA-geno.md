@@ -5,7 +5,6 @@ The legacy archive of the [GDC](https://portal.gdc.cancer.gov/legacy-archive/sea
 ### Location
 
 Genotypes: `/project2/xinhe/TCGA_genotypes/` 
-
 PLINK files: `TCGA_ALL.ped`, `snp6_all.map`
 
 
