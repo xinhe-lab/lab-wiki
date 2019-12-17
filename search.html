@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+
+  <title>Search the site</title>
+  <meta name="description" content="">
+
+  <link rel="canonical" href="http://0.0.0.0:4000/lab-wiki/search">
+  <link rel="alternate" type="application/rss+xml" title="Lab Docs" href="http://0.0.0.0:4000/lab-wiki/feed.xml">
+
+  <meta property="og:url"         content="http://0.0.0.0:4000/lab-wiki/search" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Search the site" />
+<meta property="og:description" content="" />
+<meta property="og:image"       content="" />
+
+
+  <script type="application/ld+json">
+  {
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage":
+    "http://0.0.0.0:4000/lab-wiki/search",
+  "headline":
+    "Search the site",
+  "datePublished":
+    "2019-12-17T11:05:49-06:00",
+  "dateModified":
+    "2019-12-17T11:05:49-06:00",
+  "description":
+    "",
+  "author": {
+    "@type": "Person",
+    "name": "Gao Wang"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Data 100 at UC Berkeley",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://0.0.0.0:4000/lab-wiki",
+      "width": 60,
+      "height": 60
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "http://0.0.0.0:4000/lab-wiki",
+    "height": 60,
+    "width": 60
+  }
+}
+
+  </script>
+  <link rel="stylesheet" href="/lab-wiki/assets/css/styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css ">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#efae0a"> -->
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#233947">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="/lab-wiki/images/favicon.ico">
+
+  <!-- MathJax Config -->
+  <!-- Allow inline math using $ and automatically break long math lines -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    CommonHTML: {
+        linebreaks: {
+            automatic: true,
+        },
+    },
+});
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML' async></script>
+
+  <!-- DOM updating function -->
+  <script>
+const runWhenDOMLoaded = cb => {
+  if (document.readyState != 'loading') {
+    cb()
+  } else if (document.addEventListener) {
+    document.addEventListener('DOMContentLoaded', cb)
+  } else {
+    document.attachEvent('onreadystatechange', function() {
+      if (document.readyState == 'complete') cb()
+    })
+  }
+}
+
+// Helper function to init things quickly
+initFunction = function(myfunc) {
+  runWhenDOMLoaded(myfunc);
+  document.addEventListener('turbolinks:load', myfunc);
+};
+</script>
+
+  <!-- Define some javascript variables that will be useful in other javascript -->
+  <script>
+    const site_basename = '/lab-wiki';
+  </script>
+
+  <!-- Add AnchorJS to let headers be linked -->
+  <script src="/lab-wiki/assets/js/anchor.min.js"  type="text/javascript"></script>
+  <script>
+
+initFunction(function () {
+    anchors.add("main h1, main h2, main h3, main h4")
+});
+
+</script>
+
+  <!-- Include Turbolinks to make page loads fast -->
+  <!-- https://github.com/turbolinks/turbolinks -->
+  <script src="/lab-wiki/assets/js/turbolinks.js" async></script>
+  <meta name="turbolinks-cache-control" content="no-cache">
+
+  <!-- Load nbinteract for widgets -->
+  
+
+  <!-- Load Thebelab for interactive widgets -->
+  <!-- Include Thebelab for interactive code if it's enabled -->
+
+
+
+  <!-- Load the auto-generating TOC -->
+  <script src="/lab-wiki/assets/js/tocbot.min.js"  type="text/javascript"></script>
+  <script>
+var initToc = function () {
+  tocbot.init({
+    tocSelector: 'nav.onthispage',
+    contentSelector: '.c-textbook__content',
+    headingSelector: 'h2, h3',
+    orderedList: false,
+    collapseDepth: 6,
+    listClass: 'toc__menu',
+    activeListItemClass: "",  // Not using
+    activeLinkClass: "", // Not using
+  });
+  tocbot.refresh();
+}
+initFunction(initToc);
+</script>
+
+  <!-- Google analytics -->
+  <script src="/lab-wiki/assets/js/ga.js" async></script>
+
+  <!-- Clipboard copy button -->
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" async></script>
+
+  <!-- Load JS that depends on site variables -->
+  <script>
+/**
+ * Set up copy/paste for code blocks
+ */
+const codeCellId = index => `codecell${index}`
+
+const clipboardButton = id =>
+  `<a id="copy-button-${id}" class="btn copybtn o-tooltip--left" data-tooltip="Copy" data-clipboard-target="#${id}">
+    <img src="/lab-wiki/assets/images/copy-button.svg" alt="Copy to clipboard">
+  </a>`
+
+// Clears selected text since ClipboardJS will select the text when copying
+const clearSelection = () => {
+  if (window.getSelection) {
+    window.getSelection().removeAllRanges()
+  } else if (document.selection) {
+    document.selection.empty()
+  }
+}
+
+// Changes tooltip text for two seconds, then changes it back
+const temporarilyChangeTooltip = (el, newText) => {
+  const oldText = el.getAttribute('data-tooltip')
+  el.setAttribute('data-tooltip', newText)
+  setTimeout(() => el.setAttribute('data-tooltip', oldText), 2000)
+}
+
+const addCopyButtonToCodeCells = () => {
+  // If ClipboardJS hasn't loaded, wait a bit and try again. This
+  // happens because we load ClipboardJS asynchronously.
+  if (window.ClipboardJS === undefined) {
+    setTimeout(addCopyButtonToCodeCells, 250)
+    return
+  }
+
+  const codeCells = document.querySelectorAll('div.c-textbook__content > div.highlighter-rouge > div.highlight > pre, div.input_area pre')
+  codeCells.forEach((codeCell, index) => {
+    const id = codeCellId(index)
+    codeCell.setAttribute('id', id)
+    if (document.getElementById("copy-button" + id) == null) {
+      codeCell.insertAdjacentHTML('afterend', clipboardButton(id));
+    }
+  })
+
+  const clipboard = new ClipboardJS('.copybtn')
+  clipboard.on('success', event => {
+    clearSelection()
+    temporarilyChangeTooltip(event.trigger, 'Copied!')
+  })
+
+  clipboard.on('error', event => {
+    temporarilyChangeTooltip(event.trigger, 'Failed to copy')
+  })
+
+  // Get rid of clipboard before the next page visit to avoid memory leak
+  document.addEventListener('turbolinks:before-visit', () =>
+    clipboard.destroy()
+  )
+}
+
+initFunction(addCopyButtonToCodeCells);
+</script>
+
+
+  <!-- Hide cell code -->
+  <script>
+    /**
+    Add buttons to hide code cells
+    */
+
+
+    var setCodeCellVisibility = function (inputField, kind) {
+        // Update the image and class for hidden
+        var id = inputField.getAttribute('data-id');
+        var codeCell = document.querySelector(`#${id} div.highlight`);
+
+        if (kind === "visible") {
+            codeCell.classList.remove('hidden');
+            inputField.checked = true;
+        } else {
+            codeCell.classList.add('hidden');
+            inputField.checked = false;
+        }
+    }
+
+    var toggleCodeCellVisibility = function (event) {
+        // The label is clicked, and now we decide what to do based on the input field's clicked status
+        if (event.target.tagName === "LABEL") {
+            var inputField = event.target.previousElementSibling;
+        } else {
+            // It is the span inside the target
+            var inputField = event.target.parentElement.previousElementSibling;
+        }
+
+        if (inputField.checked === true) {
+            setCodeCellVisibility(inputField, "visible");
+        } else {
+            setCodeCellVisibility(inputField, "hidden");
+        }
+    }
+
+
+    // Button constructor
+    const hideCodeButton = id => `<input class="hidebtn" type="checkbox" id="hidebtn${id}" data-id="${id}"><label title="Toggle cell" for="hidebtn${id}" class="plusminus"><span class="pm_h"></span><span class="pm_v"></span></label>`
+
+    var addHideButton = function () {
+        // If a hide button is already added, don't add another
+        if (document.querySelector('div.hidecode input') !== null) {
+            return;
+        }
+
+        // Find the input cells and add a hide button
+        document.querySelectorAll('div.input_area').forEach(function (item, index) {
+            if (!item.classList.contains("hidecode")) {
+                // Skip the cell if it doesn't have a hidecode class
+                return;
+            }
+
+            const id = codeCellId(index)
+            item.setAttribute('id', id);
+            // Insert the button just inside the end of the next div
+            item.querySelector('div').insertAdjacentHTML('beforeend', hideCodeButton(id))
+
+            // Set up the visibility toggle
+            hideLink = document.querySelector(`#${id} div.highlight + input + label`);
+            hideLink.addEventListener('click', toggleCodeCellVisibility)
+        });
+    }
+
+
+    // Initialize the hide buttos
+    var initHiddenCells = function () {
+        // Add hide buttons to the cells
+        addHideButton();
+
+        // Toggle the code cells that should be hidden
+        document.querySelectorAll('div.hidecode input').forEach(function (item) {
+            setCodeCellVisibility(item, 'hidden');
+            item.checked = true;
+        })
+    }
+
+    initFunction(initHiddenCells);
+
+</script>
+
+  <!-- Load custom website scripts -->
+  <script src="/lab-wiki/assets/js/scripts.js" async></script>
+
+  <!-- Load custom user CSS and JS  -->
+  <script src="/lab-wiki/assets/custom/custom.js" async></script>
+  <link rel="stylesheet" href="/lab-wiki/assets/custom/custom.css">
+
+  <!-- Update interact links w/ REST param, is defined in includes so we can use templates -->
+  
+
+  <!-- Lunr search code - will only be executed on the /search page -->
+  <script src="/lab-wiki/assets/js/lunr/lunr.min.js" type="text/javascript"></script>
+  <script>var initQuery = function() {
+  // See if we have a search box
+  var searchInput = document.querySelector('input#lunr_search');
+  if (searchInput === null) {
+    return;
+  }
+
+  // Function to parse our lunr cache
+  var idx = lunr(function () {
+    this.field('title')
+    this.field('excerpt')
+    this.field('categories')
+    this.field('tags')
+    this.ref('id')
+
+    this.pipeline.remove(lunr.trimmer)
+
+    for (var item in store) {
+      this.add({
+        title: store[item].title,
+        excerpt: store[item].excerpt,
+        categories: store[item].categories,
+        tags: store[item].tags,
+        id: item
+      })
+    }
+  });
+
+  // Run search upon keyup
+  searchInput.addEventListener('keyup', function () {
+    var resultdiv = document.querySelector('#results');
+    var query = document.querySelector("input#lunr_search").value.toLowerCase();
+    var result =
+      idx.query(function (q) {
+        query.split(lunr.tokenizer.separator).forEach(function (term) {
+          q.term(term, { boost: 100 })
+          if(query.lastIndexOf(" ") != query.length-1){
+            q.term(term, {  usePipeline: false, wildcard: lunr.Query.wildcard.TRAILING, boost: 10 })
+          }
+          if (term != ""){
+            q.term(term, {  usePipeline: false, editDistance: 1, boost: 1 })
+          }
+        })
+      });
+
+      // Empty the results div
+      while (resultdiv.firstChild) {
+        resultdiv.removeChild(resultdiv.firstChild);
+      }
+
+    resultdiv.insertAdjacentHTML('afterbegin', '<p class="results__found">'+result.length+' Result(s) found</p>');
+    for (var item in result) {
+      var ref = result[item].ref;
+      if(store[ref].teaser){
+        var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<div class="archive__item-teaser">'+
+                '<img src="'+store[ref].teaser+'" alt="">'+
+              '</div>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      else{
+    	  var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      resultdiv.insertAdjacentHTML('beforeend', searchitem);
+    }
+  });
+};
+
+initFunction(initQuery);
+</script>
+</head>
+
+  <body>
+    <!-- .js-show-sidebar shows sidebar by default -->
+    <div id="js-textbook" class="c-textbook js-show-sidebar">
+      
+
+
+
+<nav id="js-sidebar" class="c-textbook__sidebar">
+  <a href="https://xinhe-lab.github.io/lab-wiki"><img src="/lab-wiki/images/logo.png" class="textbook_logo" id="sidebar-logo" data-turbolinks-permanent/></a>
+  <h2 class="c-sidebar__title">Lab Docs</h2>
+  <ul class="c-sidebar__chapters">
+    
+      
+      
+        <li class="c-sidebar__chapter"><a class="c-sidebar__entry" href="/lab-wiki/search.html"><img src="/lab-wiki/images/search.svg" alt="Search The Site"></a></li>
+        
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/lab-wiki/welcome.html"
+        >
+          
+          Home
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/lab-wiki/orientation/index.html"
+        >
+          
+          Orientation
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections ">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/lab-wiki/orientation/5m-git.html"
+                >
+                  
+                  5 minutes git
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/lab-wiki/orientation/github-issues.html"
+                >
+                  
+                  Use github issues
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/lab-wiki/orientation/debian-setup.html"
+                >
+                  
+                  Debian based Linux setup
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/lab-wiki/orientation/jupyter-setup.html"
+                >
+                  
+                  Jupyter and SoS suite setup
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/lab-wiki/project_resource/index.html"
+        >
+          
+          Projects
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections ">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/lab-wiki/project_resource/project.html"
+                >
+                  
+                  Project repos
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/lab-wiki/project_resource/investigation.html"
+                >
+                  
+                  Prelim. explorations
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/lab-wiki/project_resource/pipeline.html"
+                >
+                  
+                  Pipelines & workflows
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/lab-wiki/project_resource/data.html"
+                >
+                  
+                  Data resources
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/lab-wiki/project_resource/sharing-guideline.html"
+                >
+                  
+                  Sharing guidelines
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+        <li class="c-sidebar__divider"></li>
+        
+      
+      
+        <li><h2 class="c-sidebar__title">Tutorials</li>
+        
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/lab-wiki/computing_tutorial/index.html"
+        >
+          
+          Computing
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/lab-wiki/compbio_tutorial/index.html"
+        >
+          
+          Computational biology
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+        <li class="c-sidebar__divider"></li>
+        
+      
+      
+        <li><h2 class="c-sidebar__title">Resources</li>
+        
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/lab-wiki/learning_center/index.html"
+        >
+          
+          Learning resource
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/lab-wiki/productivity_tips/index.html"
+        >
+          
+          Productivity tips
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/lab-wiki/this_that/index.html"
+        >
+          
+          This and that
+        </a>
+
+        
+      </li>
+
+      
+    
+  </ul>
+  <p class="sidebar_footer">Copyright (c) 2019 <br> <a href="http://xinhelab.org">Xin He Lab</a>.<br>Distributed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA license</a>.<br></p>
+</nav>
+
+      
+      <main class="c-textbook__page" tabindex="-1">
+          <div class="o-wrapper">
+            <div class="c-sidebar-toggle">
+  <!-- We show the sidebar by default so we use .is-active -->
+  <button
+    id="js-sidebar-toggle"
+    class="hamburger hamburger--arrowalt is-active"
+  >
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+    <span class="c-sidebar-toggle__label">Toggle Sidebar</span>
+  </button>
+</div>
+
+            
+
+            <div class="c-textbook__content">
+              <div class="search-content__inner-wrap">
+    <input type="text" id="lunr_search" class="search-input" tabindex="-1" placeholder="'Enter your search term...''" />
+    <div id="results" class="results"></div>
+</div>
+
+<script>
+    // Add the lunr store since we will now search it
+    var store = [{
+        "title": "Computational biology",
+        
+        "excerpt":
+            " ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/compbio_tutorial/index.html",
+        "teaser":null},{
+        "title": "Computing",
+        
+        "excerpt":
+            "Programming      A list of must-know shell commands.   OpenMP C++ demo.   Software tools      A quick tutorial on nextflow (workflow tool).  ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/computing_tutorial/index.html",
+        "teaser":null},{
+        "title": "openmp_cpp",
+        
+        "excerpt":
+            "OpenMP in C++, a toy example Example Create a file test.cpp #include &lt;iostream&gt; #include &lt;thread&gt; #include &lt;chrono&gt; #include &lt;omp.h&gt; #include &lt;vector&gt; #include &lt;stdlib.h&gt; int f(int i) { std::this_thread::sleep_for (std::chrono::seconds(1)); return i; } int main(int argc, char* argv[]) { int n_threads = atoi(argv[1]); std::cout &lt;&lt; n_threads &lt;&lt; \" threads ...\" &lt;&lt; std::endl; std::vector&lt;int&gt; M(25); #pragma omp parallel for num_threads(n_threads) for (int i=0; i&lt;25; i++) M[i] = f(i); return 0; } and compile with g++ test.cpp -fopenmp -std=c++11 -o test.exe and run it: [GW] time ./test.exe 1 1 threads ... real 0m25.004s user 0m0.000s sys 0m0.000s [GW] time ./test.exe 2 2 threads...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/computing_tutorial/openmp_cpp.html",
+        "teaser":null},{
+        "title": "shell-must-know",
+        
+        "excerpt":
+            "A short list of “must know” shell commands   Basic   pwd cd; cd -; cd .. ls; ls -lhrt mkdir; mkdir -p mv cp; cp -a cat; zcat less; zless head; tail wc -l history top; htop chmod; chmod +x tar xzvf; tar czvf; tar xjvf; tar cjvf   Intermediate   grep; grep -r; grep -n; grep -v sort uniq find tree du -h rsync; rsync -auzP   Advanced (yet commonly used!)   | awk sed   Contact  Gao Wang  ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/computing_tutorial/shell-must-know.html",
+        "teaser":null},{
+        "title": "comp-genomics-2016",
+        
+        "excerpt":
+            "Computational genomics reading list (version 2016) A list compiled by Xin He at UChicago in 2016. Sequence Analysis Motif discovery Background What are DNA sequence motifs? NBT, 2006 How does DNA sequence motif discovery work? NBT, 2006 Paper Fitting a mixture model by expectation maximization to discover motifs in biopolymers, ISMB, 2004 (MEME) Profile HMM Background Eddy, Hidden Markov Models, Current Opinion in Structural Biology, 1996 DEKM, Introduction in Chapter 5. Paper DEKM Chapter 5, 5.1-5.4. Dynamic Programming Introduction to Algorithms, CLRS, 3^rd^ edition. Sections: 15.1-15.3. Remark: focus on the main recurrence equations, (15.2) and (15.7). Pay less attention to...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/learning_center/comp-genomics-2016.html",
+        "teaser":null},{
+        "title": "compbio-books",
+        
+        "excerpt":
+            "Computational biology books   Bioinformatics      Biological Sequence Analysis: Probabilistic Models of Proteins and Nucleic Acids            Richard Durbin, Sean R. Eddy, Anders Krogh, Graeme Mitchison (DEKM)           An Introduction to Bioinformatics Algorithms            Neil C. Jones and Pavel A. Pevzner          ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/learning_center/compbio-books.html",
+        "teaser":null},{
+        "title": "Learning resource",
+        
+        "excerpt":
+            "Learning material Relevant books, papers, lectures and other learning materials online. Books Text books Statistics backgroud most relevant to our research. Computational biology Popular science books Papers Keep up with literature A list of relevant journals How to keep up with the scientific literature (a 2016 blogpost) A distilled version by Gao Wang General collections Nature’s Scitable PLoS Compbio Education collection Nature Biotech Computational Biology collection Computational genomics papers, a list compiled by Xin He in 2016 Statistical Genetics NRG GWAS colection Statistical genetics papers Lectures Online courses &amp; tutorials Statistics Intro to statistics by Matthew Stephens with some additional...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/learning_center/index.html",
+        "teaser":null},{
+        "title": "journals",
+        
+        "excerpt":
+            "Relevant journals   Generic      Science   Nature   Nature Genetics   Nature Biotech   Nature Method   Nature Communication   eLife   F1000 Research   Genetics      American Journal of Human Genetics   PLOS Genetics   Genome Biology   Genome Research   Genetics   Genetic Epidemiology   European Journal of Human Genetics   BMC Genomics   Computational Biology      Bioinformatics   PLOS Computational Biology   Biostatistics   NAR   BMC Bioinformatics   Statistics      Biostatistics   AoAS   JASA   JRSS  ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/learning_center/journals.html",
+        "teaser":null},{
+        "title": "keep-up-literature-2016",
+        
+        "excerpt":
+            "Keep up with literature Notes from this post. Reading techniques Use an app. I have been using Read RXMD. Others have mentioned PubCrawler, Google Scholar (updates feature), alerts from journals, Twitter, Pubchase, TOC of favorite journal, talk to others, readcube. Every morning, read abstracts. Save some relevant ones for later to read deeper. Every Friday use a regular time block to read in details of the most relevant ones. Blog about it or Twit it within 140 characters. Download all papers and read them in chunks. Summer is best time for reading. Keep organized and able to backtrack is most...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/learning_center/keep-up-literature-2016.html",
+        "teaser":null},{
+        "title": "statgen-papers",
+        
+        "excerpt":
+            "Statistical genetics papers Introductory Bayesian statistical methods for genetic association studies. [NRG, 2009] The role of regulatory variation in complex traits and disease [NRG, 2015] Dissecting the genetics of complex traits using summary association statistics [NRG, 2017] From genome-wide associations to candidate causal variants by statistical fine-mapping [NRG, 2018] The personal and clinical utility of polygenic risk scores [NRG, 2018] GWAS Genetic mapping in human disease. [Science, 2008] Genome-wide association studies for complex traits: consensus, uncertainty and challenges. [NRG, 2008] Genome-wide association study of 14,000 cases of seven common diseases and 3,000 shared controls. [WTCCC paper, Nature, 2007] How to...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/learning_center/statgen-papers.html",
+        "teaser":null},{
+        "title": "stats-background",
+        
+        "excerpt":
+            "Introductory books on statistics Statistical Modeling and Machine Learning for Molecular Biology By Alan Moses Bayesian Data analysis (3rd Edition) By Gelman et al. Chapters 1-3, 5. Bayesian statistics background Chapters 10-11. MCMC Chapter 14.15: Bayesian regression Machine Learning: a probabilistic perspective Chapter 4. Multivariate normal distributions Chapter 5. Bayesian model selection Chapters 7, 8, 9, 13: regression models Chapter 11. mixture model and EM Chapter 12. Latent linear models Chapter 17. HMM. Chapter 21. Variational inference Chapter 24: MCMC. Chapter 25. Clustering Data Analysis for the Life Sciences with R By Rafa Irizzary Statistical Inference (2nd Edition) By Casella...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/learning_center/stats-background.html",
+        "teaser":null},{
+        "title": "5 minutes git",
+        
+        "excerpt":
+            "5 Minutes git tutorial What is git? Git is a distributed version control system that not only automatically records the changes of each file, but also allows colleagues to collaborate and edit, so that users do not need to manage a bunch of files, and do not need to transfer files from / to colleagues. It keeps track of any change to any files (git diff, git log and git blame) in your project. It allows you to easily see history of modifications of a file, or restore the file to any time point in the history. In the context...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/orientation/5m-git.html",
+        "teaser":null},{
+        "title": "Debian based Linux setup",
+        
+        "excerpt":
+            "Software installation on Debian based system Some suggested apt-get commands Most software should be installed via conda especially for bioinformatics (see later). Here are a few system-wide software better installed via apt-get. They work for Debian 9 or distributions based on Debian 9 (have not tested them on Ubuntu): sudo apt-get install git curl unzip gzip bzip2 ca-certificates build-essential gfortran libgfortran-6-dev libgomp1 libgsl-dev libatlas3-base liblapack-dev libcurl4-openssl-dev libssl-dev sudo apt-get install openssh-server sudo apt-get install vim vim-gtk3 sudo apt-get install trash-cli sudo apt-get install texlive-full python-pygments fonts-wqy-microhei ttf-wqy-microhei fonts-wqy-zenhei ttf-wqy-zenhei pandoc graphviz libmagickwand-dev nodejs sudo apt-get install smartmontools lm-sensors htop sudo...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/orientation/debian-setup.html",
+        "teaser":null},{
+        "title": "git-tips",
+        
+        "excerpt":
+            "Discuss about merge conflict You can run into a merge conflict when you commit a change and someone else has made changes to the file. When you face this type of merge conflicts there are two options. Clean the file manually Open the file using a text editor and modify the conflicting parts of the file that will appear marked with &gt;&gt;&gt; &lt;&lt;&lt;. The file won’t be usable unless you edit it to resolve these conflicts. Then commit and push this new file into the repository. Remove the local copy of the GitHub repository Make sure your local clone does...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/orientation/git-tips.html",
+        "teaser":null},{
+        "title": "Use github issues",
+        
+        "excerpt":
+            "How to write a github issue Issues for discussion, new ideas, exchange of thoughts First, describe your motivation – why are you proposing something? what’s wrong with existing solution? Intuition behand your proposed solution – why do you think it will work? Feasibility of your solution – how long does it take to implement? Is it simple enough as a proof of concept that can be further developed into more sophisticated solutions? Issues for bug reports This is when you think you are doing it correctly as instructed in the documentation, but the code does not work as expected –...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/orientation/github-issues.html",
+        "teaser":null},{
+        "title": "Orientation",
+        
+        "excerpt":
+            "Welcome to the lab! This page is created specifically for new comers to the lab. Project resources For a quick overview of what we are up to, here is a curated list of project repositories of the lab. They are contributed by different past and current members in various styles, but are all meant to follow good computational research practice that makes our work easy to share and reproduce. Orientation tasks Task 1: Add yourself to our slack workspace You should join our slack workspace at xinhe-lab.slack.com. Please ask Xin to send you an invite. After you are added to...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/orientation/index.html",
+        "teaser":null},{
+        "title": "Jupyter and SoS suite setup",
+        
+        "excerpt":
+            "JupyterLab + SoS Suite setup Install miniconda3 the Python development environment We recommend using miniconda over anaconda and customize your installation as needed after install this minimal version of conda. To install please follow instructions on this page. Please go for miniconda3. After you successfully installed the latest version of miniconda3, please follow prompts below to setup a JupyterLab + SoS Suite environment for daily computing. Jupyter Notebook kernels Bash kernel pip install bash_kernel --no-cache-dir python -m bash_kernel.install Markdown kernel pip install markdown-kernel --no-cache-dir python -m markdown_kernel.install R kernel R --slave -e \"install.packages('IRkernel'); IRkernel::installspec()\" A ipynb to docx converter This...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/orientation/jupyter-setup.html",
+        "teaser":null},{
+        "title": "Productivity tips",
+        
+        "excerpt":
+            "Computing devices      Setup and run Jupyter server on cluster.   Connect from one computer to another.   Software development tips      Automatic package versioning in R for packages you develop.   Command line tools      Monitor memory usage for a command line program.  ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/productivity_tips/index.html",
+        "teaser":null},{
+        "title": "remote-computer",
+        
+        "excerpt":
+            "Connect from your personal computer to another computer This is a typical user case when we need to work with a computer server to perform data analysis etc but not physically in front of the machine. Rather we connect to it from another machine, say a personal laptop. Here we introduce in brief a few methods to connect and work with remote computers. I’ll call it “host” for the remote computer, and “guest” for the computer through which you connect to the host. Through command shell Get IP address First, obtain the IP address or domain name of the host...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/productivity_tips/remote-computer.html",
+        "teaser":null},{
+        "title": "Data resources",
+        
+        "excerpt":
+            "Data Resources | | | | | | | | | | |:-: |:-: |:-: |:-: |:-: |:-: |:-: |:-: |:-: | | # | A | B | C | D | E | F | G | H | | I | J | K | L | M | N | O | P | Q | | R | S | T | U | V | W | X | Y | Z | G GIANT Adult Height GWAS Summary Data and Estimated LD. The single-SNP summary statistics and estimated LD matrices for adult human...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/project_resource/data.html",
+        "teaser":null},{
+        "title": "GIANT_Height_GWAS",
+        
+        "excerpt":
+            "GIANT Adult Height GWAS Summary Data and Estimated LD The single-SNP summary statistics and estimated LD matrices for adult human height (Wood et al, 2014). Contact Jane Doe Location PPS server: /mnt/gluster/data/internal_supp/giant_height_2014 Source The processed data are derived from the following datasets. GWAS summary statitics: https://www.broadinstitute.org/collaboration/giant/index.php 1000 Genomes EUR haplotypes (phase 1): http://csg.sph.umich.edu//abecasis/MaCH/download/1000G.2012-03-14.html HapMap CEU genetic maps (rel#24): https://mathgen.stats.ox.ac.uk/wtccc-software/recombination_rates/genetic_map_b36_CEU.tgz File Summary The GWAS summary data file height2014_analyzed_autosome_chr_*.txt has the following columns. MarkerName: The dbSNP Name Allele1: The 1st Allele (hg19 + strand) Allele2: The 2nd Allele (hg19 + strand) Freq.Allele1.HapMapCEU: The Allele Frequency of Allele1 in the HapMap CEU Population...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/project_resource/data/GIANT_Height_GWAS.html",
+        "teaser":null},{
+        "title": "GTEx",
+        
+        "excerpt":
+            "GTEx data   GTEx V8 from dbGaP.   Contact  Gao Wang   Location   Genotype and expression on RCC:      expression: /project2/compbio/GTEx_dbGaP/GTEx_Analysis_2017-06-05_v8/rna_seq   expression (normalized): /project2/compbio/GTEx_dbGaP/GTEx_Analysis_2017-06-05_v8/eqtl/GTEx_Analysis_v8_eQTL_expression_matrices   genotype: /project2/compbio/GTEx_dbGaP/GTEx_Analysis_2017-06-05_v8/genotypes/WGS/variant_calls   cis-eQTL analysis: /project2/compbio/GTEx_dbGaP/GTEx_Analysis_2017-06-05_v8/eqtl   Analysis results on RCC:      DAP-G fine-mapping: /project2/compbio/GTEx_eQTL/independent_eQTL/DAPG (filtered by PIP=0.1)   some trans-eQTL results: /project2/compbio/GTEx_eQTL/trans-eQTL/   Source   Data are downloaded from dbGaP. If you need additional files for example BAM file for a particular sample you can ask people in the lab who have access to GTEx data on dbGaP (Gao and Peter for now).   File summary   See /project2/compbio/GTEx_dbGaP/README.md for a catelog.  ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/project_resource/data/GTEx.html",
+        "teaser":null},{
+        "title": "TEMPLATE",
+        
+        "excerpt":
+            "Name of the data set   Contact  Location  Source  File summary  Analysis notes (if any)  ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/project_resource/data/TEMPLATE.html",
+        "teaser":null},{
+        "title": "dbGaP-download",
+        
+        "excerpt":
+            "Download data from dbGaP A brief documentation to how dbGaP website is accessed &amp; how to download data. Contact Gao Wang, Dongyue Xie Data directory Files downloaded from dbGaP need to be decypted &amp; extracted to usable formats. Files are first to be downloaded to some temporary directory, then processed and saved into a more permanent location. It is therefore suggested that on RCC Midway, for example, you download data to a temporary folder under /scratch/midway2/$USER then extract them to shared computational space /project2/mstephens/ for sharing with the group. This documentation assumes this workflow. dbGaP access Visit dbGaP, click on...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/project_resource/dbGaP-download.html",
+        "teaser":null},{
+        "title": "Projects",
+        
+        "excerpt":
+            "Lab project resources      Lab projects repo, links to ongoing / past research projects.   Investigations, links to preliminary studies on open questions yet to be made into projects.   Analysis workflows / pipelines, analysis pipelines from the lab. They should be clearly documented and reproducible.   Data resources, data inventory in our shared computing devices.   Resource sharing guidelines.  ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/project_resource/index.html",
+        "teaser":null},{
+        "title": "Prelim. explorations",
+        
+        "excerpt":
+            "Prelimilary studies      Explore how annotation helps with fine-mapping.            Gao Wang          ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/project_resource/investigation.html",
+        "teaser":null},{
+        "title": "Pipelines & workflows",
+        
+        "excerpt":
+            "Association mapping pipelines   GWAS enrichment and fine-mapping      Pipeline for enrichment and fine-mapping using annotation and GWAS summary statistics. It implements enrichment analysis via torus and fine-mapping using summary statistics and LD panel from reference genotype files via susieR, CAVIAR and FINEMAP.            Gao Wang and Min Qiao           Multivariate Adaptive Shrinkage (MASH) pipeline currently works on GTEx data. It contains a summary statistics formatting pipeline and a MASH association analysis pipeline. To see these pipelines in action, here is an example analysis on GTEx V8 European only samples.            Gao Wang          ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/project_resource/pipeline.html",
+        "teaser":null},{
+        "title": "Project repos",
+        
+        "excerpt":
+            " ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/project_resource/project.html",
+        "teaser":null},{
+        "title": "Sharing guidelines",
+        
+        "excerpt":
+            "Guideline for internal resource sharing   Add external data-set on server   It is required that for every data-set added, you should contribute a description of data to the data inventory, using this template. Here is an example contribution. A data catelog is automatically generated and published to this wiki.  ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/project_resource/sharing-guideline.html",
+        "teaser":null},{
+        "title": "chicago_museums",
+        
+        "excerpt":
+            "Museums in Chicago  ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/this_that/chicago_museums.html",
+        "teaser":null},{
+        "title": "chicago_restaurants",
+        
+        "excerpt":
+            " ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/this_that/chicago_restaurants.html",
+        "teaser":null},{
+        "title": "chinese_lunch",
+        
+        "excerpt":
+            "Chinese lunch box Joy Delivery Service There has long been a collaboration between CSSA (Chinese Students and Scholars Association) and Tangchao restaurant offering $7 lunch boxes at East lobby of GCIS building at noon. A while ago Tangchao closed their business. Now Joy Delivery service replaces Tangchao offering lunch boxes at the same time and location, and roughly the same price. I put together several of their CSSA emails into information below. How to order Personal note: I always order the same day before 10AM via text. They mostly immediately reply your text to confirm. You then show up at...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/this_that/chinese_lunch.html",
+        "teaser":null},{
+        "title": "This and that",
+        
+        "excerpt":
+            "This and that   About Chicago      Museums in Chicago.   Restaurants in Chicago.   Campus life      Chinese lunch options.  ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/this_that/index.html",
+        "teaser":null},{
+        "title": "Home",
+        
+        "excerpt":
+            "Welcome to the lab wiki!  ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/lab-wiki/welcome.html",
+        "teaser":null},]
+</script>
+              <nav class="c-page__nav">
+  
+
+  
+</nav>
+
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,27 @@
+# Introductory books on statistics
+
+- Statistical Modeling and Machine Learning for Molecular Biology
+    - By Alan Moses
+- Bayesian Data analysis (3rd Edition) 
+    - By Gelman et al. 
+    - Chapters 1-3, 5. Bayesian statistics background
+    - Chapters 10-11. MCMC
+    - Chapter 14.15: Bayesian regression
+- Machine Learning: a probabilistic perspective
+    - Chapter 4. Multivariate normal distributions
+    - Chapter 5. Bayesian model selection
+    - Chapters 7, 8, 9, 13: regression models
+    - Chapter 11. mixture model and EM
+    - Chapter 12. Latent linear models
+    - Chapter 17. HMM. 
+    - Chapter 21. Variational inference
+    - Chapter 24: MCMC. 
+    - Chapter 25. Clustering
+- [Data Analysis for the Life Sciences with R](http://www.rwdc2.com/files/rafa.pdf)
+    - By Rafa Irizzary
+- Statistical Inference (2nd Edition)
+    - By Casella and Berger
+    - An introductory book to mathematical statistics
+- Likelihood, Bayesian and MCMC methods in quantitative genetics
+    - By Sorensen and Gianola
+    - This book has many examples illustrated in quantitative genetics
