@@ -2,7 +2,7 @@
 #fileformat=SOS1.0
 
 [global]
-import os, glob, getpass
+import os, getpass
 from sos.utils import env, get_output
 parameter: workdir = 'jupyter-book'
 parameter: htmldir = 'docs'
@@ -26,13 +26,14 @@ bash: expand = '${ }'
 depends: executable('rsync'), f'{workdir}/Gemfile'
 bash: expand = '${ }'
 	rsync -auz --delete ${src}/* --exclude "*.bib" ${workdir}/content/
-	cp README.md ${workdir}/content/index.md
+	# homepage is ${src}/README.md -- currently using the global README.md
+	cp README.md ${workdir}/content/README.md
 	rsync -auz --delete --ignore-missing-args ${src}/*.bib  ${workdir}/_bibliography
 	cp toc.yml ${workdir}/_data
 	cp jekyll_config.yml ${workdir}/_config.yml
 
 # Rename README.md to index.md
-for x in glob.glob(f'{workdir}/content/*/README.md'):
+for x in path(f'{workdir}/content').rglob('README.md'):
 	os.rename(x, f'{path(x):d}/index.md')
 
 bash: expand = True
@@ -71,6 +72,7 @@ bash:  workdir = workdir, expand = "${ }"
 [run_jekyll]
 depends: executable('bundle')
 bash:  workdir = workdir, expand = "${ }"
+	${("echo 'Preview the website at: http://0.0.0.0:4000/lab-wiki/index.html; type **one** ctrl-c to stop it.'") if serve else ""}
  	bundle exec jekyll ${'build' if not serve else 'serve --host 0.0.0.0'} &> /dev/null
 
 [make_site]
