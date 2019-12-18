@@ -1,5 +1,5 @@
 This is a list of directories in `/project2/xinhe` on rcc. Please claim your directories and add a description of what they are.
-Unowned direcotires or directories belonging to long departed members that are not transferred will be deleted.
+Unowned directories or directories belonging to long departed members that are not transferred will be deleted.
 
 | directory/file         | owner        | contact | description |
 |------------------------|--------------|------------|-------------|
@@ -26,7 +26,7 @@ Unowned direcotires or directories belonging to long departed members that are n
 | lecture7-simingz       | simingz      |            |             |
 | m6A                    | kaixuan      |            |             |
 | metaxcan_model_db      | jeanm        |            |             |
-| mqiao                  | gaow         |            |             |
+| mqiao                  | gaow         | Min Qiao   | GWAS analysis for ATAC-seq paper (Zhang et al 2019); Simulation data and analysis for CNV paper (Qiao et al 2019+)|
 | NTR_data               | nwknoblauch  |            |             |
 | nwknoblauch            | nwknoblauch  |            |             |
 | project_old            | xinhe        |            |             |
