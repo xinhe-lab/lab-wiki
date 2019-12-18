@@ -65,13 +65,13 @@ bash:  workdir = workdir, expand = "${ }"
    		-v `pwd`:/srv/jekyll \
    		${'-p 4000:4000 --name wiki-server' if serve else ''} -it -u 1000:1000 \
    		${getpass.getuser()}/jekyll-book \
-		 bundle exec jekyll ${'build' if not serve else 'serve --host 0.0.0.0'} > /dev/null
+		 bundle exec jekyll ${'build' if not serve else 'serve --host 0.0.0.0'} &> /dev/null
 	${"docker stop wiki-server 2> /dev/null || true" if serve else ""}
 
 [run_jekyll]
 depends: executable('bundle')
 bash:  workdir = workdir, expand = "${ }"
- 	bundle exec jekyll ${'build' if not serve else 'serve --host 0.0.0.0'} > /dev/null
+ 	bundle exec jekyll ${'build' if not serve else 'serve --host 0.0.0.0'} &> /dev/null
 
 [make_site]
 depends: executable('rsync')
