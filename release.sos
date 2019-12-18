@@ -64,7 +64,7 @@ bash:  workdir = workdir, expand = "${ }"
 	${("echo 'Preview the website at: http://0.0.0.0:4000/lab-wiki/index.html; type **one** ctrl-c to stop it.'") if serve else ""}
 	docker run --rm --security-opt label:disable \
    		-v `pwd`:/srv/jekyll \
-   		${'-p 4000:4000 --name wiki-server' if serve else ''} -it -u 1000:1000 \
+   		${'-p 4000:4000 --name wiki-server' if serve else ''} -it -u $(id -u):0 \
    		${getpass.getuser()}/jekyll-book \
 		 bundle exec jekyll ${'build' if not serve else 'serve --host 0.0.0.0'} &> /dev/null
 	${"docker stop wiki-server 2> /dev/null || true" if serve else ""}
