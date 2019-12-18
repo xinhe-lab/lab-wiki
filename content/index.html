@@ -7,15 +7,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>stats-background</title>
+  <title>Welcome to the lab!</title>
   <meta name="description" content="">
 
-  <link rel="canonical" href="https://xinhe-lab.github.io/lab-wiki/learning_center/stats-background.html">
+  <link rel="canonical" href="https://xinhe-lab.github.io/lab-wiki/content/">
   <link rel="alternate" type="application/rss+xml" title="Lab Docs" href="https://xinhe-lab.github.io/lab-wiki/feed.xml">
 
-  <meta property="og:url"         content="https://xinhe-lab.github.io/lab-wiki/learning_center/stats-background.html" />
+  <meta property="og:url"         content="https://xinhe-lab.github.io/lab-wiki/content/" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="stats-background" />
+<meta property="og:title"       content="Welcome to the lab!" />
 <meta property="og:description" content="" />
 <meta property="og:image"       content="" />
 
@@ -25,9 +25,9 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage":
-    "https://xinhe-lab.github.io/lab-wiki/learning_center/stats-background.html",
+    "https://xinhe-lab.github.io/lab-wiki/content/",
   "headline":
-    "stats-background",
+    "Welcome to the lab!",
   "datePublished":
     "2019-12-17T20:59:10-06:00",
   "dateModified":
@@ -878,53 +878,45 @@ initFunction(initQuery);
             
 
             <div class="c-textbook__content">
-              <h1 id="introductory-books-on-statistics">Introductory books on statistics</h1>
+              <h1 id="welcome-to-the-lab">Welcome to the lab!</h1>
 
-<ul>
-  <li>Statistical Modeling and Machine Learning for Molecular Biology
-    <ul>
-      <li>By Alan Moses</li>
-    </ul>
-  </li>
-  <li>Bayesian Data analysis (3rd Edition)
-    <ul>
-      <li>By Gelman et al.</li>
-      <li>Chapters 1-3, 5. Bayesian statistics background</li>
-      <li>Chapters 10-11. MCMC</li>
-      <li>Chapter 14.15: Bayesian regression</li>
-    </ul>
-  </li>
-  <li>Machine Learning: a probabilistic perspective
-    <ul>
-      <li>Chapter 4. Multivariate normal distributions</li>
-      <li>Chapter 5. Bayesian model selection</li>
-      <li>Chapters 7, 8, 9, 13: regression models</li>
-      <li>Chapter 11. mixture model and EM</li>
-      <li>Chapter 12. Latent linear models</li>
-      <li>Chapter 17. HMM.</li>
-      <li>Chapter 21. Variational inference</li>
-      <li>Chapter 24: MCMC.</li>
-      <li>Chapter 25. Clustering</li>
-    </ul>
-  </li>
-  <li><a href="http://www.rwdc2.com/files/rafa.pdf">Data Analysis for the Life Sciences with R</a>
-    <ul>
-      <li>By Rafa Irizzary</li>
-    </ul>
-  </li>
-  <li>Statistical Inference (2nd Edition)
-    <ul>
-      <li>By Casella and Berger</li>
-      <li>An introductory book to mathematical statistics</li>
-    </ul>
-  </li>
-  <li>Likelihood, Bayesian and MCMC methods in quantitative genetics
-    <ul>
-      <li>By Sorensen and Gianola</li>
-      <li>This book has many examples illustrated in quantitative genetics</li>
-    </ul>
-  </li>
-</ul>
+<p>Internal documentation for the lab. To contribute please edit files under</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- public
+- private
+</code></pre></div></div>
+
+<p>and the sidebar navigation menu in:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- toc.yml
+</code></pre></div></div>
+
+<h2 id="preview-your-changes">Preview your changes</h2>
+
+<p>To preview changes before you push, you need to <a href="https://xinhe-lab.github.io/lab-wiki/orientation/jupyter-setup.html#install-docker">install docker</a>, then run from <code class="language-plaintext highlighter-rouge">bash</code> terminal:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run --rm --security-opt label:disable -v $(pwd):/srv/jekyll -u $(id -u):100 -p 4000:4000 --name wiki-server -t \
+	gaow/lab-wiki sos run release.sos --no-use-docker --serve
+</code></pre></div></div>
+<p>then see the changes at http://0.0.0.0:4000/lab-wiki. If the <code class="language-plaintext highlighter-rouge">docker run</code> command complains that port 4000 is in use, it means previously the server was not stopped properly. To fix it, type:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker stop wiki-server
+</code></pre></div></div>
+
+<h2 id="update-the-website">Update the website</h2>
+
+<p><strong>Notice: this section assumes the website is hosted under <code class="language-plaintext highlighter-rouge">docs</code> folder on github as source for github pages. But in our setup we’ve implemented an automatic deploy workflow to update the website. Therefore setup in this section do not apply and you can skip this section.</strong></p>
+
+<p>To publish contents under <code class="language-plaintext highlighter-rouge">public</code> folder to github.io, run from <code class="language-plaintext highlighter-rouge">bash</code> terminal:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run --rm --security-opt label:disable -v $(pwd):/srv/jekyll -u $(id -u):100 -t \
+	gaow/lab-wiki sos run release.sos --no-use-docker
+</code></pre></div></div>
+<p>to write the changes to the repo, add &amp; commit, and push. The updated wiki will then be displayed at https://xinhe-lab.github.io/lab-wiki</p>
+
+<h2 id="why-docker">Why docker?</h2>
+
+<p>The wiki is powered by <code class="language-plaintext highlighter-rouge">jupyterbook</code> which uses <code class="language-plaintext highlighter-rouge">jekyll</code>, a <code class="language-plaintext highlighter-rouge">ruby</code> based tool for generating static website. These tools, along with their dependencies, are not straightforward to install. Also instead of vanilla <code class="language-plaintext highlighter-rouge">jupyterbook</code> + <code class="language-plaintext highlighter-rouge">jekyll</code> some modifications are made to it (making file organization much clearer) and built into <code class="language-plaintext highlighter-rouge">release.sos</code> as a pipeline, which requires <code class="language-plaintext highlighter-rouge">sos</code> to run it (requires Python 3.6+). All these tools are built into the docker image and users will only have to run the <code class="language-plaintext highlighter-rouge">docker</code> commands above.</p>
 
               <nav class="c-page__nav">
   
