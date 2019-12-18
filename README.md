@@ -21,7 +21,7 @@ To preview changes before you push, you need to [install docker](https://xinhe-l
 docker run --rm --security-opt label:disable -v $(pwd):/srv/jekyll -u $(id -u):100 -p 4000:4000 --name wiki-server -t \
 	gaow/lab-wiki sos run release.sos --no-use-docker --serve
 ```
-then see the changes at http://0.0.0.0:4000/lab-wiki/welcome.html. If the `docker run` command complains that port 4000 is in use, it means previously the server was not stopped properly. To fix it, type:
+then see the changes at http://0.0.0.0:4000/lab-wiki. If the `docker run` command complains that port 4000 is in use, it means previously the server was not stopped properly. To fix it, type:
 
 ```
 docker stop wiki-server

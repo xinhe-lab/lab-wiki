@@ -8,7 +8,7 @@ parameter: workdir = 'jupyter-book'
 parameter: htmldir = 'docs'
 parameter: src = 'public'
 parameter: base_url = 'https://xinhe-lab.github.io/lab-wiki'
-# Set to True to preview it at http://0.0.0.0:4000/${workdir}/welcome.html
+# Set to True to preview it at http://0.0.0.0:4000/lab-wiki/index.html
 parameter: serve = False
 # Run docker based jekyll. Use --no-use-docker to disable it
 parameter: use_docker = True
@@ -26,7 +26,7 @@ bash: expand = '${ }'
 depends: executable('rsync'), f'{workdir}/Gemfile'
 bash: expand = '${ }'
 	rsync -auz --delete ${src}/* --exclude "*.bib" ${workdir}/content/
-	cp README.md ${workdir}/content/welcome.md
+	cp README.md ${workdir}/content/index.md
 	rsync -auz --delete --ignore-missing-args ${src}/*.bib  ${workdir}/_bibliography
 	cp toc.yml ${workdir}/_data
 	cp jekyll_config.yml ${workdir}/_config.yml
@@ -56,39 +56,22 @@ docker_build: workdir = workdir, tag = f'{getpass.getuser()}/jekyll-book'
 	COPY Gemfile .
 	RUN gem install bundle && bundle install
 
-[run_jekyll_image_1]
+[run_jekyll_image]
 depends: executable('docker')
 bash:  workdir = workdir, expand = "${ }"
 	docker container stop $(docker container ls -q --filter ancestor=${getpass.getuser()}/jekyll-book) &> /dev/null || true
-	${("echo 'Preview the website at: http://0.0.0.0:4000/lab-wiki/welcome.html; type **one** ctrl-c to stop it.'") if serve else ""}
+	${("echo 'Preview the website at: http://0.0.0.0:4000/lab-wiki/index.html; type **one** ctrl-c to stop it.'") if serve else ""}
 	docker run --rm --security-opt label:disable \
    		-v `pwd`:/srv/jekyll \
    		${'-p 4000:4000 --name wiki-server' if serve else ''} -it -u 1000:1000 \
    		${getpass.getuser()}/jekyll-book \
-		 bundle exec jekyll ${'build' if not serve else 'serve --host 0.0.0.0 > /dev/null'}
+		 bundle exec jekyll ${'build' if not serve else 'serve --host 0.0.0.0'} > /dev/null
 	${"docker stop wiki-server 2> /dev/null || true" if serve else ""}
 
-[run_jekyll_1]
+[run_jekyll]
 depends: executable('bundle')
 bash:  workdir = workdir, expand = "${ }"
  	bundle exec jekyll ${'build' if not serve else 'serve --host 0.0.0.0'}
-
-[run_jekyll_2, run_jekyll_image_2]
-output: f"{workdir}/_site/index.html"
-bash: expand = "${ }"
-	echo '''
-	<!DOCTYPE html>
-	<html lang="en-US">
-	<meta charset="utf-8">
-	<title>Redirecting&hellip;</title>
-  	<link rel="canonical" href="${base_url}/welcome">
-  	<script>location="${base_url}/welcome"</script>
-  	<meta http-equiv="refresh" content="0; url=${base_url}/welcome">
-  	<meta name="robots" content="noindex">
-  	<h1>Redirecting&hellip;</h1>
-  	<a href="${base_url}/welcome">Click here if you are not redirected.</a>
-	</html>
-	''' > ${_output}
 
 [make_site]
 depends: executable('rsync')

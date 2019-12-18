@@ -15,12 +15,12 @@
 - title: '<img src="/lab-wiki/images/search.svg" alt="Search The Site">'
   search: true
 - title: Home
-  url: /welcome
+  url: /index
   not_numbered: true
 - title: Orientation
   url: /orientation/index
   not_numbered: true
-  expand_sections: false 
+  expand_sections: false
   sections:
   - title: 5 minutes git
     url: /orientation/5m-git
