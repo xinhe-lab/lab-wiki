@@ -1,19 +1,19 @@
 
 # Table of Contents
 
-1.  [Annotating VCF files](#orgc868e8d)
-    1.  [`ANNOVAR`](#org770b8a1)
-        1.  [Figure out what annotations you want and download them](#org3685aea)
-        2.  [Working with VCFs](#org69f7614)
-    2.  [Running `ANNOVAR`](#orgcffed0c)
+1.  [Annotating VCF files](#orga92436a)
+    1.  [`ANNOVAR`](#org05fbd99)
+        1.  [Figure out what annotations you want and download them](#org7d855c2)
+        2.  [Working with VCFs](#orgdca8ffa)
+    2.  [Running `ANNOVAR`](#org983c21e)
 
 
-<a id="orgc868e8d"></a>
+<a id="orga92436a"></a>
 
 # Annotating VCF files
 
 
-<a id="org770b8a1"></a>
+<a id="org05fbd99"></a>
 
 ## `ANNOVAR`
 
@@ -21,8 +21,6 @@
 In this tutorial we'll be working with data on the University of Chicago's `gardner` cluster run by the CRI.  [You can learn more about gardner here.](https://github.com/stephenslab/gardner)
 I'll be assuming that the data is already in VCF(gz) format stored at `/gpfs/data/xhe-lab/ncbi_2`. And that if you got the data from db-GaP, that it's been decrypted with `vdb-decrypt`.
 You can run `vdb-decrypt` using 
-
-The tangled file: `no` can be found here: <https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no>
 
     module load gcc/6.2.0 
     module load sra-tools
@@ -32,13 +30,11 @@ The tangled file: `no` can be found here: <https://github.com/ptb_workflowr/tree
 Also, please note that `ANNOVAR` has a *very* inefficient method for storing data (large uncompressed plain-text files), so *please* use the already installed version at `/gpfs/data/xhe-lab/software/annovar/`
 
 
-<a id="org3685aea"></a>
+<a id="org7d855c2"></a>
 
 ### Figure out what annotations you want and download them
 
 Let's start with a peek at what's already downloaded (so that we don't have to download it again).
-
-The tangled file: `no` can be found here: <https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no>
 
     cd /gpfs/data/xhe-lab/software/annovar
     find humandb -name "*txt"
@@ -51,13 +47,11 @@ You can read more about these annotations in the documentation.  (Check out the 
 
 If we wanted to download it again, this is the command we would use:
 
-The tangled file: `no` can be found here: <https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no>
-
     cd /gpfs/data/xhe-lab/software/annovar/
     .annotate_variation.pl -downdb -webfrom annovar -buildver hg19 dbnsfp30a humandb/
 
 
-<a id="org69f7614"></a>
+<a id="orgdca8ffa"></a>
 
 ### Working with VCFs
 
@@ -66,19 +60,14 @@ Again, `ANNOVAR` has extensive documentation about working with VCF files, [whic
 1.  Get  VCF files
 
     Starting with a list of vcf files:
-    The tangled file: `no` can be found here: <https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no>
     
         find /gpfs/data/xhe-lab -name "*vcf*gz"
     
     Within those files, let's find the "genotype" files
     
-    The tangled file: `no` can be found here: <https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no>
-    
         find . -name "*tar.gz" | egrep 'genotype-calls' | grep 'grc37'
     
     We can then extract these files using something like this to extract all tar files that we believe contain vcfs:
-    
-    The tangled file: `no` can be found here: <https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no>
     
         
         for i in `find . -name "*tar.gz" | egrep 'genotype-calls' | grep 'grc37'`;
@@ -96,8 +85,6 @@ Again, `ANNOVAR` has extensive documentation about working with VCF files, [whic
 
     To annotate we do not need the individual level genotypes, and `ANNOVAR` is not smart enough to ignore them, so we have to remove them ourselves.
     
-    The tangled file: `no` can be found here: <https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no>
-    
         module load gcc/6.2.0
         module load htslib/1.10.2
         module load bcftools/1.10.2
@@ -105,14 +92,12 @@ Again, `ANNOVAR` has extensive documentation about working with VCF files, [whic
         bcftools view -G c3_asc_phs000298_exomes.vcf.gz -Oz -o /gpfs/data/xhe-lab/ncbi_2/c3_asc_phs000298_exomes.vcf.gz
 
 
-<a id="orgcffed0c"></a>
+<a id="org983c21e"></a>
 
 ## Running `ANNOVAR`
 
 To get the annotations `refGene,cytoBand,exac03,avsnp147,dbnsfp30a,cadd` with a vcf input, run the command. Note how the `operation` flag requires `g`, `r`, or `f` for 
 `gene`, `region` and `filter` (variant) level annotation matching the `protocol` argument.
-
-The tangled file: `no` can be found here: <https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no>
 
     qsub -I -l walltime=12:00:00 -l nodes=1:ppn=1 -l mem=32gb #DO NOT RUN ANNOVAR FROM THE HEAD NODE!
     cd /gpfs/data/xhe-lab/ncbi_2/
