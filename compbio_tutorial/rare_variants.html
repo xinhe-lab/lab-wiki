@@ -29,9 +29,9 @@
   "headline":
     "rare_variants",
   "datePublished":
-    "2020-05-10T18:10:07-05:00",
+    "2020-05-10T18:20:55-05:00",
   "dateModified":
-    "2020-05-10T18:10:07-05:00",
+    "2020-05-10T18:20:55-05:00",
   "description":
     "",
   "author": {
@@ -881,24 +881,24 @@ initFunction(initQuery);
               <h1 id="table-of-contents">Table of Contents</h1>
 
 <ol>
-  <li><a href="#orgc868e8d">Annotating VCF files</a>
+  <li><a href="#orga92436a">Annotating VCF files</a>
     <ol>
-      <li><a href="#org770b8a1"><code class="language-plaintext highlighter-rouge">ANNOVAR</code></a>
+      <li><a href="#org05fbd99"><code class="language-plaintext highlighter-rouge">ANNOVAR</code></a>
         <ol>
-          <li><a href="#org3685aea">Figure out what annotations you want and download them</a></li>
-          <li><a href="#org69f7614">Working with VCFs</a></li>
+          <li><a href="#org7d855c2">Figure out what annotations you want and download them</a></li>
+          <li><a href="#orgdca8ffa">Working with VCFs</a></li>
         </ol>
       </li>
-      <li><a href="#orgcffed0c">Running <code class="language-plaintext highlighter-rouge">ANNOVAR</code></a></li>
+      <li><a href="#org983c21e">Running <code class="language-plaintext highlighter-rouge">ANNOVAR</code></a></li>
     </ol>
   </li>
 </ol>
 
-<p><a id="orgc868e8d"></a></p>
+<p><a id="orga92436a"></a></p>
 
 <h1 id="annotating-vcf-files">Annotating VCF files</h1>
 
-<p><a id="org770b8a1"></a></p>
+<p><a id="org05fbd99"></a></p>
 
 <h2 id="annovar"><code class="language-plaintext highlighter-rouge">ANNOVAR</code></h2>
 
@@ -906,8 +906,6 @@ initFunction(initQuery);
 In this tutorial we’ll be working with data on the University of Chicago’s <code class="language-plaintext highlighter-rouge">gardner</code> cluster run by the CRI.  <a href="https://github.com/stephenslab/gardner">You can learn more about gardner here.</a>
 I’ll be assuming that the data is already in VCF(gz) format stored at <code class="language-plaintext highlighter-rouge">/gpfs/data/xhe-lab/ncbi_2</code>. And that if you got the data from db-GaP, that it’s been decrypted with <code class="language-plaintext highlighter-rouge">vdb-decrypt</code>.
 You can run <code class="language-plaintext highlighter-rouge">vdb-decrypt</code> using</p>
-
-<p>The tangled file: <code class="language-plaintext highlighter-rouge">no</code> can be found here: <a href="https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no">https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no</a></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module load gcc/6.2.0 
 module load sra-tools
@@ -917,13 +915,11 @@ vdb-decrypt dbGaP-12106 #or whatever directory
 
 <p>Also, please note that <code class="language-plaintext highlighter-rouge">ANNOVAR</code> has a <em>very</em> inefficient method for storing data (large uncompressed plain-text files), so <em>please</em> use the already installed version at <code class="language-plaintext highlighter-rouge">/gpfs/data/xhe-lab/software/annovar/</code></p>
 
-<p><a id="org3685aea"></a></p>
+<p><a id="org7d855c2"></a></p>
 
 <h3 id="figure-out-what-annotations-you-want-and-download-them">Figure out what annotations you want and download them</h3>
 
 <p>Let’s start with a peek at what’s already downloaded (so that we don’t have to download it again).</p>
-
-<p>The tangled file: <code class="language-plaintext highlighter-rouge">no</code> can be found here: <a href="https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no">https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no</a></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /gpfs/data/xhe-lab/software/annovar
 find humandb -name "*txt"
@@ -939,13 +935,11 @@ find humandb -name "*txt"
 
 <p>If we wanted to download it again, this is the command we would use:</p>
 
-<p>The tangled file: <code class="language-plaintext highlighter-rouge">no</code> can be found here: <a href="https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no">https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no</a></p>
-
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /gpfs/data/xhe-lab/software/annovar/
 .annotate_variation.pl -downdb -webfrom annovar -buildver hg19 dbnsfp30a humandb/
 </code></pre></div></div>
 
-<p><a id="org69f7614"></a></p>
+<p><a id="orgdca8ffa"></a></p>
 
 <h3 id="working-with-vcfs">Working with VCFs</h3>
 
@@ -955,22 +949,17 @@ find humandb -name "*txt"
   <li>
     <p>Get  VCF files</p>
 
-    <p>Starting with a list of vcf files:
-The tangled file: <code class="language-plaintext highlighter-rouge">no</code> can be found here: <a href="https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no">https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no</a></p>
+    <p>Starting with a list of vcf files:</p>
 
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find /gpfs/data/xhe-lab -name "*vcf*gz"
 </code></pre></div>    </div>
 
     <p>Within those files, let’s find the “genotype” files</p>
 
-    <p>The tangled file: <code class="language-plaintext highlighter-rouge">no</code> can be found here: <a href="https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no">https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no</a></p>
-
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find . -name "*tar.gz" | egrep 'genotype-calls' | grep 'grc37'
 </code></pre></div>    </div>
 
     <p>We can then extract these files using something like this to extract all tar files that we believe contain vcfs:</p>
-
-    <p>The tangled file: <code class="language-plaintext highlighter-rouge">no</code> can be found here: <a href="https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no">https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no</a></p>
 
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for i in `find . -name "*tar.gz" | egrep 'genotype-calls' | grep 'grc37'`;
 do
@@ -990,8 +979,6 @@ as you organize the data is that it appears that there are VCF files with differ
 
     <p>To annotate we do not need the individual level genotypes, and <code class="language-plaintext highlighter-rouge">ANNOVAR</code> is not smart enough to ignore them, so we have to remove them ourselves.</p>
 
-    <p>The tangled file: <code class="language-plaintext highlighter-rouge">no</code> can be found here: <a href="https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no">https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no</a></p>
-
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module load gcc/6.2.0
 module load htslib/1.10.2
 module load bcftools/1.10.2
@@ -1001,14 +988,12 @@ bcftools view -G c3_asc_phs000298_exomes.vcf.gz -Oz -o /gpfs/data/xhe-lab/ncbi_2
   </li>
 </ol>
 
-<p><a id="orgcffed0c"></a></p>
+<p><a id="org983c21e"></a></p>
 
 <h2 id="running-annovar">Running <code class="language-plaintext highlighter-rouge">ANNOVAR</code></h2>
 
 <p>To get the annotations <code class="language-plaintext highlighter-rouge">refGene,cytoBand,exac03,avsnp147,dbnsfp30a,cadd</code> with a vcf input, run the command. Note how the <code class="language-plaintext highlighter-rouge">operation</code> flag requires <code class="language-plaintext highlighter-rouge">g</code>, <code class="language-plaintext highlighter-rouge">r</code>, or <code class="language-plaintext highlighter-rouge">f</code> for 
 <code class="language-plaintext highlighter-rouge">gene</code>, <code class="language-plaintext highlighter-rouge">region</code> and <code class="language-plaintext highlighter-rouge">filter</code> (variant) level annotation matching the <code class="language-plaintext highlighter-rouge">protocol</code> argument.</p>
-
-<p>The tangled file: <code class="language-plaintext highlighter-rouge">no</code> can be found here: <a href="https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no">https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no</a></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qsub -I -l walltime=12:00:00 -l nodes=1:ppn=1 -l mem=32gb #DO NOT RUN ANNOVAR FROM THE HEAD NODE!
 cd /gpfs/data/xhe-lab/ncbi_2/
