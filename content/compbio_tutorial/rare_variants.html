@@ -7,15 +7,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>chinese_lunch</title>
+  <title>Table of Contents</title>
   <meta name="description" content="">
 
-  <link rel="canonical" href="https://xinhe-lab.github.io/lab-wiki/this_that/chinese_lunch.html">
+  <link rel="canonical" href="https://xinhe-lab.github.io/lab-wiki/content/compbio_tutorial/rare_variants.html">
   <link rel="alternate" type="application/rss+xml" title="Lab Docs" href="https://xinhe-lab.github.io/lab-wiki/feed.xml">
 
-  <meta property="og:url"         content="https://xinhe-lab.github.io/lab-wiki/this_that/chinese_lunch.html" />
+  <meta property="og:url"         content="https://xinhe-lab.github.io/lab-wiki/content/compbio_tutorial/rare_variants.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="chinese_lunch" />
+<meta property="og:title"       content="Table of Contents" />
 <meta property="og:description" content="" />
 <meta property="og:image"       content="" />
 
@@ -25,9 +25,9 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage":
-    "https://xinhe-lab.github.io/lab-wiki/this_that/chinese_lunch.html",
+    "https://xinhe-lab.github.io/lab-wiki/content/compbio_tutorial/rare_variants.html",
   "headline":
-    "chinese_lunch",
+    "Table of Contents",
   "datePublished":
     "2020-05-10T17:41:49-05:00",
   "dateModified":
@@ -878,122 +878,146 @@ initFunction(initQuery);
             
 
             <div class="c-textbook__content">
-              <h1 id="chinese-lunch-box">Chinese lunch box</h1>
+              
+<h1 id="table-of-contents">Table of Contents</h1>
 
-<h2 id="joy-delivery-service">Joy Delivery Service</h2>
+<ol>
+  <li><a href="#orgc868e8d">Annotating VCF files</a>
+    <ol>
+      <li><a href="#org770b8a1"><code class="language-plaintext highlighter-rouge">ANNOVAR</code></a>
+        <ol>
+          <li><a href="#org3685aea">Figure out what annotations you want and download them</a></li>
+          <li><a href="#org69f7614">Working with VCFs</a></li>
+        </ol>
+      </li>
+      <li><a href="#orgcffed0c">Running <code class="language-plaintext highlighter-rouge">ANNOVAR</code></a></li>
+    </ol>
+  </li>
+</ol>
 
-<p>There has long been a collaboration between CSSA (Chinese Students and Scholars Association) and Tangchao restaurant offering $7 lunch boxes at East lobby of GCIS building at noon. A while ago Tangchao closed their business. Now <a href="https://www.joydeliveryservice.com/">Joy Delivery service</a> replaces Tangchao offering lunch boxes at the same time and location, and roughly the same price.</p>
+<p><a id="orgc868e8d"></a></p>
 
-<p>I put together several of their CSSA emails into information below.</p>
+<h1 id="annotating-vcf-files">Annotating VCF files</h1>
 
-<h3 id="how-to-order">How to order</h3>
+<p><a id="org770b8a1"></a></p>
 
-<p>Personal note: I always order the same day before 10AM via text. They mostly immediately reply your text to confirm. You then show up at 12PM with cash to get the food.</p>
+<h2 id="annovar"><code class="language-plaintext highlighter-rouge">ANNOVAR</code></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$7 per meal for lunch specials (cash only)
-Location: 929 E 57th Street, outside of GCIS east lobby
-Pick-up time: 12:00 – 2:00 pm (Monday à Friday)
+<p><code class="language-plaintext highlighter-rouge">ANNOVAR</code> is a tool for functionally annotating genetic variants.  The documentation for <code class="language-plaintext highlighter-rouge">ANNOVAR</code> is quite good, <a href="https://doc-openbio.readthedocs.io/projects/annovar/en/latest/">you can find it here</a>.
+In this tutorial we’ll be working with data on the University of Chicago’s <code class="language-plaintext highlighter-rouge">gardner</code> cluster run by the CRI.  <a href="https://github.com/stephenslab/gardner">You can learn more about gardner here.</a>
+I’ll be assuming that the data is already in VCF(gz) format stored at <code class="language-plaintext highlighter-rouge">/gpfs/data/xhe-lab/ncbi_2</code>. And that if you got the data from db-GaP, that it’s been decrypted with <code class="language-plaintext highlighter-rouge">vdb-decrypt</code>.
+You can run <code class="language-plaintext highlighter-rouge">vdb-decrypt</code> using</p>
 
-How to make an order:
-(1) Text to (773) 664 - 2110
-Example: one L51 on 7/30 (Tuesday)
-(2) Email to: joydeliveryservice@gmail.com
-Example: one L23 on 8/30 (Friday)
-(3) Online: www.joydeliveryservice.com
+<p>The tangled file: <code class="language-plaintext highlighter-rouge">no</code> can be found here: <a href="https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no">https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no</a></p>
 
-It's be nice to make an order by 8pm one day before
-Emergent case: before 10:00am the same day (order by cellphone only)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module load gcc/6.2.0 
+module load sra-tools
+cd /gpfs/data/xhe-lab/ncbi_2/
+vdb-decrypt dbGaP-12106 #or whatever directory
 </code></pre></div></div>
 
-<h3 id="price">Price</h3>
+<p>Also, please note that <code class="language-plaintext highlighter-rouge">ANNOVAR</code> has a <em>very</em> inefficient method for storing data (large uncompressed plain-text files), so <em>please</em> use the already installed version at <code class="language-plaintext highlighter-rouge">/gpfs/data/xhe-lab/software/annovar/</code></p>
 
-<p>Note: I mostly go for T200 combo — you’ve got to text them what to go into the combo.</p>
+<p><a id="org3685aea"></a></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 普通分量：L （24oz）每份 $6
-- 晚餐分量：D （32oz）每份 $8
-- 特类饭盒：T（32oz）每份 $9
-- T300: （choose 2 meat + 1 vegetable, or 1 meat + 2 vegetables）$9 
-三拼饭：（可选2肉 + 1 蔬菜，或者1肉 + 2蔬菜）每份9块
-- T200: （choose 1 meat + 1 vegetable, or 2 vegetables）$7 /each
-双拼饭：（可选1肉 + 1 蔬菜，或者 2蔬菜）每份7块    
+<h3 id="figure-out-what-annotations-you-want-and-download-them">Figure out what annotations you want and download them</h3>
+
+<p>Let’s start with a peek at what’s already downloaded (so that we don’t have to download it again).</p>
+
+<p>The tangled file: <code class="language-plaintext highlighter-rouge">no</code> can be found here: <a href="https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no">https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no</a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /gpfs/data/xhe-lab/software/annovar
+find humandb -name "*txt"
 </code></pre></div></div>
 
-<h3 id="menu">Menu</h3>
+<p>You can read more about these annotations in the documentation.  (Check out the “Filter” based annotations for variant-level annotation)</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>L12 Chicken Pad Siew （泰式鸡肉河粉）
-L13 Chicken in Yellow Curry （泰式黄咖喱鸡肉饭）
-L15 Chicken Basil Fried Rice （泰式鸡炒饭）
-L45 Chicken Singapore noodle （鸡肉星洲米粉）
-L51 Pork Katsu Don （日式猪排饭）
-L52 Chicken Katsu Don （日式鸡排饭）
-L61 麻婆豆腐饭
-L62 干煸四季豆饭
-L63 腊味小炒饭
-L64 凉瓜鱼片饭
-L65 粟米鱼片饭
-L66 酸菜鱼片饭
-L67 椒盐鱼片饭
-L68 红烧班腩饭
-L69 凉瓜牛肉饭
-L70 番茄牛肉饭
-L71 白菜牛肉饭
-L72 牛腩萝卜饭
-L73 葡国烩鸡饭
-L74 凉瓜排骨饭
-L75 梅菜扣肉饭
-L76 京都猪扒饭
-L77 洋葱猪扒饭
-L78 椒盐猪扒饭
-L79 白菜五花肉饭
-L80 榨菜炒五花肉饭
-L81 XO酱五花肉饭
-L82 咸鱼鸡粒茄子饭
-L83 黑椒猪扒饭
-L84 莲藕猪手饭
-L85 支竹鸭子饭
-L86 蒙古牛肉饭
-L87 葱爆炒牛肉饭
-L88 菠萝咕噜肉饭
-L89 鱼香茄子饭
+<p><a href="https://doc-openbio.readthedocs.io/projects/annovar/en/latest/user-guide/filter/">From the documentation</a>:</p>
 
-特别类饭盒 （T）
-T101  椒盐有头虾饭
-T102  美极有头虾饭
-T103  葱油鸡饭
-T103  手撕鸡饭
-T105  咖喱牛腩饭
-T106  黑椒牛柳丝饭
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">dbnsfp30a</code>: this dataset already includes SIFT, PolyPhen2 HDIV, PolyPhen2 HVAR, LRT, MutationTaster, MutationAssessor, FATHMM, MetaSVM, MetaLR, VEST, CADD, GERP++, DANN, fitCons, PhyloP and SiPhy scores, but ONLY on coding variants</p>
+</blockquote>
+
+<p>If we wanted to download it again, this is the command we would use:</p>
+
+<p>The tangled file: <code class="language-plaintext highlighter-rouge">no</code> can be found here: <a href="https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no">https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no</a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /gpfs/data/xhe-lab/software/annovar/
+.annotate_variation.pl -downdb -webfrom annovar -buildver hg19 dbnsfp30a humandb/
 </code></pre></div></div>
 
-<p>T200/300 menu</p>
+<p><a id="org69f7614"></a></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>肉类的选择有：(meat choices)
-蜜汁叉烧（Roasted Pork in Honey Sauce）
-红烧牛腩（Soy-Braised Beef Brisket）
-四川牛肉（Szechuan Beef）（Hot）
-孜然牛肉（Beef w/ Pure Cumin Powder）（Hot）
-口水鸡（Never Forget Chicken）（Hot）
-香辣子鸡（Hot &amp; Spicy Chicken）（Hot）
-干锅鸡（Chicken with Dry Hot Sauce）（Hot）
-宫保鸡（Kung Pao Chicken）（Hot）
-炸鸡翼（Fried Chicken Wing）
-椒盐鱼片（Salt &amp; Pepper Fish Fillet）
-豉汁鱼片（Fish Fillet with Black Bean Sauce）
-鱼香肉丝（Yu Shiang Pork）（Hot）
-香干肉丝（Sliced Pork, Dry Beam w/ Chives）（Hot）
-椒盐肉排（Salt &amp; Pepper Pork Chop）（Hot）
-蒜香肉排（Pork Chop w/ Garlic Sauce）
-豉汁蒸排骨（Steamed Pork Ribs w/ Black Bean Sauce）
+<h3 id="working-with-vcfs">Working with VCFs</h3>
 
-蔬菜的选择有: （Vegetable Choices）
-麻婆豆腐（Mapo Tofu）（Hot）
-红烧豆腐（Oyster Tofu）
-鱼香茄子（Yu Shiang Eggplant）
-蒜蓉大白菜（Garlic Sauce Chinese Cabbage）
-蒜蓉包心菜（Garlic Chinese Cabbage）
-清炒青江菜（Stir-Fry Spoon Cabbage）
-耗油芥兰（Chinese Broccoli w/ Oyster Sauce）    
+<p>Again, <code class="language-plaintext highlighter-rouge">ANNOVAR</code> has extensive documentation about working with VCF files, <a href="https://doc-openbio.readthedocs.io/projects/annovar/en/latest/articles/VCF/">which you can find here</a>.  The script <code class="language-plaintext highlighter-rouge">table_annovar.pl</code> can <strong>directly</strong> support working with VCFs, but because our data is quite large, we might want to preprocess it first</p>
+
+<ol>
+  <li>
+    <p>Get  VCF files</p>
+
+    <p>Starting with a list of vcf files:
+The tangled file: <code class="language-plaintext highlighter-rouge">no</code> can be found here: <a href="https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no">https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no</a></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find /gpfs/data/xhe-lab -name "*vcf*gz"
+</code></pre></div>    </div>
+
+    <p>Within those files, let’s find the “genotype” files</p>
+
+    <p>The tangled file: <code class="language-plaintext highlighter-rouge">no</code> can be found here: <a href="https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no">https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no</a></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find . -name "*tar.gz" | egrep 'genotype-calls' | grep 'grc37'
+</code></pre></div>    </div>
+
+    <p>We can then extract these files using something like this to extract all tar files that we believe contain vcfs:</p>
+
+    <p>The tangled file: <code class="language-plaintext highlighter-rouge">no</code> can be found here: <a href="https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no">https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no</a></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for i in `find . -name "*tar.gz" | egrep 'genotype-calls' | grep 'grc37'`;
+do
+    tar -C $(dirname "${i}") -xvzf "${i}";
+done
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Prepping VCFs for <code class="language-plaintext highlighter-rouge">ANNOVAR</code></p>
+
+    <p>I’m going to focus on the file <code class="language-plaintext highlighter-rouge">./dbGaP-23177/73416/PhenoGenotypeFiles/RootStudyConsentSet_phs000298.Autism_HighSeq.v4.p3.c1.DS-ASD/GenotypeFiles/c1/grc37/c1_Autism_BCM_hg19.vcf.gz</code> .  Something to note
+as you organize the data is that it appears that there are VCF files with different reference genomes(note the <code class="language-plaintext highlighter-rouge">grc37</code> vs <code class="language-plaintext highlighter-rouge">grc36</code> and <code class="language-plaintext highlighter-rouge">hg19</code> vs <code class="language-plaintext highlighter-rouge">hg18</code>).  <a href="https://bitesizebio.com/38335/get-to-know-your-reference-genome-grch37-vs-grch38/">You can learn more about that here.</a> You <strong>DO NOT</strong>
+ want to merge data with different reference genomes.</p>
+  </li>
+  <li>
+    <p>Removing individual level data</p>
+
+    <p>To annotate we do not need the individual level genotypes, and <code class="language-plaintext highlighter-rouge">ANNOVAR</code> is not smart enough to ignore them, so we have to remove them ourselves.</p>
+
+    <p>The tangled file: <code class="language-plaintext highlighter-rouge">no</code> can be found here: <a href="https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no">https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no</a></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module load gcc/6.2.0
+module load htslib/1.10.2
+module load bcftools/1.10.2
+cd /gpfs/data/xhe-lab/ncbi_2/dbGaP-23177/PhenoGenotypeFiles/RootStudyConsentSet_phs000298.Autism_HighSeq.v4.p3.c3.DS-AOND-MDS/GenotypeFiles/c3
+bcftools view -G c3_asc_phs000298_exomes.vcf.gz -Oz -o /gpfs/data/xhe-lab/ncbi_2/c3_asc_phs000298_exomes.vcf.gz
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p><a id="orgcffed0c"></a></p>
+
+<h2 id="running-annovar">Running <code class="language-plaintext highlighter-rouge">ANNOVAR</code></h2>
+
+<p>To get the annotations <code class="language-plaintext highlighter-rouge">refGene,cytoBand,exac03,avsnp147,dbnsfp30a,cadd</code> with a vcf input, run the command. Note how the <code class="language-plaintext highlighter-rouge">operation</code> flag requires <code class="language-plaintext highlighter-rouge">g</code>, <code class="language-plaintext highlighter-rouge">r</code>, or <code class="language-plaintext highlighter-rouge">f</code> for 
+<code class="language-plaintext highlighter-rouge">gene</code>, <code class="language-plaintext highlighter-rouge">region</code> and <code class="language-plaintext highlighter-rouge">filter</code> (variant) level annotation matching the <code class="language-plaintext highlighter-rouge">protocol</code> argument.</p>
+
+<p>The tangled file: <code class="language-plaintext highlighter-rouge">no</code> can be found here: <a href="https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no">https://github.com/ptb_workflowr/tree/master/compbio_tutorial/no</a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qsub -I -l walltime=12:00:00 -l nodes=1:ppn=1 -l mem=32gb #DO NOT RUN ANNOVAR FROM THE HEAD NODE!
+cd /gpfs/data/xhe-lab/ncbi_2/
+gunzip c3_asc_phs000298_exomes.vcf.gz
+/gpfs/data/xhe-lab/software/annovar/table_annovar.pl c3_asc_phs000298_exomes.vcf /gpfs/data/xhe-lab/software/annovar/humandb/ -buildver hg19 -out myanno -remove -protocol refGene,cytoBand,exac03,avsnp147,dbnsfp30a -operation g,r,f,f,f -nastring . -vcfinput -polish
+rm c3_asc_phs000298_exomes.vcf
 </code></pre></div></div>
+
 
               <nav class="c-page__nav">
   
