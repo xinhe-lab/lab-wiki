@@ -17,3 +17,12 @@
 ## Somatic/germline mutation calling
 
 - [cancerWGS](https://github.com/aselewa/cancerWGS_pipeline). A pipeline for calling germline and somatic mutations from whole-genome sequencing data (WGS). The pipeline takes in fastq files from normal and tumor sequencing data from the same patient. Edit the config file to point to your reference genome files. This pipeline follows the GATK4 best practices for calling somatic mutations.
+
+## S-LDSC (stratified LD score regression)
+
+- [Pipeline for S-LDSC analysis](https://kevinlkx.github.io/analysis_pipelines/sldsc_pipeline.html). The pipeline lists example steps to install the `LDSC` software and run `S-LDSC` (stratified LD score regression) analysis to partition heritability by functional annotations using genome-wide association summary statistics. This pipeline basically follows the [tutorial](https://github.com/bulik/ldsc) from the authors. 
+
+## TWAS/FUSION
+
+- [Pipeline for TWAS analysis using FUSION](https://kevinlkx.github.io/analysis_pipelines/twas_fusion_pipeline.html). `FUSION` performs transcriptome-wide (or any other ome-wide) association study by predicting functional/molecular phenotypes into GWAS using only summary statistics. This pipeline basically follows the [tutorial](https://github.com/gusevlab/fusion_twas) from the authors. 
+
