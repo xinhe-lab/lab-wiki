@@ -1,6 +1,6 @@
 ## GWAS Summary Statistics in LD-score format
 
-Collections of GWAS summary statistics in LD-score format (`.sumstats`) format
+Collections of GWAS summary statistics in LD-score `.sumstats` format
 
 ### Contact
 Kevin Luo (kevinlkx@gmail.com)
