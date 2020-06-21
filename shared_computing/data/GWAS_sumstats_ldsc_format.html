@@ -29,9 +29,9 @@
   "headline":
     "GWAS_sumstats_ldsc_format",
   "datePublished":
-    "2020-05-26T15:40:17-05:00",
+    "2020-06-21T15:29:34-05:00",
   "dateModified":
-    "2020-05-26T15:40:17-05:00",
+    "2020-06-21T15:29:34-05:00",
   "description":
     "",
   "author": {
@@ -892,9 +892,11 @@ initFunction(initQuery);
 
 <h3 id="source">Source</h3>
 
-<p>The directory contains collections of GWAS summary statistics in <a href="https://github.com/bulik/ldsc/wiki/Summary-Statistics-File-Format"><code class="language-plaintext highlighter-rouge">.sumstats</code></a> format, which could be used in <code class="language-plaintext highlighter-rouge">LDSC</code> and <code class="language-plaintext highlighter-rouge">TWAS/FUSION</code> analysis. Please read the <a href="`https://kevinlkx.github.io/analysis_pipelines/GWAS_sumstats.html`">details</a> about these datasets.</p>
+<p>The directory contains collections of GWAS summary statistics in <a href="https://github.com/bulik/ldsc/wiki/Summary-Statistics-File-Format"><code class="language-plaintext highlighter-rouge">.sumstats</code></a> format, which could be used in <code class="language-plaintext highlighter-rouge">LDSC</code> and <code class="language-plaintext highlighter-rouge">TWAS/FUSION</code> analysis. The <a href="https://kevinlkx.github.io/analysis_pipelines/GWAS_sumstats.html">page</a> has more detail instructions about these datasets.</p>
 
-<p>You can convert your own GWAS summary statistics to the <code class="language-plaintext highlighter-rouge">.sumstats</code> format using <code class="language-plaintext highlighter-rouge">munge_sumstats.py</code> from <code class="language-plaintext highlighter-rouge">LDSC</code> software, see <a href="https://github.com/bulik/ldsc/wiki/Summary-Statistics-File-Format">“Summary-Statistics-File-Format”</a> for more details.</p>
+<p>You can convert your own GWAS summary statistics to the <code class="language-plaintext highlighter-rouge">.sumstats</code> format using <code class="language-plaintext highlighter-rouge">munge_sumstats.py</code> from <code class="language-plaintext highlighter-rouge">LDSC</code> software, see this <a href="https://github.com/bulik/ldsc/wiki/Summary-Statistics-File-Format">page</a> for more details.</p>
+
+<p>Note: if your <code class="language-plaintext highlighter-rouge">munge_sumstats.py</code> command seems to run forever, you may need to add an option <code class="language-plaintext highlighter-rouge">--chunksize 500000</code> to <code class="language-plaintext highlighter-rouge">munge_sumstats.py</code> command (https://github.com/bulik/ldsc/issues/145).</p>
 
               <nav class="c-page__nav">
   
