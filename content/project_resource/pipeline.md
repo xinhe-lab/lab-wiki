@@ -20,7 +20,8 @@
 
 ## S-LDSC (stratified LD score regression)
 
-- [Pipeline for S-LDSC analysis](https://kevinlkx.github.io/analysis_pipelines/sldsc_pipeline.html). The pipeline lists example steps to install the `LDSC` software and run `S-LDSC` (stratified LD score regression) analysis to partition heritability by functional annotations using genome-wide association summary statistics. This pipeline basically follows the [tutorial](https://github.com/bulik/ldsc) from the authors. 
+- [Pipeline for S-LDSC analysis](https://kevinlkx.github.io/analysis_pipelines/sldsc_pipeline.html). The pipeline lists example steps to install the `LDSC` software and run `S-LDSC` (stratified LD score regression) analysis to partition heritability by functional annotations using genome-wide association summary statistics. This pipeline basically follows the [tutorial](https://github.com/bulik/ldsc) from the authors. You can find some more examples/tutorials: 1) [running S-LDSC on GTEx eQTL MaxCPP annotations](https://kevinlkx.github.io/analysis_pipelines/sldsc_example_GTEx_QTLs.html) from Hormozdiari et al. Nature Genetics 2018 paper 2) [running S-LDSC on neuron ATAC-seq annotations](https://kevinlkx.github.io/analysis_pipelines/sldsc_example_neuron_ATACseq.html) from Zhang et al. Science 2020 paper.
+
 
 ## TWAS/FUSION
 
